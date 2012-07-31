@@ -1,0 +1,265 @@
+body {
+	background: rgba(165, 170, 255, 0.15);
+	font-family: Georgia, Times New Roman, Times, serif;
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 120px;
+	font-weight: normal;
+	margin: 0;
+    font-family: 'Sansita One', cursive;
+	color: #3a7eff;
+	text-shadow: 0 2px 1px #000;
+	line-height: 1;
+}
+
+h2 {
+	font-size: 80px;
+	font-weight: normal;
+	margin: 0;
+	text-shadow: 0 2px 1px #000;
+	color: #FFB000;
+    font-family: 'Sansita One', cursive;
+}
+
+h3 {
+	font-size: 40px;
+	font-weight: normal;
+	margin: 0;
+	color: #D92B00;
+	text-shadow: 0 2px 1px #000;
+    font-family: 'Sansita One', cursive;
+}
+
+p {
+	width: 80%;
+	margin: 20px auto;
+	text-shadow: 0 2px 1px #fff;
+	color: #222438;
+}
+
+a, a:visited {
+	color: #D92B00;
+	font-weight: bold;
+	font-style: italic;
+}
+
+ul {
+	list-style: none;
+}
+
+.download {
+	padding: 10px;
+}
+
+pre {
+	font-size: 18px;
+}
+
+blockquote {
+	text-align: left;
+	width: 720px;
+	margin: 10px auto;
+	background: #C5C3DE;
+	border: solid 2px #69697A;
+	padding: 0 40px;
+}
+
+code {
+	font-style: normal;
+	padding-left: 5px;
+}
+
+/*----------------------------------------  BLOCKS */
+
+.scrollblock {
+	position: relative;
+	margin: 0;
+	width: 100%;
+	height: 600px;
+}
+
+.scrollblock h2 {
+	padding-top: 100px;
+}
+
+.divider {
+	font-size: 14px;
+}
+
+.divider, .accent {
+	color: #69697A;
+	text-shadow: none;
+}
+
+#console {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 15px;
+	width: 500px;
+	margin: 0;
+	font-size: 14px;
+	font-style: italic;
+	background-color: #69697A;
+	text-shadow: none;
+	text-align: left;
+	padding: 3px 10px;
+	border-radius: 0 0 10px 10px;
+	z-index: 99;
+	opacity: .8;
+}
+
+#intro {
+	overflow: hidden;
+}
+
+#title {
+	margin: 80px auto 0;
+	width: 1100px;
+	position: relative;
+	z-index: 99;
+}
+
+#author {
+	width: 640px;
+	position: absolute;
+	top: 180px;
+	right: 15%;
+	font-size: 20px;
+	text-align: right;
+	font-style: italic;
+	color: #D92B00;
+	z-index:100;
+}
+
+.twitter-share-button {
+	position: relative;
+	top: 8px;
+	left: 4px;
+}
+
+#desc {
+	position: absolute;
+	top: 250px;
+	width: 100%;
+}
+
+#download {
+	position: absolute;
+	top: 380px;
+	font-size: 18px;
+	width: 100%;
+	line-height: 1.8;
+}
+
+#download a {
+	color: #69697A;
+}
+
+#examples-pin {
+	height: 500px;
+}
+
+#examples-transition {
+	overflow: hidden;
+}
+
+#examples-parallax {
+	overflow: hidden;
+}
+
+#parallax2 {
+	position: absolute;
+	top: 200px;
+	left: -50px;
+	color: #C5C3DE;
+	opacity: .2;
+	font-size: 210px;
+	text-shadow: none;
+}
+
+#parallax3 {
+	position: absolute;
+	top: 320px;
+	right: 40px;
+	color: #C5C3DE;
+	opacity: .4;
+	font-size: 160px;
+	text-shadow: none;
+}
+
+#easing span {
+	position: relative;
+	top:0;
+	left:0;
+}
+#easing_bottom {
+	width: 330px;
+	height: 13px;
+	margin: auto;
+	background: #131420;
+	border-bottom: 1px solid #30334F;
+	position: relative;
+	top: 276px;
+	border-radius: 2px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+}
+
+#howtouse {
+	height: 2100px;
+}
+
+#disclaimer {
+	font-size: 18px;
+	font-style: italic;
+	font-weight: normal;
+	margin: 0 auto;
+}
+
+#instructions {
+	padding-top: 40px;
+}
+
+#instructions p {
+	margin: 0px auto 20px;
+}
+
+#instructions-animation {
+	padding-top: 40px;
+}
+
+.param-list {
+	color: #C5C3DE;
+	font-size: 18px;
+	line-height: 1.4;
+	padding: 0 18px;
+}
+
+.param-list li {
+	padding-bottom: 20px;
+	text-shadow: 0 2px 1px #000;
+}
+
+.param {
+	display: block;
+	color: #69697A;
+}
+
+.param-def small {
+	display: block;
+	font-weight: normal;
+	font-style: italic;
+}
+
+#credits {
+	height: 525px;
+	margin-top: 100px;
+}

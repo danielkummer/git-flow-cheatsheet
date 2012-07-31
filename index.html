@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git-flow cheatsheet</title>
+    <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/jquery.lettering-0.6.1.min.js"></script>
+    <script src="js/jquery.scrollorama.js"></script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33766650-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+<div class="scrollblock" id="intro">
+    <h1 id="title">git-flow cheatsheet</h1>
+
+    <p id="author">
+        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+    </p>
+
+    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">nvie</a>
+    </p>
+</div>
+
+<p id="console"></p>
+
+<div class="scrollblock" id="into">
+    <h2 id="zoom-in">sorry..</h2>
+    <p>This is still a work in progress, stay tuned for update (happening soon)</p>
+</div>
+
+<div class="scrollblock">
+    <p> another block</p>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var scrollorama = $.scrollorama({ blocks:'.scrollblock' });
+
+        // assign function to add behavior for onBlockChange event
+        scrollorama.onBlockChange(function () {
+            var i = scrollorama.blockIndex;
+            $('#console')
+                    .css('display', 'block')
+                    .text('onBlockChange | blockIndex:' + i + ' | current block: ' + scrollorama.settings.blocks.eq(i).attr('id'));
+        });
+
+        $('#title').lettering();
+        $('#title span')
+                .css('display', 'block')
+                .css('float', 'left');
+        $('.char9').css('padding-left', '6px');
+
+        scrollorama.animate('#zoom-in', { delay:200, duration:600, property:'zoom', start:8 });
+        // animate some examples
+        scrollorama.animate('#unpin', { duration:500, property:'padding-top', start:400, pin:true });
+        scrollorama.animate('#fade-in', { delay:400, duration:300, property:'opacity', start:0 });
+        scrollorama.animate('#fly-in', { delay:400, duration:300, property:'left', start:-1400, end:0 });
+        scrollorama.animate('#rotate-in', { duration:800, property:'rotate', start:720 });
+        scrollorama.animate('#any', { delay:700, duration:200, property:'opacity', start:0 });
+        scrollorama.animate('#any', { delay:800, duration:200, property:'letter-spacing', start:18 });
+
+        // animate the parallaxing
+        scrollorama.animate('#parallax2', { delay:400, duration:600, property:'top', start:800, end:-800 });
+        scrollorama.animate('#parallax3', { delay:200, duration:1200, property:'top', start:500, end:-500 });
+
+    });
+</script>
+
+
+</body>
+</html>
