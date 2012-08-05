@@ -1,265 +1,338 @@
+/*----------------------------------------  Colors */
+/*.color1 {
+    background-color: lightskyblue;
+}
+
+
+.color2 {
+    background-color: lightblue;
+}
+
+.color3 {
+    background-color: deepskyblue;
+}
+
+.color4 {
+    background-color: darkturquoise;
+}
+
+.color5 {
+    background-color: cornflowerblue;
+}
+*/
+
+/*----------------------------------------  Text */
+
 body {
-	background: rgba(165, 170, 255, 0.15);
-	font-family: Georgia, Times New Roman, Times, serif;
-	font-weight: bold;
-	font-size: 30px;
-	text-align: center;
+    background-color: powderblue;
+    font-family: Georgia, Times New Roman, Times, serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    transition: background-color 1s linear;
+    -moz-transition: background-color 1s linear; /* FF3.7+ */
+    -o-transition: background-color 1s linear; /* Opera 10.5 */
+    -webkit-transition: background-color 1s linear; /* Saf3.2+, Chrome */
+    adding: 0;
+    margin: 0;
 }
 
 h1 {
-	font-size: 120px;
-	font-weight: normal;
-	margin: 0;
+    font-size: 120px;
+    font-weight: normal;
+    margin: 0;
     font-family: 'Sansita One', cursive;
-	color: #3a7eff;
-	text-shadow: 0 2px 1px #000;
-	line-height: 1;
+    color: #3a7eff;
+    text-shadow: 0 2px 1px #000;
+    line-height: 1;
 }
 
 h2 {
-	font-size: 80px;
-	font-weight: normal;
-	margin: 0;
-	text-shadow: 0 2px 1px #000;
-	color: #FFB000;
+    font-size: 80px;
+    font-weight: normal;
+    margin: 0;
+    text-shadow: 0 2px 1px #000;
+    color: #FFB000;
     font-family: 'Sansita One', cursive;
 }
 
 h3 {
-	font-size: 40px;
-	font-weight: normal;
-	margin: 0;
-	color: #D92B00;
-	text-shadow: 0 2px 1px #000;
+    font-size: 40px;
+    font-weight: normal;
+    margin: 0;
+    color: #D92B00;
+    text-shadow: 0 2px 1px #000;
     font-family: 'Sansita One', cursive;
 }
 
 p {
-	width: 80%;
-	margin: 20px auto;
-	text-shadow: 0 2px 1px #fff;
-	color: #222438;
+    width: 95%;
+    margin: 20px auto;
+    text-shadow: 0 2px 1px #fff;
+    color: #222438;
 }
 
 a, a:visited {
-	color: #D92B00;
-	font-weight: bold;
-	font-style: italic;
+    color: #D92B00;
+    font-weight: bold;
+    font-style: italic;
 }
 
 ul {
-	list-style: none;
+    list-style: none;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+ul li:before {
+    content: "\2605\a0"
 }
 
 .download {
-	padding: 10px;
+    padding: 10px;
 }
 
-pre {
-	font-size: 18px;
-}
-
+/** coding  block */
 blockquote {
-	text-align: left;
-	width: 720px;
-	margin: 10px auto;
-	background: #C5C3DE;
-	border: solid 2px #69697A;
-	padding: 0 40px;
+    color: white;
+    text-align: left;
+    margin: 10px auto;
+    background: #131420;
+    border-bottom: 2px solid #30334F;
+    border-right: 2px solid #30334F;
+    border-radius: 7px;
+    padding: 5px 30px;
+    font-size: 0.8em;
 }
 
 code {
-	font-style: normal;
-	padding-left: 5px;
+    font-style: normal;
+    padding-left: 5px;
+}
+
+/*----------------------------------------  Images */
+
+div#init-img {
+    background: url("../img/init.png") no-repeat scroll center center transparent;
+    height: 122px;
+    width: 122px;
+    position: relative;
+    z-index: 99;
+}
+
+div#feature-start-img {
+    background: url("../img/feature-start.png") no-repeat scroll center center transparent;
+    position: relative;
+    width: 321px;
+    height: 386px;
+    left: -8px;
+    z-index: 99;
+}
+
+div#feature-finish-img {
+    background: url("../img/feature-finish.png") no-repeat scroll center center transparent;
+    position: relative;
+    width: 321px;
+    height: 338px;
+    left: -8px;
+    z-index: 99;
+}
+
+div#blue-line-img {
+    background: url("../img/blue_line.png") repeat-y scroll center center transparent;
+    width: 46px;
+    position: relative;
+    height: 1500px;
+    left: 37px;
+    top: -10px;
+}
+
+div#violet-line-img {
+    background: url("../img/violet-line.png") repeat-y scroll center center transparent;
+    width: 46px;
+    position: relative;
+    height: 300px;
+    left: 184px;
+    top: -60px;
 }
 
 /*----------------------------------------  BLOCKS */
 
+.col-1 {
+    float: left;
+    width: 600px;
+}
+
+.col-2 {
+    float: right;
+    width: 500px;
+    margin-left: 30px;
+}
+
+#main {
+    margin: 0 auto;
+    position: relative;
+    width: 1200px;
+}
+
 .scrollblock {
-	position: relative;
-	margin: 0;
-	width: 100%;
-	height: 600px;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    min-height: 600px;
 }
 
 .scrollblock h2 {
-	padding-top: 100px;
-}
-
-.divider {
-	font-size: 14px;
+    padding-top: 100px;
 }
 
 .divider, .accent {
-	color: #69697A;
-	text-shadow: none;
+    color: #69697A;
+    text-shadow: none;
 }
 
 #console {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 15px;
-	width: 500px;
-	margin: 0;
-	font-size: 14px;
-	font-style: italic;
-	background-color: #69697A;
-	text-shadow: none;
-	text-align: left;
-	padding: 3px 10px;
-	border-radius: 0 0 10px 10px;
-	z-index: 99;
-	opacity: .8;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 15px;
+    width: 500px;
+    margin: 0;
+    font-size: 14px;
+    font-style: italic;
+    background-color: #69697A;
+    text-shadow: none;
+    text-align: left;
+    padding: 3px 10px;
+    border-radius: 0 0 10px 10px;
+    z-index: 99;
+    opacity: .8;
 }
 
-#intro {
-	overflow: hidden;
-}
 
 #title {
-	margin: 80px auto 0;
-	width: 1100px;
-	position: relative;
-	z-index: 99;
+    margin: 80px auto 0;
+    width: 1150px;
+    position: relative;
+    z-index: 99;
 }
 
 #author {
-	width: 640px;
-	position: absolute;
-	top: 180px;
-	right: 15%;
-	font-size: 20px;
-	text-align: right;
-	font-style: italic;
-	color: #D92B00;
-	z-index:100;
+    width: 640px;
+    position: absolute;
+    top: 180px;
+    right: 15%;
+    font-size: 20px;
+    text-align: right;
+    font-style: italic;
+    color: #D92B00;
+    z-index: 100;
 }
 
 .twitter-share-button {
-	position: relative;
-	top: 8px;
-	left: 4px;
+    position: relative;
+    top: 8px;
+    left: 4px;
 }
 
 #desc {
-	position: absolute;
-	top: 250px;
-	width: 100%;
+    position: absolute;
+    top: 250px;
+    width: 100%;
 }
 
 #download {
-	position: absolute;
-	top: 380px;
-	font-size: 18px;
-	width: 100%;
-	line-height: 1.8;
+    position: absolute;
+    top: 380px;
+    font-size: 18px;
+    width: 100%;
+    line-height: 1.8;
 }
 
 #download a {
-	color: #69697A;
+    color: #69697A;
 }
 
 #examples-pin {
-	height: 500px;
-}
-
-#examples-transition {
-	overflow: hidden;
-}
-
-#examples-parallax {
-	overflow: hidden;
-}
-
-#parallax2 {
-	position: absolute;
-	top: 200px;
-	left: -50px;
-	color: #C5C3DE;
-	opacity: .2;
-	font-size: 210px;
-	text-shadow: none;
-}
-
-#parallax3 {
-	position: absolute;
-	top: 320px;
-	right: 40px;
-	color: #C5C3DE;
-	opacity: .4;
-	font-size: 160px;
-	text-shadow: none;
-}
-
-#easing span {
-	position: relative;
-	top:0;
-	left:0;
-}
-#easing_bottom {
-	width: 330px;
-	height: 13px;
-	margin: auto;
-	background: #131420;
-	border-bottom: 1px solid #30334F;
-	position: relative;
-	top: 276px;
-	border-radius: 2px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-o-border-radius: 4px;
-	-ms-border-radius: 4px;
-	border-radius: 4px;
-}
-
-#howtouse {
-	height: 2100px;
-}
-
-#disclaimer {
-	font-size: 18px;
-	font-style: italic;
-	font-weight: normal;
-	margin: 0 auto;
-}
-
-#instructions {
-	padding-top: 40px;
-}
-
-#instructions p {
-	margin: 0px auto 20px;
-}
-
-#instructions-animation {
-	padding-top: 40px;
+    height: 500px;
 }
 
 .param-list {
-	color: #C5C3DE;
-	font-size: 18px;
-	line-height: 1.4;
-	padding: 0 18px;
+    color: #C5C3DE;
+    font-size: 18px;
+    line-height: 1.4;
+    padding: 0 18px;
 }
 
 .param-list li {
-	padding-bottom: 20px;
-	text-shadow: 0 2px 1px #000;
+    padding-bottom: 20px;
+    text-shadow: 0 2px 1px #000;
 }
 
 .param {
-	display: block;
-	color: #69697A;
+    display: block;
+    color: #69697A;
 }
 
 .param-def small {
-	display: block;
-	font-weight: normal;
-	font-style: italic;
+    display: block;
+    font-weight: normal;
+    font-style: italic;
 }
 
-#credits {
-	height: 525px;
-	margin-top: 100px;
+/*----------------------------------------  Banner */
+#banner {
+    height: 149px;
+    width: 149px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
 }
+
+#banner a {
+
+    display: block;
+    width: 190px;
+    font-size: 14px;
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
+    background-color: #333;
+    color: #FFF;
+    word-spacing: 2px;
+    text-decoration: none;
+    padding: 5px 15px 5px 25px;
+
+    position: relative;
+    left: 20px;
+    top: -37px;
+    text-align: center;
+
+    -moz-transform-origin: 0 0;
+    -moz-transform: rotate(45deg);
+    -moz-box-shadow: 1px 1px 5px 1px #666;
+
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: rotate(45deg);
+    -webkit-box-shadow: 1px 1px 5px 1px #666;
+
+    -ms-transform-origin: 0 0;
+    -ms-transform: rotate(45deg);
+    -ms-box-shadow: 1px 1px 5px 1px #666;
+
+    transform-origin: 0 0;
+    transform: rotate(45deg);
+    box-shadow: 1px 1px 5px 1px #666;
+
+    background-image: linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+    background-image: -o-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+    background-image: -moz-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+    background-image: -webkit-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+    background-image: -ms-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
+
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.03, #000000), color-stop(0.05, #666666), color-stop(0.07, #000000), color-stop(0.93, #000000), color-stop(0.95, #666666), color-stop(0.97, #000000));
+
+}
+
