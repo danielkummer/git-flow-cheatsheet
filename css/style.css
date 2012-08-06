@@ -80,10 +80,10 @@ a, a:visited {
 
 ul {
     list-style: none;
-    text-align: left;
     margin-left: 0;
     padding-left: 1em;
     text-indent: -1em;
+    text-shadow: 0 2px 1px #fff;
 }
 
 ul li:before {
@@ -96,23 +96,37 @@ ul li:before {
 
 /** coding  block */
 blockquote {
-    color: white;
     text-align: left;
     margin: 10px auto;
     background: #131420;
     border-bottom: 2px solid #30334F;
     border-right: 2px solid #30334F;
-    border-radius: 7px;
-    padding: 5px 30px;
-    font-size: 0.8em;
+    border-radius: 10px;
+    padding: 5px 20px;
+
 }
 
 code {
     font-style: normal;
     padding-left: 5px;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 15px;
+    font-family: menlo, monospace;
+    background: #131420;
+    text-shadow: none;
+    font-size: 0.8em;
 }
 
 /*----------------------------------------  Images */
+
+div#git-repo {
+    background: url("../img/git-repo.png") no-repeat scroll center center transparent;
+    height: 275px;
+    width: 257px;
+    position: relative;
+    z-index: 99;
+}
 
 div#init-img {
     background: url("../img/init.png") no-repeat scroll center center transparent;
@@ -171,6 +185,10 @@ div#violet-line-img {
     margin-left: 30px;
 }
 
+/*.col-2:after {
+    clear: both;
+}*/
+
 #main {
     margin: 0 auto;
     position: relative;
@@ -211,9 +229,9 @@ div#violet-line-img {
     opacity: .8;
 }
 
-
 #title {
-    margin: 80px auto 0;
+    margin: auto;
+    padding-top: 40px;
     width: 1150px;
     position: relative;
     z-index: 99;
@@ -241,6 +259,11 @@ div#violet-line-img {
     position: absolute;
     top: 250px;
     width: 100%;
+}
+
+#head-img {
+    position: relative;
+    top: 200px;
 }
 
 #download {
@@ -282,6 +305,8 @@ div#violet-line-img {
     font-style: italic;
 }
 
+
+#disqus_thread { width: 800px; text-align: left; margin-left: auto; margin-right: auto; }
 /*----------------------------------------  Banner */
 #banner {
     height: 149px;
