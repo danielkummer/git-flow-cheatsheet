@@ -129,9 +129,9 @@ div#git-repo {
 }
 
 div#init-img {
-    background: url("../img/init.png") no-repeat scroll center center transparent;
-    height: 122px;
-    width: 122px;
+    background: url("../img/initialize.png") no-repeat scroll center center transparent;
+    height: 300px;
+    width: 300px;
     position: relative;
     z-index: 99;
 }
