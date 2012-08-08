@@ -32,38 +32,45 @@
 
 <div id="banner"><a href="">Fork me on GitHub</a></div>
 
+
 <header>
-    <div class="scrollblock">
-        <h1 id="title">git-flow cheatsheet</h1>
 
-        <p id="author">
-            created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
-            <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
-            <script>!function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (!d.getElementById(id)) {
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = "//platform.twitter.com/widgets.js";
-                    fjs.parentNode.insertBefore(js, fjs);
-                }
-            }(document, "script", "twitter-wjs");</script>
-        </p>
+    <h1 id="title">git-flow cheatsheet</h1>
 
-        <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="author">
+        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+    </p>
 
-        <!-- <p id="download">
-            <span class="accent">&bigstar;</span>
+    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
+
+    <!-- <p id="download">
+   <span class="accent">&bigstar;</span>
             <a href="files/git-flow-cheatsheet.pdf"
                onClick="recordOutboundLink(this, 'Cheat Sheet', 'git-flow-cheatsheet');return false;" class="download">Download
                 as pdf</a>
             <span class="accent">&bigstar;</span>
         </p>-->
-        <img id="head-img" src="/img/git-flow.png" alt="git flow"/>
-    </div>
+
+
 </header>
 
 <div id="main">
+<div>
+    <div class="col-1"></div>
+    <div class="col-2">
+        <div class="small"></div>
+    </div>
+</div>
 
 <div class="scrollblock">
     <h2 id="animate1">About</h2>
@@ -141,7 +148,16 @@
 
     </div>
     <div class="col-2">
-        <div id="init-img"></div>
+        <img src="img/initialize.png" alt="initialize"/>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1"></div>
+    <div class="col-2">
+
+        <div id="open"></div>
+        <div class="big"></div>
     </div>
 </div>
 
@@ -164,10 +180,22 @@
             </code>
         </blockquote>
         <p>This action creates a new feature branch based on 'develop' and switches to it</p>
+
+        <!--
+        - Bump the version number now!
+        - Start committing last-minute fixes in preparing your release
+        - When done, run:
+
+             git flow release finish 'testrelease'
+
+
+
+        -->
+
+
     </div>
     <div class="col-2">
-        <div id="feature-start-img"></div>
-        <div id="violet-line-img"></div>
+        <div id="feature-start"></div>
     </div>
 </div>
 
@@ -192,7 +220,7 @@
         </blockquote>
     </div>
     <div class="col-2">
-        <div id="feature-finish-img"></div>
+        <div id="feature-finish"></div>
     </div>
 </div>
 
@@ -219,6 +247,7 @@
 <div class="scrollblock">
     <div class="col-1">
         <h3>Getting a published feature</h3>
+
         <p>
             Get a feature published by another user and track remote changes.
         </p>
@@ -259,7 +288,7 @@
             'develop' branch.</p>
     </div>
     <div class="col-2">
-        <div id="release-start-img"></div>
+        <div id="release-start"></div>
     </div>
 </div>
 
@@ -289,8 +318,8 @@
         </blockquote>
     </div>
     <div class="col-2">
-        <div id="release-finish-img"></div>
-        <p>(You can track a remote release with the <code>git flow release track RELEASE</code> command)</p>
+        <div id="release-finish"></div>
+        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE</code> command)</p>
     </div>
 </div>
 
@@ -315,7 +344,7 @@
         <p>The release argument hereby marks the faulty production release</p>
     </div>
     <div class="col-2">
-        <div id="hotfix-start-img"></div>
+        <div id="hotfix-start"></div>
     </div>
 </div>
 
@@ -326,7 +355,15 @@
         <p>TODO</p>
     </div>
     <div class="col-2">
-        <div id="hotfix-finish-img"></div>
+        <div id="hotfix-finish"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1"></div>
+    <div class="col-2">
+        <div id="closing"></div>
+        <div class="small-end"></div>
     </div>
 </div>
 
@@ -343,11 +380,13 @@
 </div>
 </div>
 
-<div class="scrollblock">
-    <h2>Comments</h2>
+<footer>
+    <div class="scrollblock">
+        <h2>Comments</h2>
 
-    <div id="disqus_thread"></div>
-</div>
+        <div id="disqus_thread"></div>
+    </div>
+</footer>
 
 <script type="text/javascript">
     $(document).ready(function () {

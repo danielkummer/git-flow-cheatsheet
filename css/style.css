@@ -37,6 +37,23 @@ body {
     margin: 0;
 }
 
+header {
+    box-shadow: 0px 5px 7px #8db7bd;
+    -webkit-box-shadow: 0px 5px 7px #8db7bd;
+    -moz-box-shadow: 0px 5px 7px #8db7bd;
+    height: 400px;
+    background-color: #8db7bd;
+    border-bottom: 1px solid #698b91
+}
+
+footer {
+    box-shadow: 0px -5px 7px #8db7bd;
+    -webkit-box-shadow: 0px -5px 7px #8db7bd;
+    -moz-box-shadow: 0px -5px 7px #8db7bd;
+    background-color: #8db7bd;
+    border-top: 1px solid #698b91
+}
+
 h1 {
     font-size: 120px;
     font-weight: normal;
@@ -120,56 +137,12 @@ code {
 
 /*----------------------------------------  Images */
 
-div#git-repo {
-    background: url("../img/git-repo.png") no-repeat scroll center center transparent;
-    height: 275px;
-    width: 257px;
-    position: relative;
-    z-index: 99;
-}
-
 div#init-img {
     background: url("../img/initialize.png") no-repeat scroll center center transparent;
     height: 300px;
     width: 300px;
     position: relative;
     z-index: 99;
-}
-
-div#feature-start-img {
-    background: url("../img/feature-start.png") no-repeat scroll center center transparent;
-    position: relative;
-    width: 321px;
-    height: 386px;
-    left: -8px;
-    z-index: 99;
-}
-
-div#feature-finish-img {
-    background: url("../img/feature-finish.png") no-repeat scroll center center transparent;
-    position: relative;
-    width: 321px;
-    height: 338px;
-    left: -8px;
-    z-index: 99;
-}
-
-div#blue-line-img {
-    background: url("../img/blue_line.png") repeat-y scroll center center transparent;
-    width: 46px;
-    position: relative;
-    height: 1500px;
-    left: 37px;
-    top: -10px;
-}
-
-div#violet-line-img {
-    background: url("../img/violet-line.png") repeat-y scroll center center transparent;
-    width: 46px;
-    position: relative;
-    height: 300px;
-    left: 184px;
-    top: -60px;
 }
 
 /*----------------------------------------  BLOCKS */
@@ -305,8 +278,13 @@ div#violet-line-img {
     font-style: italic;
 }
 
+#disqus_thread {
+    width: 800px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-#disqus_thread { width: 800px; text-align: left; margin-left: auto; margin-right: auto; }
 /*----------------------------------------  Banner */
 #banner {
     height: 149px;
@@ -359,5 +337,97 @@ div#violet-line-img {
 
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.03, #000000), color-stop(0.05, #666666), color-stop(0.07, #000000), color-stop(0.93, #000000), color-stop(0.95, #666666), color-stop(0.97, #000000));
 
+}
+
+.small {
+    width: 496px;
+    height: 2600px;
+    background-repeat: repeat-y;
+    background: url("../img/small.png");
+    position: absolute;
+    top: 0;
+
+}
+
+.small-end {
+    width: 496px;
+    height: 985px;
+    background-repeat: repeat-y;
+    background: url("../img/small.png");
+    position: relative;
+
+}
+
+.big {
+    width: 496px;
+    height: 6285px;
+    background-repeat: repeat-y;
+    background: url("../img/big.png");
+    position: absolute;
+    left: 703px;
+}
+
+#open {
+    width: 496px;
+    height: 215px;
+    background: url("../img/opening.png");
+    background-repeat: no-repeat;
+}
+
+#closing {
+    width: 496px;
+    height: 215px;
+    background-repeat: no-repeat;
+    background: url("../img/closing.png");
+}
+
+#feature-start {
+    width: 496px;
+    height: 302px;
+    background-position: -0px -259px;
+    background-repeat: no-repeat;
+
+}
+
+#feature-finish {
+    width: 496px;
+    height: 331px;
+    background-position: -0px -561px;
+    background-repeat: no-repeat;
+}
+
+#release-start {
+    width: 496px;
+    height: 297px;
+    background-position: -0px -892px;
+    background-repeat: no-repeat;
+}
+
+#release-finish {
+    width: 496px;
+    height: 331px;
+    background-position: -0px -1189px;
+    background-repeat: no-repeat;
+}
+
+#hotfix-start {
+    width: 496px;
+    height: 303px;
+    background-position: -0px -1520px;
+    background-repeat: no-repeat;
+}
+
+#hotfix-finish {
+    width: 496px;
+    height: 333px;
+    background-position: -0px -1823px;
+    background-repeat: no-repeat;
+}
+
+#feature-start, #feature-finish, #release-start, #release-start, #hotfix-start, #hotfix-finish {
+    background-image: url("../img/git-flow-process.png");
+    background-color: rgba(163, 167, 251, 0.5);
+    border: 7px solid #008098;
+    border-radius: 25px;
 }
 
