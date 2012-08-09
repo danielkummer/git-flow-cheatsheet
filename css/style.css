@@ -1,26 +1,3 @@
-/*----------------------------------------  Colors */
-/*.color1 {
-    background-color: lightskyblue;
-}
-
-
-.color2 {
-    background-color: lightblue;
-}
-
-.color3 {
-    background-color: deepskyblue;
-}
-
-.color4 {
-    background-color: darkturquoise;
-}
-
-.color5 {
-    background-color: cornflowerblue;
-}
-*/
-
 /*----------------------------------------  Text */
 
 body {
@@ -29,12 +6,27 @@ body {
     font-weight: bold;
     font-size: 30px;
     text-align: center;
-    transition: background-color 1s linear;
-    -moz-transition: background-color 1s linear; /* FF3.7+ */
-    -o-transition: background-color 1s linear; /* Opera 10.5 */
-    -webkit-transition: background-color 1s linear; /* Saf3.2+, Chrome */
-    adding: 0;
+
+    padding: 0;
     margin: 0;
+}
+
+header {
+    box-shadow: 0px 5px 7px #8db7bd;
+    -webkit-box-shadow: 0px 5px 7px #8db7bd;
+    -moz-box-shadow: 0px 5px 7px #8db7bd;
+    height: 400px;
+    background-color: #8db7bd;
+    border-bottom: 1px solid #698b91
+}
+
+footer {
+    box-shadow: 0px -5px 7px #8db7bd;
+    -webkit-box-shadow: 0px -5px 7px #8db7bd;
+    -moz-box-shadow: 0px -5px 7px #8db7bd;
+    background-color: #8db7bd;
+    border-top: 1px solid #698b91;
+    position:relative;
 }
 
 h1 {
@@ -84,14 +76,11 @@ ul {
     padding-left: 1em;
     text-indent: -1em;
     text-shadow: 0 2px 1px #fff;
+    line-height: 1.4;
 }
 
 ul li:before {
     content: "\2605\a0"
-}
-
-.download {
-    padding: 10px;
 }
 
 /** coding  block */
@@ -120,56 +109,135 @@ code {
 
 /*----------------------------------------  Images */
 
-div#git-repo {
-    background: url("../img/git-repo.png") no-repeat scroll center center transparent;
-    height: 275px;
-    width: 257px;
-    position: relative;
-    z-index: 99;
-}
-
-div#init-img {
+.initialize {
     background: url("../img/initialize.png") no-repeat scroll center center transparent;
     height: 300px;
-    width: 300px;
+    width: 100%;
     position: relative;
     z-index: 99;
+    margin-left: 10px;
 }
 
-div#feature-start-img {
-    background: url("../img/feature-start.png") no-repeat scroll center center transparent;
+.lines-small {
+    width: 500px;
+    height: 150px;
+    background-repeat: repeat-y;
+    background: url("../img/lines-small.png");
     position: relative;
-    width: 321px;
-    height: 386px;
-    left: -8px;
+}
+
+.lines-small-end {
+    width: 500px;
+    height: 500px;
+    background-repeat: repeat-y;
+    background: url("../img/lines-small.png");
+    position: absolute;
+
+}
+
+.lines-big {
+    width: 500px;
+    height: 5620px;
+    background-repeat: repeat-y;
+    background: url("../img/lines-big.png");
+    position: absolute;
+    left: 697px;
+
+}
+
+.lines-open {
+    width: 500px;
+    height: 86px;
+    background: url("../img/lines-open.png");
+}
+
+.lines-close {
+    width: 500px;
+    height: 86px;
+    background: url("../img/lines-close.png");
+}
+
+.hotfix-end, .hotfix-start, .release-end, .release-start, .feature-end, .feature-start {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url('../img/flow-sprites.png');
+    background-color: rgba(173, 215, 223, 0.8);
+    border: 2px dashed #008098;
+    border-radius: 25px;
+    width: 500px;
+    height: 370px;
+    position: relative;
     z-index: 99;
+
+    box-shadow: 5px 5px 7px #8db7bd;
+    -webkit-box-shadow: 5px 5px 7px #8db7bd;
+    -moz-box-shadow: 5px 5px 7px #8db7bd;
+
 }
 
-div#feature-finish-img {
-    background: url("../img/feature-finish.png") no-repeat scroll center center transparent;
-    position: relative;
-    width: 321px;
-    height: 338px;
-    left: -8px;
-    z-index: 99;
+.feature-publish {
+    display: inline-block;
+       background-repeat: no-repeat;
+
+       background-color: rgba(173, 215, 223, 0.8);
+       border: 2px dashed #008098;
+       border-radius: 25px;
+       width: 500px;
+       height: 370px;
+       position: relative;
+
+
+       box-shadow: 5px 5px 7px #8db7bd;
+       -webkit-box-shadow: 5px 5px 7px #8db7bd;
+       -moz-box-shadow: 5px 5px 7px #8db7bd;
+    background-image: url('../img/feature-publish.png');
+    background-position:center;
+
 }
 
-div#blue-line-img {
-    background: url("../img/blue_line.png") repeat-y scroll center center transparent;
-    width: 46px;
-    position: relative;
-    height: 1500px;
-    left: 37px;
-    top: -10px;
+.feature-pull {
+    display: inline-block;
+       background-repeat: no-repeat;
+
+       background-color: rgba(173, 215, 223, 0.8);
+       border: 2px dashed #008098;
+       border-radius: 25px;
+       width: 500px;
+       height: 370px;
+       position: relative;
+       z-index: 99;
+
+       box-shadow: 5px 5px 7px #8db7bd;
+       -webkit-box-shadow: 5px 5px 7px #8db7bd;
+       -moz-box-shadow: 5px 5px 7px #8db7bd;
+    background-image: url('../img/feature-pull.png');
+    background-position:center;
+
 }
 
-div#violet-line-img {
-    background: url("../img/violet-line.png") repeat-y scroll center center transparent;
-    width: 46px;
-    position: relative;
-    height: 300px;
-    left: 184px;
-    top: -60px;
+
+.hotfix-end {
+    background-position: 0px 0px;
+}
+
+.hotfix-start {
+    background-position: 0px -370px;
+}
+
+.release-end {
+    background-position: 0px -740px;
+}
+
+.release-start {
+    background-position: 0px -1110px;
+}
+
+.feature-end {
+    background-position: 0px -1480px;
+}
+
+.feature-start {
+    background-position: 0px -1850px;
 }
 
 /*----------------------------------------  BLOCKS */
@@ -185,10 +253,6 @@ div#violet-line-img {
     margin-left: 30px;
 }
 
-/*.col-2:after {
-    clear: both;
-}*/
-
 #main {
     margin: 0 auto;
     position: relative;
@@ -196,37 +260,15 @@ div#violet-line-img {
 }
 
 .scrollblock {
-    position: relative;
-    margin: 0;
     width: 100%;
-    min-height: 600px;
-}
-
-.scrollblock h2 {
     padding-top: 100px;
+    min-height: 450px;
+    position: relative;
 }
 
 .divider, .accent {
     color: #69697A;
     text-shadow: none;
-}
-
-#console {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 15px;
-    width: 500px;
-    margin: 0;
-    font-size: 14px;
-    font-style: italic;
-    background-color: #69697A;
-    text-shadow: none;
-    text-align: left;
-    padding: 3px 10px;
-    border-radius: 0 0 10px 10px;
-    z-index: 99;
-    opacity: .8;
 }
 
 #title {
@@ -261,53 +303,14 @@ div#violet-line-img {
     width: 100%;
 }
 
-#head-img {
-    position: relative;
-    top: 200px;
+#disqus_thread {
+    width: 800px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#download {
-    position: absolute;
-    top: 380px;
-    font-size: 18px;
-    width: 100%;
-    line-height: 1.8;
-}
-
-#download a {
-    color: #69697A;
-}
-
-#examples-pin {
-    height: 500px;
-}
-
-.param-list {
-    color: #C5C3DE;
-    font-size: 18px;
-    line-height: 1.4;
-    padding: 0 18px;
-}
-
-.param-list li {
-    padding-bottom: 20px;
-    text-shadow: 0 2px 1px #000;
-}
-
-.param {
-    display: block;
-    color: #69697A;
-}
-
-.param-def small {
-    display: block;
-    font-weight: normal;
-    font-style: italic;
-}
-
-
-#disqus_thread { width: 800px; text-align: left; margin-left: auto; margin-right: auto; }
-/*----------------------------------------  Banner */
+/*---------------------------------------- Github Banner */
 #banner {
     height: 149px;
     width: 149px;
