@@ -1,32 +1,21 @@
 /*----------------------------------------  Text */
 
 body {
-    background-color: powderblue;
     font-family: Georgia, Times New Roman, Times, serif;
     font-weight: bold;
     font-size: 30px;
     text-align: center;
-
     padding: 0;
     margin: 0;
 }
 
 header {
-    box-shadow: 0px 5px 7px #8db7bd;
-    -webkit-box-shadow: 0px 5px 7px #8db7bd;
-    -moz-box-shadow: 0px 5px 7px #8db7bd;
     height: 400px;
-    background-color: #8db7bd;
     border-bottom: 1px solid #698b91
 }
 
 footer {
-    box-shadow: 0px -5px 7px #8db7bd;
-    -webkit-box-shadow: 0px -5px 7px #8db7bd;
-    -moz-box-shadow: 0px -5px 7px #8db7bd;
-    background-color: #8db7bd;
-    border-top: 1px solid #698b91;
-    position:relative;
+    display: none;
 }
 
 h1 {
@@ -34,8 +23,6 @@ h1 {
     font-weight: normal;
     margin: 0;
     font-family: 'Sansita One', cursive;
-    color: #3a7eff;
-    text-shadow: 0 2px 1px #000;
     line-height: 1;
 }
 
@@ -43,8 +30,6 @@ h2 {
     font-size: 80px;
     font-weight: normal;
     margin: 0;
-    text-shadow: 0 2px 1px #000;
-    color: #FFB000;
     font-family: 'Sansita One', cursive;
 }
 
@@ -52,8 +37,6 @@ h3 {
     font-size: 40px;
     font-weight: normal;
     margin: 0;
-    color: #D92B00;
-    text-shadow: 0 2px 1px #000;
     font-family: 'Sansita One', cursive;
 }
 
@@ -61,11 +44,9 @@ p {
     width: 95%;
     margin: 20px auto;
     text-shadow: 0 2px 1px #fff;
-    color: #222438;
 }
 
 a, a:visited {
-    color: #D92B00;
     font-weight: bold;
     font-style: italic;
 }
@@ -161,60 +142,47 @@ code {
     display: inline-block;
     background-repeat: no-repeat;
     background-image: url('../img/flow-sprites.png');
-    background-color: rgba(173, 215, 223, 0.8);
-    border: 2px dashed #008098;
+    background-color: rgba(218, 218, 218, 0.78);
+    border: 2px dashed grey;
+    border-radius: 25px;
+    width: 500px;
+    height: 370px;
+    position: relative;
+    z-index: 99;
+}
+
+.feature-publish {
+    display: inline-block;
+    background-repeat: no-repeat;
+
+    background-color: rgba(218, 218, 218, 0.78);
+    border: 2px dashed grey;
+    border-radius: 25px;
+    width: 500px;
+    height: 370px;
+    position: relative;
+
+    background-image: url('../img/feature-publish.png');
+    background-position: center;
+
+}
+
+.feature-pull {
+    display: inline-block;
+    background-repeat: no-repeat;
+
+    background-color: rgba(218, 218, 218, 0.78);
+    border: 2px dashed grey;
     border-radius: 25px;
     width: 500px;
     height: 370px;
     position: relative;
     z-index: 99;
 
-    box-shadow: 5px 5px 7px #8db7bd;
-    -webkit-box-shadow: 5px 5px 7px #8db7bd;
-    -moz-box-shadow: 5px 5px 7px #8db7bd;
-
-}
-
-.feature-publish {
-    display: inline-block;
-       background-repeat: no-repeat;
-
-       background-color: rgba(173, 215, 223, 0.8);
-       border: 2px dashed #008098;
-       border-radius: 25px;
-       width: 500px;
-       height: 370px;
-       position: relative;
-
-
-       box-shadow: 5px 5px 7px #8db7bd;
-       -webkit-box-shadow: 5px 5px 7px #8db7bd;
-       -moz-box-shadow: 5px 5px 7px #8db7bd;
-    background-image: url('../img/feature-publish.png');
-    background-position:center;
-
-}
-
-.feature-pull {
-    display: inline-block;
-       background-repeat: no-repeat;
-
-       background-color: rgba(173, 215, 223, 0.8);
-       border: 2px dashed #008098;
-       border-radius: 25px;
-       width: 500px;
-       height: 370px;
-       position: relative;
-       z-index: 99;
-
-       box-shadow: 5px 5px 7px #8db7bd;
-       -webkit-box-shadow: 5px 5px 7px #8db7bd;
-       -moz-box-shadow: 5px 5px 7px #8db7bd;
     background-image: url('../img/feature-pull.png');
-    background-position:center;
+    background-position: center;
 
 }
-
 
 .hotfix-end {
     background-position: 0px 0px;
@@ -267,7 +235,6 @@ code {
 }
 
 .divider, .accent {
-    color: #69697A;
     text-shadow: none;
 }
 
@@ -287,14 +254,11 @@ code {
     font-size: 20px;
     text-align: right;
     font-style: italic;
-    color: #D92B00;
     z-index: 100;
 }
 
 .twitter-share-button {
-    position: relative;
-    top: 8px;
-    left: 4px;
+    display: none;
 }
 
 #desc {
@@ -303,64 +267,8 @@ code {
     width: 100%;
 }
 
-#disqus_thread {
-    width: 800px;
-    text-align: left;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /*---------------------------------------- Github Banner */
 #banner {
-    height: 149px;
-    width: 149px;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    right: 0;
-}
-
-#banner a {
-
-    display: block;
-    width: 190px;
-    font-size: 14px;
-    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
-    background-color: #333;
-    color: #FFF;
-    word-spacing: 2px;
-    text-decoration: none;
-    padding: 5px 15px 5px 25px;
-
-    position: relative;
-    left: 20px;
-    top: -37px;
-    text-align: center;
-
-    -moz-transform-origin: 0 0;
-    -moz-transform: rotate(45deg);
-    -moz-box-shadow: 1px 1px 5px 1px #666;
-
-    -webkit-transform-origin: 0 0;
-    -webkit-transform: rotate(45deg);
-    -webkit-box-shadow: 1px 1px 5px 1px #666;
-
-    -ms-transform-origin: 0 0;
-    -ms-transform: rotate(45deg);
-    -ms-box-shadow: 1px 1px 5px 1px #666;
-
-    transform-origin: 0 0;
-    transform: rotate(45deg);
-    box-shadow: 1px 1px 5px 1px #666;
-
-    background-image: linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-    background-image: -o-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-    background-image: -moz-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-    background-image: -webkit-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-    background-image: -ms-linear-gradient(bottom, #000000 3%, #666666 5%, #000000 7%, #000000 93%, #666666 95%, #000000 97%);
-
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.03, #000000), color-stop(0.05, #666666), color-stop(0.07, #000000), color-stop(0.93, #000000), color-stop(0.95, #666666), color-stop(0.97, #000000));
-
+    display: none;
 }
 
