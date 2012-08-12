@@ -4,7 +4,7 @@ body {
     background-color: powderblue;
     font-family: Georgia, Times New Roman, Times, serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -42,6 +42,7 @@ h2 {
     font-size: 60px;
     font-weight: normal;
     margin: 0;
+    margin-bottom: 25px;
     text-shadow: 0 2px 1px #000;
     color: #FFB000;
     font-family: 'Sansita One', cursive;
@@ -92,7 +93,8 @@ blockquote {
     border-right: 2px solid #30334F;
     border-radius: 10px;
     padding: 5px 20px;
-
+    color:white;
+    font-family: menlo, monospace;
 }
 
 code {
@@ -101,7 +103,7 @@ code {
     border-radius: 10px;
     color: white;
     padding: 5px 15px;
-    font-family: menlo, monospace;
+
     background: #131420;
     text-shadow: none;
     font-size: 0.8em;
@@ -139,7 +141,7 @@ code {
 
 .lines-big {
     width: 300px;
-    height: 4390px;
+    height: 4130px;
     background-repeat: repeat-y;
     background: url("../img/lines-big.png");
     position: absolute;
