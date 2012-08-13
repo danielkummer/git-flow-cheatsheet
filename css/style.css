@@ -141,7 +141,7 @@ code {
 
 .lines-big {
     width: 300px;
-    height: 4130px;
+    height: 4140px;
     background-repeat: repeat-y;
     background: url("../img/lines-big.png");
     position: absolute;
