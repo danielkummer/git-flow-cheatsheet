@@ -92,7 +92,8 @@ blockquote {
     border-right: 2px solid #30334F;
     border-radius: 10px;
     padding: 5px 20px;
-
+    color:white;
+    font-family: menlo, monospace;
 }
 
 code {
@@ -137,7 +138,7 @@ code {
 
 .lines-big {
     width: 500px;
-    height: 5620px;
+    height: 5500px;
     background-repeat: repeat-y;
     background: url("../img/lines-big.png");
     position: absolute;
