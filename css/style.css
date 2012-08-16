@@ -4,9 +4,8 @@ body {
     background-color: powderblue;
     font-family: Georgia, Times New Roman, Times, serif;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
-
     padding: 0;
     margin: 0;
 }
@@ -26,11 +25,11 @@ footer {
     -moz-box-shadow: 0px -5px 7px #8db7bd;
     background-color: #8db7bd;
     border-top: 1px solid #698b91;
-    position:relative;
+    position: relative;
 }
 
 h1 {
-    font-size: 120px;
+    font-size: 100px;
     font-weight: normal;
     margin: 0;
     font-family: 'Sansita One', cursive;
@@ -40,16 +39,17 @@ h1 {
 }
 
 h2 {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: normal;
     margin: 0;
+    margin-bottom: 25px;
     text-shadow: 0 2px 1px #000;
     color: #FFB000;
     font-family: 'Sansita One', cursive;
 }
 
 h3 {
-    font-size: 40px;
+    font-size: 34px;
     font-weight: normal;
     margin: 0;
     color: #D92B00;
@@ -63,6 +63,7 @@ p {
     text-shadow: 0 2px 1px #fff;
     color: #222438;
 }
+
 
 a, a:visited {
     color: #D92B00;
@@ -102,7 +103,7 @@ code {
     border-radius: 10px;
     color: white;
     padding: 5px 15px;
-    font-family: menlo, monospace;
+
     background: #131420;
     text-shadow: none;
     font-size: 0.8em;
@@ -112,7 +113,7 @@ code {
 
 .initialize {
     background: url("../img/initialize.png") no-repeat scroll center center transparent;
-    height: 300px;
+    height: 244px;
     width: 100%;
     position: relative;
     z-index: 99;
@@ -120,42 +121,48 @@ code {
 }
 
 .lines-small {
-    width: 500px;
+    width: 300px;
     height: 150px;
     background-repeat: repeat-y;
     background: url("../img/lines-small.png");
     position: relative;
+    left: 11px;
 }
 
 .lines-small-end {
-    width: 500px;
+    width: 300px;
     height: 500px;
     background-repeat: repeat-y;
     background: url("../img/lines-small.png");
     position: absolute;
+    left: 361px;
 
 }
 
 .lines-big {
-    width: 500px;
-    height: 5500px;
+    width: 300px;
+    height: 4140px;
     background-repeat: repeat-y;
     background: url("../img/lines-big.png");
     position: absolute;
-    left: 697px;
+    left: 360px;
 
 }
 
 .lines-open {
-    width: 500px;
-    height: 86px;
+    width: 300px;
+    height: 52px;
     background: url("../img/lines-open.png");
+    position: relative;
+    left: 11px;
 }
 
 .lines-close {
-    width: 500px;
-    height: 86px;
+    width: 300px;
+    height: 52px;
     background: url("../img/lines-close.png");
+    position: relative;
+        left: 11px;
 }
 
 .hotfix-end, .hotfix-start, .release-end, .release-start, .feature-end, .feature-start {
@@ -165,8 +172,8 @@ code {
     background-color: rgba(173, 215, 223, 0.8);
     border: 2px dashed #008098;
     border-radius: 25px;
-    width: 500px;
-    height: 370px;
+    width: 300px;
+    height: 222px;
     position: relative;
     z-index: 99;
 
@@ -178,93 +185,92 @@ code {
 
 .feature-publish {
     display: inline-block;
-       background-repeat: no-repeat;
+    background-repeat: no-repeat;
 
-       background-color: rgba(173, 215, 223, 0.8);
-       border: 2px dashed #008098;
-       border-radius: 25px;
-       width: 500px;
-       height: 370px;
-       position: relative;
+    background-color: rgba(173, 215, 223, 0.8);
+    border: 2px dashed #008098;
+    border-radius: 25px;
+    width: 300px;
+    height: 120px;
+    position: relative;
 
-
-       box-shadow: 5px 5px 7px #8db7bd;
-       -webkit-box-shadow: 5px 5px 7px #8db7bd;
-       -moz-box-shadow: 5px 5px 7px #8db7bd;
+    box-shadow: 5px 5px 7px #8db7bd;
+    -webkit-box-shadow: 5px 5px 7px #8db7bd;
+    -moz-box-shadow: 5px 5px 7px #8db7bd;
     background-image: url('../img/feature-publish.png');
-    background-position:center;
+    background-position: center;
 
 }
 
 .feature-pull {
     display: inline-block;
-       background-repeat: no-repeat;
+    background-repeat: no-repeat;
 
-       background-color: rgba(173, 215, 223, 0.8);
-       border: 2px dashed #008098;
-       border-radius: 25px;
-       width: 500px;
-       height: 370px;
-       position: relative;
-       z-index: 99;
+    background-color: rgba(173, 215, 223, 0.8);
+    border: 2px dashed #008098;
+    border-radius: 25px;
+    width: 300px;
+    height: 120px;
+    position: relative;
+    z-index: 99;
+    margin-left: -21px;
 
-       box-shadow: 5px 5px 7px #8db7bd;
-       -webkit-box-shadow: 5px 5px 7px #8db7bd;
-       -moz-box-shadow: 5px 5px 7px #8db7bd;
+    box-shadow: 5px 5px 7px #8db7bd;
+    -webkit-box-shadow: 5px 5px 7px #8db7bd;
+    -moz-box-shadow: 5px 5px 7px #8db7bd;
     background-image: url('../img/feature-pull.png');
-    background-position:center;
+    background-position: center;
 
 }
-
 
 .hotfix-end {
     background-position: 0px 0px;
 }
 
 .hotfix-start {
-    background-position: 0px -370px;
+    background-position: 0px -222px;
 }
 
 .release-end {
-    background-position: 0px -740px;
+    background-position: 0px -444px;
 }
 
 .release-start {
-    background-position: 0px -1110px;
+    background-position: 0px -666px;
 }
 
 .feature-end {
-    background-position: 0px -1480px;
+    background-position: 0px -888px;
 }
 
 .feature-start {
-    background-position: 0px -1850px;
+    background-position: 0px -1110px;
 }
 
 /*----------------------------------------  BLOCKS */
 
 .col-1 {
     float: left;
-    width: 600px;
+    width: 320px;
 }
 
 .col-2 {
     float: right;
-    width: 500px;
+    width: 320px;
     margin-left: 30px;
 }
 
 #main {
     margin: 0 auto;
     position: relative;
-    width: 1200px;
+    width: 670px;
 }
 
 .scrollblock {
     width: 100%;
-    padding-top: 100px;
-    min-height: 450px;
+    padding-top: 50px;
     position: relative;
+    clear: both;
 }
 
 .divider, .accent {
@@ -275,7 +281,7 @@ code {
 #title {
     margin: auto;
     padding-top: 40px;
-    width: 1150px;
+    width: 670px;
     position: relative;
     z-index: 99;
 }
@@ -283,7 +289,7 @@ code {
 #author {
     width: 640px;
     position: absolute;
-    top: 180px;
+    top: 230px;
     right: 15%;
     font-size: 20px;
     text-align: right;
@@ -300,7 +306,7 @@ code {
 
 #desc {
     position: absolute;
-    top: 250px;
+    top: 300px;
     width: 100%;
 }
 
