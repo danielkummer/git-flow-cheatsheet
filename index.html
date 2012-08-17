@@ -149,7 +149,7 @@
         <p>Development of new features starting from the 'develop' branch.</p>
         <p>Start developing a new feature with</p>
         <blockquote>
-            git-flow feature start MYFEATURE
+            git flow feature start MYFEATURE
         </blockquote>
         <p>This action creates a new feature branch based on 'develop' and switches to it</p>
 
@@ -184,7 +184,7 @@
         </ul>
 
         <blockquote>
-            git-flow feature finish MYFEATURE
+            git flow feature finish MYFEATURE
         </blockquote>
     </div>
     <div class="col-2">
@@ -202,7 +202,7 @@
         </p>
 
         <blockquote>
-            git-flow feature publish MYFEATURE
+            git flow feature publish MYFEATURE
         </blockquote>
     </div>
     <div class="col-2">
@@ -219,7 +219,7 @@
         </p>
 
         <blockquote>
-            git-flow feature pull MYFEATURE
+            git flow feature pull MYFEATURE
         </blockquote>
     </div>
     <div class="col-2">
@@ -248,6 +248,12 @@
         <p>You can optionally supply a <code>[BASE]</code> commit sha-1 hash to start the release from. The commit must
             be on the
             'develop' branch.</p>
+        <p class="divider">&#9733; &#9733; &#9733;</p>
+        <p>It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:</p>
+        <blockquote>
+            git flow release publish RELEASE
+        </blockquote>
+        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE</code> command)</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -268,13 +274,6 @@
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
-
-        <p>It's wise to publish a finished release after finishing it. Do it similar to feature publishing with the
-            command:</p>
-        <blockquote>
-            git flow release publish RELEASE
-        </blockquote>
-        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE</code> command)</p>
     </div>
     <div class="col-2">
         <div class="release-end"></div>
@@ -309,7 +308,10 @@
     <div class="col-1">
         <h3>Finish a hotfix</h3>
 
-        <p>By finishing a hotfix it gets merged back into develp and master. Additionally the master merge ist tagged.</p>
+        <p>By finishing a hotfix it gets merged back into develop and master. Additionally the master merge ist tagged.</p>
+        <blockquote>
+            git flow hotfix finish RELEASE
+        </blockquote>
     </div>
     <div class="col-2">
         <div class="hotfix-end"></div>
