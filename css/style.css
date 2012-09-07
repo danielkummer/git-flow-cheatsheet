@@ -130,7 +130,7 @@ code {
 
 .lines-small-end {
     width: 300px;
-    height: 500px;
+    height: 950px;
     background-repeat: repeat-y;
     background: url("../img/lines-small.png");
     position: absolute;
