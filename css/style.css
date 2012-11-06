@@ -309,6 +309,20 @@ code {
     width: 100%;
 }
 
+#translations {
+    position: absolute;
+    top: 340px;
+    width: 100%;
+    right: 15%;
+    text-align: right;
+}
+
+#translations .active {
+    text-decoration: none;
+    cursor: default;
+    color: #3a7eff;
+}
+
 #disqus_thread {
     width: 800px;
     text-align: left;
