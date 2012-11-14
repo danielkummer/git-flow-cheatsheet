@@ -46,7 +46,7 @@
         }(document, "script", "twitter-wjs");</script>
     </p>
     <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
-    <p id="translations">translations: <a href="#" class="active" title="english">en</a> - <a href="index.pt_BR.html" title="Brazilian Portugues">pt_BR</a></p>
+    <p id="translations">translations: <a href="#" class="active" title="english">en</a> - <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a></p>
 </header>
 
 <div id="main">
@@ -74,6 +74,7 @@
         <li>The OSX Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a> is an excellent git gui and provides
             git-flow support
         </li>
+        <li>- Git-flow is a merge based solution. It doesn't rebase feature branches.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -100,6 +101,7 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
+        <p>You need wget and util-linux to install git-flow.</p>
     </div>
     <div class="col-2">
         <p>
@@ -296,9 +298,9 @@
 
         <p>Like the other git flow commands, a hotfix is started with</p>
         <blockquote>
-            git flow hotfix start RELEASE
+            git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>The release argument hereby marks the faulty production release</p>
+        <p>The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -309,9 +311,9 @@
     <div class="col-1">
         <h3>Finish a hotfix</h3>
 
-        <p>By finishing a hotfix it gets merged back into develop and master. Additionally the master merge ist tagged.</p>
+        <p>By finishing a hotfix it gets merged back into develop and master. Additionally the master merge ist tagged with the hotfix version.</p>
         <blockquote>
-            git flow hotfix finish RELEASE
+            git flow hotfix finish VERSION
         </blockquote>
     </div>
     <div class="col-2">
