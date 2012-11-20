@@ -63,6 +63,24 @@ p {
     color: #222438;
 }
 
+h2 a {
+    text-decoration: none;
+    font-size: 60px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 1px #000;
+    color: #FFB000;
+    font-family: 'Sansita One', cursive;
+}
+
+h2 a:hover {
+    text-decoration: none;
+}
+
+h2 a:visited {
+    color: #FFB000;
+}
 
 a, a:visited {
     color: #D92B00;
@@ -92,7 +110,7 @@ blockquote {
     border-right: 2px solid #30334F;
     border-radius: 10px;
     padding: 5px 20px;
-    color:white;
+    color: white;
     font-family: menlo, monospace;
 }
 
@@ -161,7 +179,7 @@ code {
     height: 52px;
     background: url("../img/lines-close.png");
     position: relative;
-        left: 11px;
+    left: 11px;
 }
 
 .hotfix-end, .hotfix-start, .release-end, .release-start, .feature-end, .feature-start {
