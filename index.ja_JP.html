@@ -116,18 +116,18 @@
 
 <div class="scrollblock">
     <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
-    <p>Git flowを開始するには 既存のプロジェクトをカスタマイズする必要があります。</p>
+    <p>Git flowを開始するには 既存のプロジェクトをカスタマイズします。</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Initialize</h3>
+        <h3>初期化</h3>
 
-        <p>通常のgitリポジトリ配下に移動した後、下記のコマンドでgit-flow用に初期化します。</p>
+        <p>通常のgitリポジトリ配下に移動した後、下記のコマンドでgit-flow化します。</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
             コマンドのあと対話形式で、いくつかの質問に答えます。
-            大体は、デフォルトの値が推奨されます。
+            大体はデフォルトの値が推奨されます。
         </p>
 
     </div>
@@ -144,13 +144,13 @@
     <h2><a name="features" href="#features">Features</a></h2>
 
     <ul class="narrow">
-        <li>機能追加のための開発。</li>
-        <li>Typically exist in developers repos only</li>
+        <li>通常の開発を行います。</li>
+        <li>基本的には開発者のリポジトリのみに行います。</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>Start a new feature</h3>
+        <h3>開発開始</h3>
         <p>開発用ブランチは 'develop' ブランチから開始します。開始方法は、</p>
         <blockquote>
             git flow feature start MYFEATURE
@@ -175,10 +175,10 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish up a feature</h3>
+        <h3>開発終了</h3>
 
         <p>
-            開発が終了したら、以下の操作を行います。
+            開発が終了したらコマンドで以下の操作が行われます。
         </p>
         <ul>
             <li>MYFEATUREブランチを'develop'にマージします。</li>
@@ -197,11 +197,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Publish a feature</h3>
+        <h3>開発分をリモートへ</h3>
 
         <p>
-            複数人と同じ機能を開発していたら？ <br/>
-            自分の変更分をリモートサーバにマージします。
+            複数人と同じ開発ブランチでを作業するときは、
+            自分の変更分をリモートサーバにプッシュします。
         </p>
 
         <blockquote>
@@ -215,10 +215,10 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Getting a published feature</h3>
+        <h3>修正分を取り込む</h3>
 
         <p>
-            他の人の開発分を自分のローカルにマージします。
+            他の人の修正分を自分のローカルにプルします。
         </p>
 
         <blockquote>
@@ -235,12 +235,12 @@
     <h2><a name="release" href="#release">Make a release</a></h2>
 
     <ul>
-        <li>リリースのための準備を行います</li>
-        <li>軽微なバグフィックスを行ったり、リリースのため設定の登録を行います</li>
+        <li>リリースのための準備を行います。</li>
+        <li>軽微なバグフィックスを行ったり、リリースのため作業を行います。</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Start a release</h3>
+        <h3>リリース準備開始</h3>
 
         <p>リリース作業を開始するには、git flowのreleaseコマンドを使います</p>
         'develop'ブランチから'release'ブランチをを作成します
@@ -250,7 +250,7 @@
         </blockquote>
         <p><code>[BASE]</code>はオプションで 'develop'ブランチの特定のCommitのハッシュ値を指定します。指定がない場合はHEADが使われます。</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>'release'ブランチ作成後に修正をPublishするには、'feature'の時と似たコマンドを使用します:</p>
+        <p>'release'ブランチ作成後に修正をプッシュするには、'feature'の時と似たコマンドを使用します:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
@@ -263,14 +263,14 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish up a release</h3>
+        <h3>リリース準備完了</h3>
 
-        <p>リリース作業の終了処理は、gitのブランチを扱う上で大きなアクションがあります:</p>
+        <p>リリース準備の終了作業は、gitのリポジトリが大きく変化します:</p>
         <ul>
-            <li>'release'ブランチを'master'にマージします</li>
-            <li>'master'ブランチにリリース用のタグをつけます</li>
-            <li>'develop'ブランチに'release'ブランチの内容がマージされます</li>
-            <li>'release'ブランチが削除されます</li>
+            <li>'release'ブランチを'master'にマージします。</li>
+            <li>'master'ブランチにリリース用のタグをつけます。</li>
+            <li>'develop'ブランチに'release'ブランチの内容がマージされます。</li>
+            <li>'release'ブランチが削除されます。</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
@@ -286,12 +286,12 @@
     <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
 
     <ul>
-        <li>Hotfixesはすぐに適用しなければいけないようような、緊急の場合に使用します</li>
-        <li>May be branched off from the corresponding tag on the master branch that marks the production version.</li>
+        <li>すぐに適用しなければいけないような、緊急の場合に使用します。</li>
+        <li>'master'ブランチのタグから、緊急対応用のブランチを作成します。</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>git flow hotfix start</h3>
+        <h3>緊急対応の開始</h3>
 
         <p>他のgit flowコマンドと似た形で、hotfixを開始します</p>
         <blockquote>
@@ -307,9 +307,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish a hotfix</h3>
+        <h3>緊急対応の終了</h3>
 
-        <p>hotfixの終了作業は、'develop'と'master'のブランチをマージします。加えて、'master'ブランチはhotfixのバージョンでタグが付けられます。</p>
+        <p>緊急対応の終了作業は、'develop'と'master'のブランチをマージします。加えて、'master'ブランチは緊急対応のタグが付けられます。</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -337,7 +337,7 @@
     <h2>Backlog</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>使用するコマンドがすべてをカバーしているわけではなく、重要なものだけカバーしています。</li>
+        <li>コマンドがすべてをカバーしているわけではなく、重要なものだけカバーしています。</li>
         <li>もちろん、gitのコマンドは通常通りすべて使用することができます。git flowは単にgitのコマンドの集合です。 </li>
         <li>'support'ブランチの機能はまだベータ版です。それについては言及できません。</li>
         <li>もし翻訳して頂けるなら、統合してもらえると幸いです。</li>
