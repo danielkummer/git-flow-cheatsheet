@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git-flow cheatsheet</title>
+    <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33766650-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
+<header>
+
+    <h1 id="title">git-flow cheatsheet</h1>
+
+    <p id="author">
+        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+    </p>
+    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">translations:
+        <a href="index.html" title="english">English</a> -
+        <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
+        <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
+        <a href="#" class="active" title="日本語">日本語</a>
+    </p>
+</header>
+
+<div id="main">
+
+
+<div class="scrollblock">
+    <h2>About</h2>
+
+    <p>
+        git-flowはgitの拡張であり、Vincent Driessenの提唱するブランチモデルを実現するための高度なリポジトリ操作を提供します。
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">more</a></small>
+    </p>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+
+    <p>このチートシートは基本的な使い方とgit-flowの効果を表します。</p>
+
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+
+<div class="scrollblock">
+    <h2>Basic tips</h2>
+    <ul>
+        <li>Git flow は素晴らしいコマンドライン補助と出力を提供します。何が起こるか注意深く読み解いてください。</li>
+        <li>OSX Clientの <a href="http://www.sourcetreeapp.com/">Sourcetree</a> は素晴らしいGUIとgit-flowサポートを提供します。</li>
+        <li>- Git-flow はマージすることをベースとして考えるソリューションです。リベースは行いません。</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="setup" href="#setup">Setup</a></h2>
+    <ul>
+        <li>前もってgitをインストールしておく必要があります。</li>
+        <li>Git flow はOSX、Linux、Windowsで動作します。</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>OSX</h3>
+        <blockquote>
+            $ brew install git-flow
+        </blockquote>
+        <h3>Linux</h3>
+        <blockquote>
+            $ apt-get install git-flow
+        </blockquote>
+        <h3>Windows (Cygwin)</h3>
+        <blockquote>
+            $ wget -q -O - --no-check-certificate
+            https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+        </blockquote>
+        <p>git-flowのインストールには、wgetとutil-linuxが必要です。</p>
+    </div>
+    <div class="col-2">
+        <p>
+            詳細なgit flowのインストール方法は以下のサイトを参考にしてください。 <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
+            wiki</a>.
+        </p>
+        <img src="img/download.png" alt="install git-flow"/>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
+    <p>Git flowを開始するには 既存のプロジェクトをカスタマイズする必要があります。</p>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>Initialize</h3>
+
+        <p>通常のgitリポジトリ配下に移動した後、下記のコマンドでgit-flow用に初期化します。</p>
+        <blockquote>
+            git flow init
+        </blockquote>
+        <p>
+            コマンドのあと対話形式で、いくつかの質問に答えます。
+            大体は、デフォルトの値が推奨されます。
+        </p>
+
+    </div>
+    <div class="col-2">
+        <div class="initialize"></div>
+        <div class="lines-small"></div>
+        <div class="lines-open"></div>
+        <div class="lines-big"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="features" href="#features">Features</a></h2>
+
+    <ul class="narrow">
+        <li>機能追加のための開発。</li>
+        <li>Typically exist in developers repos only</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+
+    <div class="col-1">
+        <h3>Start a new feature</h3>
+        <p>開発用ブランチは 'develop' ブランチから開始します。開始方法は、</p>
+        <blockquote>
+            git flow feature start MYFEATURE
+        </blockquote>
+        <p>新たな開発用ブランチを'develop'ブランチをベースとして作成し、開発用ブランチにスイッチします。</p>
+
+        <!--
+        - Bump the version number now!
+        - Start committing last-minute fixes in preparing your release
+        - When done, run:
+
+             git flow release finish 'testrelease'
+
+
+
+        -->
+    </div>
+    <div class="col-2">
+        <div class="feature-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Finish up a feature</h3>
+
+        <p>
+            開発が終了したら、以下の操作を行います。
+        </p>
+        <ul>
+            <li>MYFEATUREブランチを'develop'にマージします。</li>
+            <li>開発用ブランチを削除します。</li>
+            <li>そして、'develop'ブランチにスイッチをします。</li>
+        </ul>
+
+        <blockquote>
+            git flow feature finish MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-end"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Publish a feature</h3>
+
+        <p>
+            複数人と同じ機能を開発していたら？ <br/>
+            自分の変更分をリモートサーバにマージします。
+        </p>
+
+        <blockquote>
+            git flow feature publish MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-publish"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Getting a published feature</h3>
+
+        <p>
+            他の人の開発分を自分のローカルにマージします。
+        </p>
+
+        <blockquote>
+            git flow feature pull MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-pull"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="release" href="#release">Make a release</a></h2>
+
+    <ul>
+        <li>リリースのための準備を行います</li>
+        <li>軽微なバグフィックスを行ったり、リリースのため設定の登録を行います</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>Start a release</h3>
+
+        <p>リリース作業を開始するには、git flowのreleaseコマンドを使います</p>
+        'develop'ブランチから'release'ブランチをを作成します
+        </p>
+        <blockquote>
+            git flow release start RELEASE [BASE]
+        </blockquote>
+        <p><code>[BASE]</code>はオプションで 'develop'ブランチの特定のCommitのハッシュ値を指定します。指定がない場合はHEADが使われます。</p>
+        <p class="divider">&#9733; &#9733; &#9733;</p>
+        <p>'release'ブランチ作成後に修正をPublishするには、'feature'の時と似たコマンドを使用します:</p>
+        <blockquote>
+            git flow release publish RELEASE
+        </blockquote>
+        <p>('release'リポジトリの修正のトラッキングをすることもできます<br/><code>git flow release track RELEASE</code> )</p>
+    </div>
+    <div class="col-2">
+        <div class="release-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Finish up a release</h3>
+
+        <p>リリース作業の終了処理は、gitのブランチを扱う上で大きなアクションがあります:</p>
+        <ul>
+            <li>'release'ブランチを'master'にマージします</li>
+            <li>'master'ブランチにリリース用のタグをつけます</li>
+            <li>'develop'ブランチに'release'ブランチの内容がマージされます</li>
+            <li>'release'ブランチが削除されます</li>
+        </ul>
+        <blockquote>
+            git flow release finish RELEASE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="release-end"></div>
+
+    </div>
+</div>
+
+<div class="scrollblock">
+    <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
+
+    <ul>
+        <li>Hotfixesはすぐに適用しなければいけないようような、緊急の場合に使用します</li>
+        <li>May be branched off from the corresponding tag on the master branch that marks the production version.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>git flow hotfix start</h3>
+
+        <p>他のgit flowコマンドと似た形で、hotfixを開始します</p>
+        <blockquote>
+            git flow hotfix start VERSION [BASENAME]
+        </blockquote>
+        <p>バージョンの引数は、ホットフィックスリリース名を指定します。 オプションとして開始するベースを指定出来ます。</p>
+        <p></p>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Finish a hotfix</h3>
+
+        <p>hotfixの終了作業は、'develop'と'master'のブランチをマージします。加えて、'master'ブランチはhotfixのバージョンでタグが付けられます。</p>
+        <blockquote>
+            git flow hotfix finish VERSION
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-end"></div>
+    </div>
+</div>
+
+<div>
+    <div class="col-1"></div>
+    <div class="col-2">
+        <div class="lines-close"></div>
+        <div class="lines-small-end"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="commands" href="#commands">Commands</a></h2>
+    <img src="img/git-flow-commands.png" alt="git-flow commands"/>
+</div>
+
+<div class="scrollblock">
+    <h2>Backlog</h2>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <ul>
+        <li>使用するコマンドがすべてをカバーしているわけではなく、重要なものだけカバーしています。</li>
+        <li>もちろん、gitのコマンドは通常通りすべて使用することができます。git flowは単にgitのコマンドの集合です。 </li>
+        <li>'support'ブランチの機能はまだベータ版です。それについては言及できません。</li>
+        <li>もし翻訳して頂けるなら、統合してもらえると幸いです。</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+</div>
+
+
+
+<footer>
+    <div class="scrollblock">
+        <h2><a name="comments" href="#comments">Comments</a></h2>
+
+        <div id="disqus_thread"></div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gitflowcheatsheet'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</body>
+</html>
