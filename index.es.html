@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git-flow cheatsheet</title>
+    <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33766650-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
+<header>
+
+    <h1 id="title">git-flow cheatsheet</h1>
+
+    <p id="author">
+        creado por <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+    </p>
+    <p id="desc">ramificaciones eficientes usando git-flow, por <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">traducciones:
+        <a href="index.html" title="english">English</a> -
+        <a href="index.es_AR.html" class="active" title="spanish">Castellano</a> -
+        <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
+        <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
+        <a href="index.ja_JP.html" title="日本語">日本語</a>
+    </p>
+</header>
+
+<div id="main">
+
+
+<div class="scrollblock">
+    <h2>Acerca de git-flow</h2>
+
+    <p>
+        git-flow es un conjunto de extensiones para git que proveen comandos de alto nivel para operar repositorios para el model de ramificaciones de  Vincent
+        Driessen.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">más</a></small>
+    </p>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+
+    <p>Este ayudamemoria de las operaciones básicas de git-flow explica los comandos y sus efectos.</p>
+
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+
+<div class="scrollblock">
+    <h2>Consejos básicos</h2>
+    <ul>
+        <li>Git flow provee una excelente ayuda en la línea de comando y e información. Lée con atención lo que sucede...</li>
+        <li>El cliente para OSX <a href="http://www.sourcetreeapp.com/">Sourcetree</a> es una excelente GUI para git y tiene soporte para git-flow
+        </li>
+        <li>- Git-flow funciona basándose en conciliaciones (merge). No cambia utiliza cambios de base para la ramificación de características (branch rebase).</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="setup" href="#setup">Configuración</a></h2>
+    <ul>
+        <li>Un prerequisito es una instalación de git en funcionamiento.</li>
+        <li>Git flow funciona en OSX, Linux y Windows</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>OSX</h3>
+        <blockquote>
+            $ brew install git-flow
+        </blockquote>
+        <h3>Linux</h3>
+        <blockquote>
+            $ apt-get install git-flow
+        </blockquote>
+        <h3>Windows (Cygwin)</h3>
+        <blockquote>
+            $ wget -q -O - --no-check-certificate
+            https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+        </blockquote>
+        <p>Necesitarás wget y util-linux al instalar git-flow.</p>
+    </div>
+    <div class="col-2">
+        <p>
+            Para instrucciones de instalación detalladas por favor visite la <a href="https://github.com/nvie/gitflow/wiki/Windows">wiki de git flow</a>
+        </p>
+        <img src="img/download.png" alt="install git-flow"/>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <h2><a name="getting_started" href="#getting_started">Introducción</a></h2>
+    <p>Git flow necesita ser inicializado para poder alterar la configuración del proyecto.</p>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>Inicialización</h3>
+
+        <p>Inicie git-flow inicializándolo desde dentro de un repositorio git existente:</p>
+        <blockquote>
+            git flow init
+        </blockquote>
+        <p>
+            Deberá contestar algunas preguntas relacionadas con las convenciones de nombres para las ramas.<br/>
+            Se recominda utilizar los valores predeterminados.
+        </p>
+
+    </div>
+    <div class="col-2">
+        <div class="initialize"></div>
+        <div class="lines-small"></div>
+        <div class="lines-open"></div>
+        <div class="lines-big"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="features" href="#features">Características</a></h2>
+
+    <ul class="narrow">
+        <li>Desarrolle características para futuras versiones</li>
+        <li>Es típico que sólo se use en los repositorios para desarrollo</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+
+    <div class="col-1">
+        <h3>Comenzar una nueva característica</h3>
+        <p>El desarrollo de nuevas características comienza en la rama 'develop'.</p>
+        <p>Comienze una nueva característica usando</p>
+        <blockquote>
+            git flow feature start MYFEATURE
+        </blockquote>
+        <p>Esta acción crea una nueva rama derivada de 'develop' y luego cambia el código a esta rama.</p>
+
+        <!--
+        - Bump the version number now!
+        - Start committing last-minute fixes in preparing your release
+        - When done, run:
+
+             git flow release finish 'testrelease'
+
+
+
+        -->
+    </div>
+    <div class="col-2">
+        <div class="feature-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Terminar una característica</h3>
+
+        <p>
+            Termina de trabajar una característica.
+            Esta acción realiza lo siguiente:
+        </p>
+        <ul>
+            <li>Concilia MYFEATURE en 'develop'</li>
+            <li>Borra la rama MYFEATURE</li>
+            <li>Establece como versión de trabajo la rama 'develop'</li>
+        </ul>
+
+        <blockquote>
+            git flow feature finish MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-end"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Publicar una característica</h3>
+
+        <p>
+            ¿Estás trabajando colaborativamente? <br/>
+            Publica una característica a un servidor remoto así puede ser vista por otros.
+        </p>
+
+        <blockquote>
+            git flow feature publish MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-publish"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Obteniendo características publicadas</h3>
+
+        <p>
+            Descarga una característica publicada por otro y sigue sus cambios.
+        </p>
+
+        <blockquote>
+            git flow feature pull MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-pull"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="release" href="#release">Publica una versión</a></h2>
+
+    <ul>
+        <li>Prepara una versión para producción</li>
+        <li>Permite arreglos menores y la preparación de los meta-datos para la publicación</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>Comienza una publicación</h3>
+
+        <p>Para comenzar una publicación, usa el comando git flow release. Creará</p>
+        una rama para una nueva versión derivada de 'develop'.
+        </p>
+        <blockquote>
+            git flow release start RELEASE [BASE]
+        </blockquote>
+        <p>Opcionalmente, usa <code>[BASE]</code> indicando la código sha-1 el cambio desde la cual comenzar al versión. El cambio debe ser parte de la rama 'develop'.</p>
+        <p class="divider">&#9733; &#9733; &#9733;</p>
+        <p>Es apropiado publicar la rama de la versión después de crearla para permitir que otros desarrolladores envíen cambios para esta versión. Hazlo de forma similar a publicar características:</p>
+        <blockquote>
+            git flow release publish RELEASE
+        </blockquote>
+        <p>(Puedes seguir versiones publicadas utilizando el comando <br/><code>git flow release track RELEASE</code></p>
+    </div>
+    <div class="col-2">
+        <div class="release-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Da cierre una publicación</h3>
+
+        <p>Dar cierre a una publicación es un gran paso. Realiza varias acciones:</p>
+        <ul>
+            <li>Concilia la rama de la versión con la rama 'master'</li>
+            <li>Etiqueta el cambio con su nombre</li>
+            <li>Re-concila la versión con la rama 'develop'</li>
+            <li>Borra la rama de la característica</li>
+        </ul>
+        <blockquote>
+            git flow release finish RELEASE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="release-end"></div>
+
+    </div>
+</div>
+
+<div class="scrollblock">
+    <h2><a name="hotfixes" href="#hotfixes">Revisiones</a></h2>
+
+    <ul>
+        <li>Las revisiones surgen de la necesidad de actuar inmediatamente cuando la versión ejecutándose en producción se encuentra en un estado que no deseamos
+        </li>
+        <li>Puede ramificarse desde la versión correspondiente etiquetada en la rama 'master' que corresponda a la versión en producción.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>git flow hotfix start</h3>
+
+        <p>Como otros comandos de git flow, una revisión se abre con</p>
+        <blockquote>
+            git flow hotfix start VERSION [BASENAME]
+        </blockquote>
+        <p>El argumento de la versión determina el nombre de la revisión. Opcionalmente, puedes agregar un nombre para la base desde la cual comenzar.</p>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Cierra una revisión</h3>
+
+        <p>Al cerrar una revisión, esta se concilia en las ramas 'develop' y 'master'. Luego, el cambio en 'master' es etiquetado con el nombre de la revisión.</p>
+        <blockquote>
+            git flow hotfix finish VERSION
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-end"></div>
+    </div>
+</div>
+
+<div>
+    <div class="col-1"></div>
+    <div class="col-2">
+        <div class="lines-close"></div>
+        <div class="lines-small-end"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="commands" href="#commands">Comandos</a></h2>
+    <img src="img/git-flow-commands.png" alt="git-flow commands"/>
+</div>
+
+<div class="scrollblock">
+    <h2>Tareas pendientes</h2>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <ul>
+        <li>Aquí no se han cubierto todos los comandos disponibles, sólo los más importantes</li>
+        <li>Aún puedes usar todos los comandos de git normales como los conoces, git-flow sólo es una herramienta más que puedes agregar a tu colección.
+        </li>
+        <li>La característica 'support' aún es beta, no se recomienda usarla</li>
+        <li>Si quieres proveer traducciones, serán bien recibidas.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+</div>
+
+
+
+<footer>
+    <div class="scrollblock">
+        <h2><a name="comments" href="#comments">Comentarios</a></h2>
+
+        <div id="disqus_thread"></div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gitflowcheatsheet'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</body>
+</html>
+
