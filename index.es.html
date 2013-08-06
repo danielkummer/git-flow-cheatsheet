@@ -62,13 +62,14 @@
     <h2>Acerca de git-flow</h2>
 
     <p>
-        git-flow es un conjunto de extensiones para git que proveen comandos de alto nivel para operar repositorios para el model de ramificaciones de  Vincent
+        git-flow es un conjunto de extensiones para git que proveen comandos de alto nivel para operar repositorios 
+        basado en el modelo de ramificaciones de  Vincent
         Driessen.
         <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">más</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>Este ayudamemoria de las operaciones básicas de git-flow explica los comandos y sus efectos.</p>
+    <p>Esta hoja de referencia explica&nbsp; las operaciones básicas de git-flow, los comandos y sus efectos.</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -79,7 +80,7 @@
         <li>Git flow provee una excelente ayuda en la línea de comando y e información. Lée con atención lo que sucede...</li>
         <li>El cliente para OSX <a href="http://www.sourcetreeapp.com/">Sourcetree</a> es una excelente GUI para git y tiene soporte para git-flow
         </li>
-        <li>- Git-flow funciona basándose en conciliaciones (merge). No cambia utiliza cambios de base para la ramificación de características (branch rebase).</li>
+        <li>- Git-flow funciona basándose en fusiones de ramas (merge). No reorganiza (branch rebase) las ramas de características (feature branches).</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -106,11 +107,11 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>Necesitarás wget y util-linux al instalar git-flow.</p>
+        <p>Necesitarás wget y util-linux para instalar git-flow.</p>
     </div>
     <div class="col-2">
         <p>
-            Para instrucciones de instalación detalladas por favor visite la <a href="https://github.com/nvie/gitflow/wiki/Windows">wiki de git flow</a>
+            Para instrucciones de instalación detalladas, por favor, visite la <a href="https://github.com/nvie/gitflow/wiki/Windows">wiki de git flow</a>
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
@@ -123,7 +124,7 @@
     <div class="col-1">
         <h3>Inicialización</h3>
 
-        <p>Inicie git-flow inicializándolo desde dentro de un repositorio git existente:</p>
+        <p>Comience a usar git-flow inicializándolo desde dentro de un repositorio git existente:</p>
         <blockquote>
             git flow init
         </blockquote>
@@ -146,7 +147,7 @@
     <h2><a name="features" href="#features">Características</a></h2>
 
     <ul class="narrow">
-        <li>Desarrolle características para futuras versiones</li>
+        <li>Desarrollar características para futuras versiones</li>
         <li>Es típico que sólo se use en los repositorios para desarrollo</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
@@ -181,11 +182,11 @@
         <h3>Terminar una característica</h3>
 
         <p>
-            Termina de trabajar una característica.
+            Terminar el desarrollo de una característica.
             Esta acción realiza lo siguiente:
         </p>
         <ul>
-            <li>Concilia MYFEATURE en 'develop'</li>
+            <li>Fusiona MYFEATURE en 'develop'</li>
             <li>Borra la rama MYFEATURE</li>
             <li>Establece como versión de trabajo la rama 'develop'</li>
         </ul>
@@ -205,7 +206,7 @@
 
         <p>
             ¿Estás trabajando colaborativamente? <br/>
-            Publica una característica a un servidor remoto así puede ser vista por otros.
+            Publica una característica a un servidor remoto para que así pueda ser vista por otros.
         </p>
 
         <blockquote>
@@ -222,7 +223,7 @@
         <h3>Obteniendo características publicadas</h3>
 
         <p>
-            Descarga una característica publicada por otro y sigue sus cambios.
+            Descarga una característica publicada por otro y mantiene un seguimiento de sus cambios.
         </p>
 
         <blockquote>
@@ -247,18 +248,19 @@
         <h3>Comienza una publicación</h3>
 
         <p>Para comenzar una publicación, usa el comando git flow release. Creará</p>
-        una rama para una nueva versión derivada de 'develop'.
+        una rama de publicación derivada de la rama 'develop'.
         </p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>Opcionalmente, usa <code>[BASE]</code> indicando la código sha-1 el cambio desde la cual comenzar al versión. El cambio debe ser parte de la rama 'develop'.</p>
+        <p>Opcionalmente, pude usar <code>[BASE]</code> indicando el código sha-1 del cambio desde el cual comenzar la versión de 
+          publicación. El cambio debe ser parte de la rama 'develop'.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>Es apropiado publicar la rama de la versión después de crearla para permitir que otros desarrolladores envíen cambios para esta versión. Hazlo de forma similar a publicar características:</p>
+        <p>Es apropiado publicar remotamente la rama de publicación después de crearla para permitir que otros desarrolladores envíen cambios para esta versión. Hazlo de forma similar a publicar características:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(Puedes seguir versiones publicadas utilizando el comando <br/><code>git flow release track RELEASE</code></p>
+        <p>(Puede establecer el seguimiento de los cambios de la publicación remota utilizando el comando <br/><code>git flow release track RELEASE</code></p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -267,14 +269,14 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Da cierre una publicación</h3>
+        <h3>Concluir una publicacion</h3>
 
         <p>Dar cierre a una publicación es un gran paso. Realiza varias acciones:</p>
         <ul>
-            <li>Concilia la rama de la versión con la rama 'master'</li>
+            <li>Fusiona la rama de la publicación con la rama 'master'</li>
             <li>Etiqueta el cambio con su nombre</li>
-            <li>Re-concila la versión con la rama 'develop'</li>
-            <li>Borra la rama de la característica</li>
+            <li>Vuelve a fusiona la publicación con la rama 'develop'</li>
+            <li>Borra la rama de la publicacion</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
@@ -302,7 +304,7 @@
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>El argumento de la versión determina el nombre de la revisión. Opcionalmente, puedes agregar un nombre para la base desde la cual comenzar.</p>
+        <p>El argumento de la versión determina el nombre de la revisión. Opcionalmente, puede agregar un nombre para la base desde la cual comenzar.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -313,7 +315,7 @@
     <div class="col-1">
         <h3>Cierra una revisión</h3>
 
-        <p>Al cerrar una revisión, esta se concilia en las ramas 'develop' y 'master'. Luego, el cambio en 'master' es etiquetado con el nombre de la revisión.</p>
+        <p>Al cerrar una revisión, esta se fusiona en las ramas 'develop' y 'master'. Luego, el cambio en 'master' es etiquetado con el nombre de la revisión.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -342,10 +344,10 @@
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
         <li>Aquí no se han cubierto todos los comandos disponibles, sólo los más importantes</li>
-        <li>Aún puedes usar todos los comandos de git normales como los conoces, git-flow sólo es una herramienta más que puedes agregar a tu colección.
+        <li>Aún puede usar todos los comandos de git normales tal y como los conoces, git-flow sólo es una herramienta más que puedes agregar a tu colección.
         </li>
-        <li>La característica 'support' aún es beta, no se recomienda usarla</li>
-        <li>Si quieres proveer traducciones, serán bien recibidas.</li>
+        <li>La característica 'support' aún esta en fase beta, no se recomienda usarla</li>
+        <li>Si quiere proveer traducciones, serán bien recibidas.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
