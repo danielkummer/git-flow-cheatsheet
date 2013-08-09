@@ -63,7 +63,7 @@
 
     <p>
         git-flow es un conjunto de extensiones para git que proveen comandos de alto nivel para operar repositorios 
-        basado en el modelo de ramificaciones de  Vincent
+        basados en el modelo de ramificaciones de  Vincent
         Driessen.
         <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">más</a></small>
     </p>
@@ -77,7 +77,7 @@
 <div class="scrollblock">
     <h2>Consejos básicos</h2>
     <ul>
-        <li>Git flow provee una excelente ayuda en la línea de comando y e información. Lée con atención lo que sucede...</li>
+        <li>Git flow provee una excelente ayuda en la línea de comandos y e información. Lée con atención lo que sucede...</li>
         <li>El cliente para OSX <a href="http://www.sourcetreeapp.com/">Sourcetree</a> es una excelente GUI para git y tiene soporte para git-flow
         </li>
         <li>- Git-flow funciona basándose en fusiones de ramas (merge). No reorganiza (branch rebase) las ramas de características (feature branches).</li>
@@ -130,7 +130,7 @@
         </blockquote>
         <p>
             Deberá contestar algunas preguntas relacionadas con las convenciones de nombres para las ramas.<br/>
-            Se recominda utilizar los valores predeterminados.
+            Se recomienda utilizar los valores predeterminados.
         </p>
 
     </div>
@@ -154,7 +154,7 @@
 
     <div class="col-1">
         <h3>Comenzar una nueva característica</h3>
-        <p>El desarrollo de nuevas características comienza en la rama 'develop'.</p>
+        <p>El desarrollo de nuevas características parte de la rama 'develop'.</p>
         <p>Comienze una nueva característica usando</p>
         <blockquote>
             git flow feature start MYFEATURE
@@ -241,7 +241,7 @@
 
     <ul>
         <li>Prepara una versión para producción</li>
-        <li>Permite arreglos menores y la preparación de los meta-datos para la publicación</li>
+        <li>Permite arreglos menores y la preparación de los metadatos para la publicación</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -253,7 +253,7 @@
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>Opcionalmente, pude usar <code>[BASE]</code> indicando el código sha-1 del cambio desde el cual comenzar la versión de 
+        <p>Opcionalmente, puede usar <code>[BASE]</code> indicando el código sha-1 del cambio desde el cual comenzar la versión de 
           publicación. El cambio debe ser parte de la rama 'develop'.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
         <p>Es apropiado publicar remotamente la rama de publicación después de crearla para permitir que otros desarrolladores envíen cambios para esta versión. Hazlo de forma similar a publicar características:</p>
@@ -269,14 +269,14 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Concluir una publicacion</h3>
+        <h3>Concluir una publicación</h3>
 
         <p>Dar cierre a una publicación es un gran paso. Realiza varias acciones:</p>
         <ul>
             <li>Fusiona la rama de la publicación con la rama 'master'</li>
             <li>Etiqueta el cambio con su nombre</li>
-            <li>Vuelve a fusiona la publicación con la rama 'develop'</li>
-            <li>Borra la rama de la publicacion</li>
+            <li>Vuelve a fusionar la publicación con la rama 'develop'</li>
+            <li>Borra la rama de la publicación</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
@@ -346,7 +346,7 @@
         <li>Aquí no se han cubierto todos los comandos disponibles, sólo los más importantes</li>
         <li>Aún puede usar todos los comandos de git normales tal y como los conoces, git-flow sólo es una herramienta más que puedes agregar a tu colección.
         </li>
-        <li>La característica 'support' aún esta en fase beta, no se recomienda usarla</li>
+        <li>La característica 'support' aún esta en fase beta y no se recomienda usarla</li>
         <li>Si quiere proveer traducciones, serán bien recibidas.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
