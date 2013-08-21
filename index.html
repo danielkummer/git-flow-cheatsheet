@@ -77,10 +77,10 @@
     <h2>Basic tips</h2>
     <ul>
         <li>Git flow provides excellent command line help and output. Read it carefully to see what's happening...</li>
-        <li>The OSX Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a> is an excellent git gui and provides
+        <li>The OSX/Windows Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a> is an excellent git gui and provides
             git-flow support
         </li>
-        <li>- Git-flow is a merge based solution. It doesn't rebase feature branches.</li>
+        <li>Git-flow is a merge based solution. It doesn't rebase feature branches.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -276,13 +276,15 @@
         <p>Finishing a release is one of the big steps in git branching. It performs several actions:</p>
         <ul>
             <li>Merges the release branch back into 'master'</li>
-            <li>Tags the release with it's name</li>
+            <li>Tags the release with its name</li>
             <li>Back-merges the release into 'develop'</li>
             <li>Removes the release branch</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
+        <p>Don't forget to push your tags with<code>git push --tags</code></p>
+
     </div>
     <div class="col-2">
         <div class="release-end"></div>
