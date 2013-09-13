@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git-flow cheatsheet</title>
+    <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33766650-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
+<header>
+
+    <h1 id="title">git-flow cheatsheet</h1>
+
+    <p id="author">
+        Tasarlayan: <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+    </p>
+    <p id="desc"><a href="http://nvie.com/">Vincent Driessen</a>'ın verimli dallanma modeli kullanılarak tasarlanmıştır.</p>
+    <p id="translations">çeviriler:
+        <a href="index.html"  title="english">English</a> -
+        <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
+        <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
+        <a href="index.ja_JP.html" title="日本語">日本語</a> -
+        <a href="index.tr_TR.html"class="active" title="Turkce">Türkçe</a>
+    </p>
+</header>
+
+<div id="main">
+
+
+<div class="scrollblock">
+    <h2>Hakkında</h2>
+
+    <p>
+        git-flow, Vincent Driessen'in dallanma modeli için geliştirilmiş,  git repoları için üst düzey işlemler
+        yapabilmenizi sağlayan, sözkonusu dallanma modelini kullanmayı oldukça kolaylaştıran git eklentilerini içerir.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/"><br>Vincent Driessen'in dallanma modeli hakkında</a></small>
+    </p>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+
+    <p>Bu döküman git flow işlemleri hakkında temel kullanım şekillerini içermektedir.</p>
+
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+
+<div class="scrollblock">
+    <h2>Temel Ipuçları</h2>
+    <ul>
+        <li>Git flow komut satırları ile kusursuz yardım (help) ve çıktı (output) sağlar.</li>
+        <li>OSX ve Windows kullanıcıları için <a href="http://www.sourcetreeapp.com/">Sourcetree</a> , git flowa destek
+            veren mükemmel bir git gui aracıdır.
+
+        </li>
+        <li>Git flow birleşme-kaynaşma (merge) tabanlı bir çözümdür. Rebase tabanlı çözümlemelerle karıştırılmamalıdır. Merge tabanlı çözümlerde
+            merge işlemi sonucunda bütün değişiklikler kendi dallanmalarındaki commit ile tek bir dala (branch) bağlanır, başlangıç noktası sabittir.
+            Rebase tabanlı çözümlerde ise kendi dalınız (branch) üzerinde yaptığınız değişiklikler, son yapılan commitler
+            başlangıç noktası alınarak ana dal üzerine eklenir. </li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="setup" href="#setup">Ayarlar</a></h2>
+    <ul>
+        <li>Git flow'u kullanabilmek için öncelikli olarak git kurulumunun yapılması gerekmektedir.</li>
+        <li>Git flow OSX, Linux ve Windows üzerinde çalıştırılabilir.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>OSX</h3>
+        <blockquote>
+            $ brew install git-flow
+        </blockquote>
+        <h3>Linux</h3>
+        <blockquote>
+            $ apt-get install git-flow
+        </blockquote>
+        <h3>Windows (Cygwin)</h3>
+        <blockquote>
+            $ wget -q -O - --no-check-certificate
+            https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+        </blockquote>
+        <p>Git flow kurulumu için wget ve util-linux gerekmektedir.</p>
+    </div>
+    <div class="col-2">
+        <p>
+            Git-flow kurulumu hakkında detaylı bilgi için git flow wiki'yi
+            ziyaret edebilirsiniz.<a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
+            wiki</a>.
+        </p>
+        <img src="img/download.png" alt="install git-flow"/>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <h2><a name="getting_started" href="#getting_started">Baslarken</a></h2>
+    <p>Git flow, kullanmak istediğiniz projede ayarlarınızı özelleştirmek amacıyla başlatılır (initialize).</p>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>Başlangıç (Initialize)</h3>
+
+        <p>git flow'u kullanmak istediğiniz reponuzdayken;
+        </p>
+        <blockquote>
+            git flow init
+        </blockquote>
+        <p>komutuyla başlatabilirsiniz.
+        </p>
+        <p>
+            Bu noktada kafanızda dallarınızı (branches) isimlendirme konusuna ilişkin birçok soru işareti oluşacaktır.
+            Bu bağlamda varsayılan (default) değerleri kullanmanız önerilir.
+        </p>
+
+    </div>
+    <div class="col-2">
+        <div class="initialize"></div>
+        <div class="lines-small"></div>
+        <div class="lines-open"></div>
+        <div class="lines-big"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="features" href="#features">Özellikler (Features)</a></h2>
+
+    <ul class="narrow">
+        <li>Git flow ile yayınlamak üzere olduğunuz projenize ekleyeceğiniz özellikler için yeni dallarda (feature) kodlama yaparsınız.</li>
+        <li>Genel olarak sadece geliştirici repolarında bulunurlar.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+
+    <div class="col-1">
+        <h3>Yeni bir özellik eklemesi başlatmak </h3>
+        <h3>(feature start)</h3>
+        <p>Yeni özelliklerin eklenmesi öncelikle develop dalından (branch) başlar.</p>
+        <p>Yeni bir özelliği kodlamaya </p>
+        <blockquote>
+            git flow feature start MYFEATURE
+        </blockquote>
+        <p>
+            ile başlarız. Bu komut bize develop dalını (branch) temel alan bir özellik dalı (feature) oluşturur.
+            Ve bulunduğumuz dalı develop/MYFEATURE olarak değiştirir.
+        </p>
+
+        <!--
+        - Bump the version number now!
+        - Start committing last-minute fixes in preparing your release
+        - When done, run:
+
+             git flow release finish 'testrelease'
+
+
+
+        -->
+    </div>
+    <div class="col-2">
+        <div class="feature-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Bir özellik eklemesi bitirilirken (feature finish)</h3>
+
+        <p>
+            Bir özelliğin eklenme işlemi bitirilirken şunları yapılır:
+        </p>
+        <ul>
+            <li>Kendi çalıştığımız özellik dalı (burada MYFEATURE) develop ana dalı ile birleştirilir.</li>
+            <li>Bu birleşmeden sonra kendi özellik dalımız (MYFEATURE) silinir.</li>
+            <li>Bulunduğumuz dal tekrar develop olarak değiştirilir.</li>
+        </ul>
+
+        <blockquote>
+            git flow feature finish MYFEATURE
+        </blockquote>
+        <p>
+            bu işlemleri bizler için yapar.
+        </p>
+    </div>
+    <div class="col-2">
+        <div class="feature-end"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Bir özelliği yayınlamak</h3>
+        <h3> (Publish a feature)</h3>
+
+        <p>
+            Bir ekip içerisinde geliştirme mi yapıyorsunuz ? <br/>
+            O zaman geliştirdiğiniz özelliği bir uzak sunucuya gönderin,
+             böylelikle geliştirdiğiniz özellik diğer kullanıcılar tarafından kullanılabilir.Öyleyse ;
+
+        </p>
+
+        <blockquote>
+            git flow feature publish MYFEATURE
+        </blockquote>
+        <p>
+            sizin için bu işi halledebilir.
+        </p>
+    </div>
+    <div class="col-2">
+        <div class="feature-publish"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Yayınlanmış bir özelliği almak (Getting a published feature)</h3>
+
+        <p>
+            Uzak sunucu üzerinde yayınlanmış bir özelliği kendi yerel (local) çalışma ortamınıza aktarırken:
+
+        </p>
+
+        <blockquote>
+            git flow feature pull MYFEATURE
+        </blockquote>
+        <p>
+            size yardımcı olacaktır.
+        </p>
+    </div>
+    <div class="col-2">
+        <div class="feature-pull"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="release" href="#release">Bir yayın çıkarırken (release)</a></h2>
+
+    <ul>
+        <li>Yeni bir ürünün yayınlanmasına yardımcı olur.</li>
+        <li>Küçük hata giderimleri ve meta-data hazırlığı için kullanılabilir.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>Bir sürüm yayınlamak</h3>
+        <h3>(Start a release)</h3>
+
+
+        <p>Yayınlamaya başlamak için,
+
+        <blockquote>
+            git flow release start RELEASE [BASE]
+        </blockquote>
+        <p>
+            komutu kullanılır.Bu komut ile develop dalını temel kabul eden bir release dalı (branch) yaratılır.
+        </p>
+        <p>Opsiyonel olarak yayınınızın <code>[BASE]</code> noktasından başlamasını sağlayabilirsiniz.
+             Bu commit develop dalında (branch) iken yapılmalıdır.</p>
+        <p class="divider">&#9733; &#9733; &#9733;</p>
+        <p>Yayınlama dalınız (release branch) oluştuktan sonra bu yöntem ile diğer yazılımcılar tarafından yapılan release
+            commitlerinin de kabul edilmesini sağlayabilirsiniz. Bunu özellik yayınlama (feature publishing) ile kolaylıkla yapabilirsiniz.
+        </p>
+        <blockquote>
+            git flow release publish RELEASE
+        </blockquote>
+        <p>(Uzak sunucu üzerindeki yayınları <br/>
+            <code>git flow release track RELEASE</code>
+            <br>ile izleyebilirsiniz. )</p>
+    </div>
+    <div class="col-2">
+        <div class="release-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Bir sürüm yayınını tamamlamak</h3>
+        <h3>(Finish up a release)</h3>
+
+        <p>
+            Bir sürüm yayınını tamamlarken git dallanmasının (branching) en büyük adımını atarız. Yayınlanma tamamlanırken:
+        </p>
+        <ul>
+            <li>Yayınlama yaptığımız dal olan release dalı (branch) master ana dalı ile birleştirilir.</li>
+            <li>Etiketler (tags) isimleri ile birlikte yayınlanır.</li>
+            <li>Arkaplandaki birleştirmeler (back-merges) develop dalında yayınlanır.</li>
+            <li>Yayınlama için açmış olduğumuz dal (branch) silinir.</li>
+        </ul>
+        <blockquote>
+            git flow release finish RELEASE
+        </blockquote>
+        <p>
+            sizler için bu işlemleri halledecektir. Ancak etiketlerinizi de eklemeyi unutmayın!
+            <code>git push --tags</code> bu sorununuzu da halledecektir.
+        </p>
+    </div>
+    <div class="col-2">
+        <div class="release-end"></div>
+
+    </div>
+</div>
+
+<div class="scrollblock">
+    <h2><a name="hotfixes" href="#hotfixes">Hata giderimleri (Hotfixes)</a></h2>
+
+    <ul>
+        <li>Yayına çıkarılmış bir versiyonda istenmeyen durumlar ortaya çıktığında ani hata giderimi için kullanılır.
+        </li>
+        <li>Hotfixler, master ana dalı (branch)ındaki versiyon numarasını belirten etiketten dallanır (branching).</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>Bir hata giderimini başlatmak</h3>
+        <h3> (git flow hotfix start)</h3>
+
+        <p>Diğer git flow komutlarında olduğu gibi bir hotfix başlatılırken :</p>
+        <blockquote>
+            git flow hotfix start VERSION [BASENAME]
+        </blockquote>
+        <p>
+            komutu kullanılır.
+
+            Versiyon argümanları yeni hotfix yayınının adını alır. Opsiyonel olarak
+            başlangıç noktası için bir isim özelleştirmesi yapabilirsiniz (basename).</p>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>Hata giderimi bitirme</h3>
+        <h3>(Finish a hotfix)</h3>
+
+        <p>Bir hata giderimi tamamlanırken, develop ve master dalları ile birleştirilir.
+            Ayrıca master dalına (branch) hotfix versiyonunun etiketi eklenir.</p>
+        <blockquote>
+            git flow hotfix finish VERSION
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-end"></div>
+    </div>
+</div>
+
+<div>
+    <div class="col-1"></div>
+    <div class="col-2">
+        <div class="lines-close"></div>
+        <div class="lines-small-end"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="commands" href="#commands">Komutlar (Commands)</a></h2>
+    <img src="img/git-flow-commands.png" alt="git-flow commands"/>
+</div>
+
+<div class="scrollblock">
+    <h2>Içerik bilgisi (Backlog)</h2>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <ul>
+        <li>Bu dökümanda Git flow için en önemli komutlar ve kullanımları ile ilgili bilgiler verilmektedir.
+            Ancak tüm Git flow komutları burda bahsedilenlerle sınırlı değildir.</li>
+        <li>Git flow kullanırken git ve gite ait diğer alt komutları gönlünüzce kullanabilirsiniz.
+            Git flow sadece bir repo derleme-toplama aracıdır.
+        </li>
+        <li>Support branch hala beta sürümündedir.Kullanımı tavsiye edilmemektedir.</li>
+        <li>Çevirilerinizle bize destek olabilirsiniz.Bunları projemize eklemekten mutluluk duyarız.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+</div>
+
+
+
+<footer>
+    <div class="scrollblock">
+        <h2><a name="comments" href="#comments">Yorumlar (Comments)</a></h2>
+
+        <div id="disqus_thread"></div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gitflowcheatsheet'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</body>
+</html>
