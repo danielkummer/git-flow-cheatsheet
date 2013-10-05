@@ -59,7 +59,7 @@ h3 {
 
 p {
     margin: 20px auto;
-    text-shadow: 0 2px 1px #fff;
+    text-shadow: none;
     color: #222438;
 }
 
