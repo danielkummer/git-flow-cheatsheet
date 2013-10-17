@@ -93,7 +93,7 @@ ul {
     margin-left: 0;
     padding-left: 1em;
     text-indent: -1em;
-    text-shadow: 0 2px 1px #fff;
+    text-shadow: none;
     line-height: 1.4;
 }
 
