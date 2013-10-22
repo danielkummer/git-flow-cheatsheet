@@ -51,9 +51,9 @@
         <a href="index.es.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
         <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
-        <a href="#" class="active" title="日本語">日本語</a> -
+        <a href="index.ja_JP.html" title="日本語">日本語</a> -
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a>
-        <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a>
+        <a href="#" class="active" title="한국어">한국어(Korean)</a>
     </p>
 </header>
 
@@ -64,12 +64,12 @@
     <h2>About</h2>
 
     <p>
-        git-flowはgitの拡張であり、Vincent Driessenの提唱するブランチモデルを実現するための高度なリポジトリ操作を提供します。
+        git-flow는 Vincent Driessen의 브랜칭 모델을 위한 고수준 저장소 작업을 제공하는 git의 확장입니다.
         <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">more</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>このチートシートは基本的な使い方とgit-flowの効果を表します。</p>
+    <p>이 치트 시트는 기본적인 사용법과 git-flow 작업의 효과를 보여줍니다.</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -77,9 +77,9 @@
 <div class="scrollblock">
     <h2>Basic tips</h2>
     <ul>
-        <li>Git flow は素晴らしいコマンドライン補助と出力を提供します。何が起こるか注意深く読み解いてください。</li>
-        <li>OSX Clientの <a href="http://www.sourcetreeapp.com/">Sourcetree</a> は素晴らしいGUIとgit-flowサポートを提供します。</li>
-        <li>- Git-flow はマージすることをベースとして考えるソリューションです。リベースは行いません。</li>
+        <li>Git flow는 훌륭한 명령행 도움말과 출력을 제공합니다. 무슨 일이 일어나는지를 알려면 출력을 주의깊게 읽어주세요.</li>
+        <li>OSX/Window Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a>는 훌륭한 git gui를 제공하고 git-flow에 대한 지원을 제공합니다.</li>
+        <li>Git-flow는 병합(merge) 기반의 솔루션입니다. feature 브랜치를 리베이스(rebase)하지 않습니다.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -88,8 +88,8 @@
 <div class="scrollblock">
     <h2><a name="setup" href="#setup">Setup</a></h2>
     <ul>
-        <li>前もってgitをインストールしておく必要があります。</li>
-        <li>Git flow はOSX、Linux、Windowsで動作します。</li>
+        <li>사전에 제대로 동작하는 git이 설치되어 있어야합니다.</li>
+        <li>Git flow는 OSX, Linux, Windows에서 동작합니다.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -106,12 +106,11 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>git-flowのインストールには、wgetとutil-linuxが必要です。</p>
+        <p>git-flow의 설치를 위해서는 wget과 util-linux가 필요합니다.</p>
     </div>
     <div class="col-2">
         <p>
-            詳細なgit flowのインストール方法は以下のサイトを参考にしてください。 <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
-            wiki</a>.
+            상세한 git flow의 설치 방법은 <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow wiki</a>를 참고하세요.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
@@ -119,18 +118,18 @@
 
 <div class="scrollblock">
     <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
-    <p>Git flowを開始するには 既存のプロジェクトをカスタマイズします。</p>
+    <p>Git flow는 프로젝트 설정을 변경하기위해 초기화를 필요로합니다.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>初期化</h3>
+        <h3>초기화</h3>
 
-        <p>通常のgitリポジトリ配下に移動した後、下記のコマンドでgit-flow化します。</p>
+        <p>기존 git 저장소 내에서 초기화하는 것으로 git-flow의 사용을 시작합니다</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            コマンドのあと対話形式で、いくつかの質問に答えます。
-            大体はデフォルトの値が推奨されます。
+            몇몇 질문에 대답해서 브랜치의 명명규척을 정합니다.
+            기본 값을 사용하기를 권장합니다.
         </p>
 
     </div>
@@ -147,18 +146,19 @@
     <h2><a name="features" href="#features">Features</a></h2>
 
     <ul class="narrow">
-        <li>通常の開発を行います。</li>
-        <li>基本的には開発者のリポジトリのみに行います。</li>
+        <li>다가오는 배포(release)를 위한 새 기능(feature)을 개발합니다.</li>
+        <li>일반적으로 개발자의 저장소에만 존재합니다.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>開発開始</h3>
-        <p>開発用ブランチは 'develop' ブランチから開始します。開始方法は、</p>
+        <h3>새 기능(feature) 시작하기</h3>
+        <p>새 기능의 개발은 'develop' 브랜치에서 시작합니다.</p>
+        <p>다음과 같이 새 기능의 개발을 시작합니다.</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>新たな開発用ブランチを'develop'ブランチをベースとして作成し、開発用ブランチにスイッチします。</p>
+        <p>이것은 'develop'에 기반한 새 기능(feature) 브랜치를 생성하고 그 브랜치로 전환합니다.</p>
 
         <!--
         - Bump the version number now!
@@ -178,15 +178,16 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>開発終了</h3>
+        <h3>기능 완료</h3>
 
         <p>
-            開発が終了したらコマンドで以下の操作が行われます。
+            기능 개발을 완료합니다.
+	    이것은 다음 작업들을 수행합니다.
         </p>
         <ul>
-            <li>MYFEATUREブランチを'develop'にマージします。</li>
-            <li>開発用ブランチを削除します。</li>
-            <li>そして、'develop'ブランチにスイッチをします。</li>
+            <li>MYFEATURE 브랜치를 'develop'에 병합(merge)합니다.</li>
+            <li>기능 브랜치를 삭제합니다.</li>
+            <li>'develop' 브랜치로 전환합니다.</li>
         </ul>
 
         <blockquote>
@@ -200,11 +201,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>開発分をリモートへ</h3>
+        <h3>기능을 게시(publish)</h3>
 
         <p>
-            複数人と同じ開発ブランチで作業するときは、
-            自分の変更分をリモートサーバにプッシュします。
+            기능을 공동으로 개발하고 있나요? <br/>
+	    기능을 원격 서버에 게시하여 다른 사용자들도 사용할 수있게 합니다.
         </p>
 
         <blockquote>
@@ -218,10 +219,10 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>修正分を取り込む</h3>
+        <h3>게시된 기능 가져오기</h3>
 
         <p>
-            他の人の修正分を自分のローカルにプルします。
+            다른 사용자가 게시한 기능을 가져오고 원격 변경을 추적합니다.
         </p>
 
         <blockquote>
@@ -238,26 +239,26 @@
     <h2><a name="release" href="#release">Make a release</a></h2>
 
     <ul>
-        <li>リリースのための準備を行います。</li>
-        <li>軽微なバグフィックスを行ったり、リリースのため作業を行います。</li>
+        <li>새로운 제품 출시 준비를 지원합니다.</li>
+        <li>출시를 위한 사소한 버그 수정이나 메타 데이터 준비를 허용합니다.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>リリース準備開始</h3>
+        <h3>릴리스 시작</h3>
 
-        <p>リリース作業を開始するには、git flowのreleaseコマンドを使います</p>
-        'develop'ブランチから'release'ブランチを作成します
+        <p>릴리스를 시작하려면 git flow의 release 명령을 사용합니다.</p>
+        'develop' 브랜치로부터 'release' 브랜치를 생성합니다.
         </p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p><code>[BASE]</code>はオプションで 'develop'ブランチの特定のCommitのハッシュ値を指定します。指定がない場合はHEADが使われます。</p>
+        <p>릴리스를 시작할 <code>[BASE]</code> commit sha-1 해시를 선택적으로 줄 수도 있습니다. 그 commit은 반드시 'develop' 브랜치에 있어야합니다.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>'release'ブランチ作成後に修正をプッシュするには、'feature'の時と似たコマンドを使用します:</p>
+        <p>릴리스 브랜치를 생성한 후에는 다른 개발자들의 릴리스 commit을 허용하기위해 게시(publish)하는 것이 현명합니다. 기능 게시와 비슷한 방법으로합니다:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>('release'リポジトリの修正のトラッキングをすることもできます<br/><code>git flow release track RELEASE</code> )</p>
+        <p>(원격 'release' 브랜치의 변경 추적은 다음과 같이 합니다<br/><code>git flow release track RELEASE</code> )</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -266,18 +267,20 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>リリース準備完了</h3>
+        <h3>릴리스 완료</h3>
 
-        <p>リリース準備の終了作業は、gitのリポジトリが大きく変化します:</p>
+        <p>릴리스 완료는 git 브랜치하기에서 가장 큰 단계입니다. 몇몇 작업을 수행합니다:</p>
         <ul>
-            <li>'release'ブランチを'master'にマージします。</li>
-            <li>'master'ブランチにリリース用のタグをつけます。</li>
-            <li>'develop'ブランチに'release'ブランチの内容がマージされます。</li>
-            <li>'release'ブランチが削除されます。</li>
+            <li>'release' 브랜치를 'master' 브랜치에 병합(merge)</li>
+            <li>릴리스를 릴리스 이름으로 태그(tag)</li>
+            <li>릴리스를 'develop' 브랜치로 재병합(back-merge)</li>
+            <li>'release' 브랜치 삭제</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
+	<p><code>git push --tags</code>를 사용해 태그들을 push하는 것을 잊지마세요.</p>
+
     </div>
     <div class="col-2">
         <div class="release-end"></div>
@@ -289,18 +292,18 @@
     <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
 
     <ul>
-        <li>すぐに適用しなければいけないような、緊急の場合に使用します。</li>
-        <li>'master'ブランチのタグから、緊急対応用のブランチを作成します。</li>
+        <li>핫픽스는 현재 출시된 제품에 문제가 생겨서 즉각 대응해야하는 상황에서 필요합니다.</li>
+        <li>'master' 브랜치의 현재 출시된 버전으로 표기(mark)된 태그(tag)로부터 브랜치를 땁니다.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>緊急対応の開始</h3>
+        <h3>핫픽스 시작</h3>
 
-        <p>他のgit flowコマンドと似た形で、hotfixを開始します</p>
+        <p>여타 git flow 명령과 비슷한 방법으로 시작합니다.</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>バージョンの引数は、ホットフィックスリリース名を指定します。 オプションとして開始するベースを指定出来ます。</p>
+        <p>여기서 버전 인수는 핫픽스 릴리스 이름을 지정합니다. 선택적으로 basename으로 시작점을 지정할 수도 있습니다.</p>
         <p></p>
     </div>
     <div class="col-2">
@@ -310,9 +313,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>緊急対応の終了</h3>
+        <h3>핫픽스 완료</h3>
 
-        <p>緊急対応の終了作業は、'develop'と'master'のブランチをマージします。加えて、'master'ブランチは緊急対応のタグが付けられます。</p>
+        <p>핫픽스를 종료하면 핫픽스는 'develop' 및 'master' 브랜치로 병합(merge)됩니다. 추가적으로 'master'의 병합분분은 핫픽스 버전으로 태그됩니다.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -340,10 +343,10 @@
     <h2>Backlog</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>コマンドがすべてをカバーしているわけではなく、重要なものだけカバーしています。</li>
-        <li>もちろん、gitのコマンドは通常通りすべて使用することができます。git flowは単にgitのコマンドの集合です。 </li>
-        <li>'support'ブランチの機能はまだベータ版です。それについては言及できません。</li>
-        <li>もし翻訳して頂けるなら、統合してもらえると幸いです。</li>
+        <li>여기서는 모든 명령을 다루지 않았습니다. 중요한 것들만 설명했습니다.</li>
+        <li>git 명령도 사용할 수 있습니다. git flow는 단지 도구 모음일 뿐입니다.</li>
+        <li>'support' 기능은 아직 베타 버전입니다. 사용은 권장되지 않습니다.</li>
+        <li>번역해주신다면 저는 행복하게 통합할 것입니다.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
