@@ -116,6 +116,7 @@ blockquote {
 }
 
 code {
+    display: inline-block;
     font-style: normal;
     padding-left: 5px;
     border-radius: 10px;
