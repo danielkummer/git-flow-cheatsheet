@@ -81,11 +81,10 @@
 <div class="scrollblock">
     <h2>Общие замечания</h2>
     <ul>
-        <li>Git flow предоставляет превосходную  provides excellent command line help and output. Read it carefully to see what's happening...</li>
-        <li>The OSX/Windows Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a> is an excellent git gui and provides
-            git-flow support
+        <li>Git flow предоставляет превосходную командную строку со справкой и улучшенными выводом. Внимательно читайте его, чтобы видеть, что происходит...</li>
+        <li>Клиент для OSX/Windows <a href="http://www.sourcetreeapp.com/">Sourcetree</a> — отличный GUI для Git — также поддерживает git-flow
         </li>
-        <li>Git-flow is a merge based solution. It doesn't rebase feature branches.</li>
+        <li>Git-flow  основана на слиянии. Для слияния ветвей фич не используется rebase.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -94,8 +93,8 @@
 <div class="scrollblock">
     <h2><a name="setup" href="#setup">Setup</a></h2>
     <ul>
-        <li>You need a working git installation as prerequisite.</li>
-        <li>Git flow works on OSX, Linux and Windows</li>
+        <li>В первую очередь вам нужена рабочая установка git.</li>
+        <li>Git flow работает на OSX, Linux и Windows</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -112,11 +111,11 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>You need wget and util-linux to install git-flow.</p>
+        <p>Вам потребуется wget и util-linux для установки git-flow.</p>
     </div>
     <div class="col-2">
         <p>
-            For detailed git flow intallation instructions please visit the <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
+            Подробные инструкции по установке git flow смотрите на <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
             wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
@@ -124,19 +123,19 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
-    <p>Git flow needs to be initialized in order to customize your project setup.</p>
+    <h2><a name="getting_started" href="#getting_started">Приступая к работе</a></h2>
+    <p>Git flow нужно инициализировать, чтобы настроить его для работы с вашим проектом.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Initialize</h3>
-
-        <p>Start using git-flow by initializing it inside an existing git repository:</p>
+        <h3>Инициализация</h3>
+        
+        <p>Для начала использования git-flow проинициализируйте его внутри существующего git-репозитория:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            You'll have to answer a few questions regarding the naming conventions for your branches.<br/>
-            It's recommended to use the default values.
+            Вам придётся ответить на несколько вопросов о способах именования ваших ветвей.<br/>
+            Рекомендуется оставить значения по умолчанию.
         </p>
 
     </div>
@@ -150,18 +149,18 @@
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">Features</a></h2>
+    <h2><a name="features" href="#features">Фичи</a></h2>
 
     <ul class="narrow">
-        <li>Develop new features for upcoming releases</li>
-        <li>Typically exist in developers repos only</li>
+        <li>Разработка новых фич для последующих релизов</li>
+        <li>Обычно присутствует только в репозиториях разработчиков</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>Start a new feature</h3>
-        <p>Development of new features starting from the 'develop' branch.</p>
-        <p>Start developing a new feature with</p>
+        <h3>Начало новой фичи</h3>
+        <p>Разработка новых фич начинается из ветви "develop".</p>
+        <p>Для начала разработки фичи выполните:</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
