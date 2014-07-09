@@ -3,10 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>git-flow cheatsheet</title>
-    <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <title>Шпаргалка по git-flow</title>
+    
+    <!-- Lobster is same as Sansita but with cyrillic and another subsets. I recomend to use Lobster instead Sansita everywere-->
+    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
+    
+    <style>
+    .title, h1, h2, h2 a, h3 {
+      font-family: 'Lobster';
+    }
+    </style>
 
     <script src="js/jquery-1.7.2.min.js"></script>
 
@@ -47,7 +56,7 @@
     </p>
     <p id="desc">эффективное ветвление с помощью git-flow от <a href="http://nvie.com/">Vincent Driessen</a></p>
     <p id="translations">переводы:
-        <a href="#" class="active" title="english">English</a> -
+        <a href="index.html" title="english">English</a> -
         <a href="index.es.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
         <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
@@ -55,8 +64,8 @@
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
         <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
         <a href="index.fr_FR.html" title="Français">Français</a> -
-        <a href="index.it_IT.html" title="Italiano">Italiano</a>
-        <a href="index.ru_RU.html" title="Russian">Russian</a>
+        <a href="index.it_IT.html" title="Italiano">Italiano</a> -
+        <a href="#" class="active" title="Russian">Русский (Russian)</a>
     </p>
 </header>
 
@@ -84,7 +93,7 @@
         <li>Git flow предоставляет превосходную командную строку со справкой и улучшенными выводом. Внимательно читайте его, чтобы видеть, что происходит...</li>
         <li>Клиент для OSX/Windows <a href="http://www.sourcetreeapp.com/">Sourcetree</a> — отличный GUI для Git — также поддерживает git-flow
         </li>
-        <li>Git-flow  основана на слиянии. Для слияния ветвей фич не используется rebase.</li>
+        <li>Git-flow  основана на слиянии. Для слияния веток фич не используется rebase.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -134,7 +143,7 @@
             git flow init
         </blockquote>
         <p>
-            Вам придётся ответить на несколько вопросов о способах именования ваших ветвей.<br/>
+            Вам придётся ответить на несколько вопросов о способах именования ваших веток.<br/>
             Рекомендуется оставить значения по умолчанию.
         </p>
 
@@ -159,12 +168,12 @@
 
     <div class="col-1">
         <h3>Начало новой фичи</h3>
-        <p>Разработка новых фич начинается из ветви "develop".</p>
+        <p>Разработка новых фич начинается из ветки "develop".</p>
         <p>Для начала разработки фичи выполните:</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>This action creates a new feature branch based on 'develop' and switches to it</p>
+        <p>Это действие создаёт новую ветку фичи, основанную на ветке "develop", и переключается на неё.</p>
 
         <!--
         - Bump the version number now!
@@ -184,16 +193,16 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish up a feature</h3>
+        <h3>Завершение фичи</h3>
 
         <p>
-            Finish the development of a feature.
-            This action performs the following
+            Окончание разработки фичи.
+            Это действие выполняется так:
         </p>
         <ul>
-            <li>Merged MYFEATURE into 'develop'</li>
-            <li>Removes the feature branch</li>
-            <li>Switches back to 'develop' branch</li>
+            <li>Слияние ветки MYFEATURE в "develop"</li>
+            <li>Удаление ветки фичи</li>
+            <li>Переключение обратно на ветку "develop"</li>
         </ul>
 
         <blockquote>
@@ -207,11 +216,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Publish a feature</h3>
+        <h3>Публикация фичи</h3>
 
         <p>
-            Are you developing a feature in collaboration? <br/>
-            Publish a feature to the remote server so it can be used by other users.
+            Вы разрабатываете фичу совместно с коллегами? <br/>
+            Опубликуйте фичу на удалённом сервере, чтобы её могли использовать другие пользователи.
         </p>
 
         <blockquote>
@@ -225,17 +234,17 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Getting a published feature</h3>
+        <h3>Получение опубликованной фичи</h3>
 
         <p>
-            Get a feature published by another user.
+            Получение фичи, опубликованной другим пользователем.
         </p>
 
         <blockquote>
             git flow feature pull origin MYFEATURE
         </blockquote>
 
-        <p>You can track a feature on origin by using <code> git flow feature track MYFEATURE</code> </p>
+        <p>Вы можете отслеживать фичу в репозитории origin с помощью команды <code> git flow feature track MYFEATURE</code></p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -244,31 +253,31 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Make a release</a></h2>
+    <h2><a name="release" href="#release">Создание релиза</a></h2>
 
     <ul>
-        <li>Support preparation of a new production release</li>
-        <li>Allow for minor bug fixes and preparing meta-data for a release</li>
+        <li>Поддержка подготовки нового релиза продукта</li>
+        <li>Позволяет устранять мелкие баги и подготавливать различные метаданные для релиза</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Start a release</h3>
+        <h3>Начало релиза</h3>
 
-        <p>To start a release, use the git flow release command. It</p>
-        creates a release branch created from the 'develop' branch.
+        <p>Для начала работы над релизом используйте команду <code>git flow release</code>
+        Она создаёт ветку релиза, ответляя от ветки "develop".
         </p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>You can optionally supply a <code>[BASE]</code> commit sha-1 hash to start the release from. The commit must
-            be on the
-            'develop' branch.</p>
+        <p>При желании вы можете указать <code>[BASE]</code>-коммит в виде его хеша sha-1, чтобы начать релиз с него.
+         Этот коммит должен принадлежать ветке "develop".</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:</p>
+        <p>Желательно сразу публиковать ветку релиза после создания, чтобы позволить другим разработчиками выполнять коммиты в ветку релиза. 
+          Это делается так же, как и при публикации фичи, с помощью команды:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE</code> command)</p>
+        <p>Вы также можете отслеживать удалённый релиз с помощью команды <br/><code>git flow release track RELEASE</code></p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -277,19 +286,19 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish up a release</h3>
+        <h3>Завершение релиза</h3>
 
-        <p>Finishing a release is one of the big steps in git branching. It performs several actions:</p>
+        <p>Завершение релиза — один из самых больших шагов в git-ветвлени. При этом происходит несколько действий:</p>
         <ul>
-            <li>Merges the release branch back into 'master'</li>
-            <li>Tags the release with its name</li>
-            <li>Back-merges the release into 'develop'</li>
-            <li>Removes the release branch</li>
+            <li>Ветка релиза сливается в ветку "master"</li>
+            <li>Релиз помечается тегом равным его имени</li>
+            <li>Ветка релиза сливается обратно в ветку "develop"</li>
+            <li>Ветка релиза удаляется</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
-        <p>Don't forget to push your tags with<code>git push --tags</code></p>
+        <p>Не забудьте отправить изменения в тегах с помощью команды <code>git push --tags</code></p>
 
     </div>
     <div class="col-2">
@@ -299,22 +308,22 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">Исправления</a></h2>
 
     <ul>
-        <li>Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version
-        </li>
-        <li>May be branched off from the corresponding tag on the master branch that marks the production version.</li>
+        <li>Исправления нужны в том случае, когда нужно незамедлительно устранить нежелательное состояние продакшн-версии продукта</li>
+        <li>Может ответвляться от соответствующего тега на ветке "master", который отмечает выпуск продакшн-версии</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>git flow hotfix start</h3>
 
-        <p>Like the other git flow commands, a hotfix is started with</p>
+        <p>Как и в случае с другими командами git flow, работа над исправлением начинается так:</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.</p>
+        <p>Аргумент VERSION определяет имя нового, исправленного релиза.</p>
+         <p>При желании можно указать BASENAME-коммит, от которого произойдёт ответвление.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -323,9 +332,10 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish a hotfix</h3>
+        <h3>Завершение исправления</h3>
 
-        <p>By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version.</p>
+        <p>Когда исправление готово, оно сливается обратно в ветки "develop" и "master".
+        Кроме того, коммит в ветке "master" помечается тегом с версией исправления.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -345,20 +355,17 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">Commands</a></h2>
+    <h2><a name="commands" href="#commands">Комманды</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
 <div class="scrollblock">
-    <h2>Backlog</h2>
+    <h2>Последние замечания</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>Not all available commands are covered here, only the most important ones</li>
-        <li>You can still use git and all its commands normally as you know them, git flow is only a tooling
-            collection
-        </li>
-        <li>The 'support' feature is still beta, using it is not advised</li>
-        <li>If you'd like to supply translations I'd be happy to integrate them</li>
+        <li>Здесь описаны не все доступные команды, только наиболее важные</li>
+        <li>Вы можете продолжать использовать git и все его команды, как обычно, git flow — это просто набор дополнительных инструментов</li>
+        <li>Возможности "support"-веток пока в beta-версии, использовать их не рекомендуется</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -368,7 +375,7 @@
 
 <footer>
     <div class="scrollblock">
-        <h2><a name="comments" href="#comments">Comments</a></h2>
+        <h2><a name="comments" href="#comments">Комментарии</a></h2>
 
         <div id="disqus_thread"></div>
     </div>
