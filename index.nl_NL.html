@@ -33,7 +33,7 @@
     <h1 id="title">git-flow cheatsheet</h1>
 
     <p id="author">
-        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        gemaakt door <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -45,19 +45,18 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
-    <p id="translations">translations:
+    <p id="desc">efficient branchen met behulp van git-flow door <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">vertalingen:
         <a href="index.html" title="english">English</a> -
         <a href="index.es.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
         <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
-        <a href="#" class="active" title="日本語">日本語</a> -
+        <a href="index.ja_JP.html" title="日本語">日本語</a> -
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
         <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
         <a href="index.fr_FR.html" title="Français">Français</a> -
         <a href="index.it_IT.html" title="Italiano">Italiano</a> -
-        <a href="index.nl_NL.html" title="Nederlands">Nederlands</a> -
-        <a href="index.ru_RU.html" title="Russian">Русский (Russian)</a>
+        <a href="#" class="active" title="Nederlands">Nederlands</a>
     </p>
 </header>
 
@@ -65,35 +64,38 @@
 
 
 <div class="scrollblock">
-    <h2>About</h2>
+    <h2>Over</h2>
 
     <p>
-        git-flowはgitの拡張であり、Vincent Driessenの提唱するブランチモデルを実現するための高度なリポジトリ操作を提供します。
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">more</a></small>
+        git-flow is een set van git extensies voor high-level repository operaties voor Vincent
+        Driessen's branching model.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">meer</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>このチートシートは基本的な使い方とgit-flowの効果を表します。</p>
+    <p>Dit cheatsheet laat het basisgebruik en de effecten zien van git-flow operaties</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>Basic tips</h2>
+    <h2>Basistips</h2>
     <ul>
-        <li>Git flow は素晴らしいコマンドライン補助と出力を提供します。何が起こるか注意深く読み解いてください。</li>
-        <li>OSX Clientの <a href="http://www.sourcetreeapp.com/">Sourcetree</a> は素晴らしいGUIとgit-flowサポートを提供します。</li>
-        <li>- Git-flow はマージすることをベースとして考えるソリューションです。リベースは行いません。</li>
+        <li>Git flow biedt uitstekende commandline hulp en output. Lees het zorgvuldig om te zien wat er gebeurt...</li>
+        <li>Het OSX/Windows programma <a href="http://www.sourcetreeapp.com/">Sourcetree</a> is een uitstekende grafische git interface en biedt
+            git-flow ondersteuning
+        </li>
+        <li>Git-flow is een op merge gebaseerde oplossing. Het rebaset feature branches niet.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">Setup</a></h2>
+    <h2><a name="setup" href="#setup">Installatie</a></h2>
     <ul>
-        <li>前もってgitをインストールしておく必要があります。</li>
-        <li>Git flow はOSX、Linux、Windowsで動作します。</li>
+        <li>Je hebt een werkende git installatie nodig.</li>
+        <li>Git flow werkt op OSX, Linux en Windows</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -110,11 +112,11 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>git-flowのインストールには、wgetとutil-linuxが必要です。</p>
+        <p>Je hebt wget en util-linux nodig om git-flow te installeren.</p>
     </div>
     <div class="col-2">
         <p>
-            詳細なgit flowのインストール方法は以下のサイトを参考にしてください。 <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
+            Gedetailleerde installatie instructies voor git flow kun je vinden op de<a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
             wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
@@ -122,19 +124,19 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
-    <p>Git flowを開始するには 既存のプロジェクトをカスタマイズします。</p>
+    <h2><a name="getting_started" href="#getting_started">Aan de slag</a></h2>
+    <p>Git flow moet geinitializeerd zijn om je project setup aan te passen.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>初期化</h3>
+        <h3>Initializatie</h3>
 
-        <p>通常のgitリポジトリ配下に移動した後、下記のコマンドでgit-flow化します。</p>
+        <p>Je kan git-flow initializeren door het volgende commando in een bestaande git repository uit te voeren:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            コマンドのあと対話形式で、いくつかの質問に答えます。
-            大体はデフォルトの値が推奨されます。
+            Je dient een paar vragen te beantwoorden over de naamgevingsconventies voor je branches.<br/>
+            Het is aanbevolen om de standaard waarden te gebruiken.
         </p>
 
     </div>
@@ -151,18 +153,19 @@
     <h2><a name="features" href="#features">Features</a></h2>
 
     <ul class="narrow">
-        <li>通常の開発を行います。</li>
-        <li>基本的には開発者のリポジトリのみに行います。</li>
+        <li>Ontwikkel nieuwe features voor aankomende releases</li>
+        <li>Bestaat typisch alleen in de repository van de ontwikkelaar</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>開発開始</h3>
-        <p>開発用ブランチは 'develop' ブランチから開始します。開始方法は、</p>
+        <h3>Een nieuwe feature starten</h3>
+        <p>Nieuwe features hebben de 'develop' branch als uitgangspunt.</p>
+        <p>Start met ontwikkelen van een nieuwe feature met</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>新たな開発用ブランチを'develop'ブランチをベースとして作成し、開発用ブランチにスイッチします。</p>
+        <p>Deze actie maakt een nieuwe feature branch gebaseerd op 'develop' en schakelt over naar deze</p>
 
         <!--
         - Bump the version number now!
@@ -182,15 +185,16 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>開発終了</h3>
+        <h3>Het afronden van een feature</h3>
 
         <p>
-            開発が終了したらコマンドで以下の操作が行われます。
+            Rond de ontwikkeling van een feature af.
+            Deze actie voert de volgende stappen uit
         </p>
         <ul>
-            <li>MYFEATUREブランチを'develop'にマージします。</li>
-            <li>開発用ブランチを削除します。</li>
-            <li>そして、'develop'ブランチにスイッチをします。</li>
+            <li>Merge MYFEATURE in 'develop'</li>
+            <li>Verwijdert de feature branch</li>
+            <li>Schakelt terug naar de 'develop' branch</li>
         </ul>
 
         <blockquote>
@@ -204,11 +208,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>開発分をリモートへ</h3>
+        <h3>Een feature publiceren</h3>
 
         <p>
-            複数人と同じ開発ブランチで作業するときは、
-            自分の変更分をリモートサーバにプッシュします。
+            Ontwikkel je de feature samen met anderen? <br/>
+            Publiceer de feature branch dan naar de remote server zodat anderen deze branch ook kunnen gebruiken.
         </p>
 
         <blockquote>
@@ -222,15 +226,17 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>修正分を取り込む</h3>
+        <h3>Een gepubliceerde feature ophalen</h3>
 
         <p>
-            他の人の修正分を自分のローカルにプルします。
+            Haal een door een andere ontwikkelaar gepubliceerde feature op.
         </p>
 
         <blockquote>
-            git flow feature pull MYFEATURE
+            git flow feature pull origin MYFEATURE
         </blockquote>
+
+        <p>Je kan de wijzigingen op de feature bijhouden op de server door <code> git flow feature track MYFEATURE</code> uit te voeren</p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -239,29 +245,30 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Make a release</a></h2>
+    <h2><a name="release" href="#release">Een release maken</a></h2>
 
     <ul>
-        <li>リリースのための準備を行います。</li>
-        <li>軽微なバグフィックスを行ったり、リリースのため作業を行います。</li>
+        <li>Ondersteunt de voorbereiding op een nieuwe productie release</li>
+        <li>Staat kleine bugfixes toe en bereidt meta-data van een release voor</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>リリース準備開始</h3>
+        <h3>Een release starten</h3>
 
-        <p>リリース作業を開始するには、git flowのreleaseコマンドを使います</p>
-        'develop'ブランチから'release'ブランチを作成します
+        <p>Om een release te starten, kun je het git flow release commando gebruiken. Dit</p>
+        maakt een release branch aan gebaseerd op de 'develop' branch.
         </p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p><code>[BASE]</code>はオプションで 'develop'ブランチの特定のCommitのハッシュ値を指定します。指定がない場合はHEADが使われます。</p>
+        <p>Je kan optioneel een <code>[BASE]</code> commit sha-1 hash toevoegen om de release hiervandaan te beginnen. Deze commit moet op de
+            'develop' branch aanwezig zijn.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>'release'ブランチ作成後に修正をプッシュするには、'feature'の時と似たコマンドを使用します:</p>
+        <p>Het is verstandig om de release branch te publiceren zodat andere ontwikkelaars hieraan kunnen meewerken. Dit lijkt op het publiceren van een feature branch:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>('release'リポジトリの修正のトラッキングをすることもできます<br/><code>git flow release track RELEASE</code> )</p>
+        <p>(Je kan wijzigingen op de release branch bijhouden met het <br/><code>git flow release track RELEASE</code> commando)</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -270,18 +277,20 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>リリース準備完了</h3>
+        <h3>Een release afronden</h3>
 
-        <p>リリース準備の終了作業は、gitのリポジトリが大きく変化します:</p>
+        <p>Een release afronden is een grote stap in git branchen. Het voert verschillende acties uit:</p>
         <ul>
-            <li>'release'ブランチを'master'にマージします。</li>
-            <li>'master'ブランチにリリース用のタグをつけます。</li>
-            <li>'develop'ブランチに'release'ブランチの内容がマージされます。</li>
-            <li>'release'ブランチが削除されます。</li>
+            <li>De release branch wordt terug in 'master' gemerged</li>
+            <li>De release wordt getagged met zijn naam</li>
+            <li>De release wordt terug in 'develop' gemerged</li>
+            <li>Verwijdert de release branch</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
+        <p>Vergeet niet je tags te pushen met <code>git push --tags</code></p>
+
     </div>
     <div class="col-2">
         <div class="release-end"></div>
@@ -293,19 +302,19 @@
     <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
 
     <ul>
-        <li>すぐに適用しなければいけないような、緊急の場合に使用します。</li>
-        <li>'master'ブランチのタグから、緊急対応用のブランチを作成します。</li>
+        <li>Hotfixes ontstaan wanneer er onmiddellijk gehandeld moet worden na een bug in de live versie
+        </li>
+        <li>Kan de corresponderende tag op de 'master' branch als basis hebben.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>緊急対応の開始</h3>
+        <h3>git flow hotfix start</h3>
 
-        <p>他のgit flowコマンドと似た形で、hotfixを開始します</p>
+        <p>Zoals andere git flow commando's, een hotfix wordt gestart door</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>バージョンの引数は、ホットフィックスリリース名を指定します。 オプションとして開始するベースを指定出来ます。</p>
-        <p></p>
+        <p>Het VERSION argument slaat op de nieuwe hotfix release naam. Optioneel kun je de BASENAME aangeven waarvandaan begonnen moet worden.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -314,9 +323,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>緊急対応の終了</h3>
+        <h3>Een hotfix afronden</h3>
 
-        <p>緊急対応の終了作業は、'develop'と'master'のブランチをマージします。加えて、'master'ブランチは緊急対応のタグが付けられます。</p>
+        <p>Het afronden van een hotfix zorgt ervoor dat deze zowel in develop als in master gemerged wordt. Aansluitend wordt de merge in de master getagged met de hotfix versie.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -336,7 +345,7 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">Commands</a></h2>
+    <h2><a name="commands" href="#commands">Commando's</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
@@ -344,10 +353,10 @@
     <h2>Backlog</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>コマンドがすべてをカバーしているわけではなく、重要なものだけカバーしています。</li>
-        <li>もちろん、gitのコマンドは通常通りすべて使用することができます。git flowは単にgitのコマンドの集合です。 </li>
-        <li>'support'ブランチの機能はまだベータ版です。それについては言及できません。</li>
-        <li>もし翻訳して頂けるなら、統合してもらえると幸いです。</li>
+        <li>Niet alle beschikbare commando's zijn hier behandeld, alleen de belangrijkste</li>
+        <li>Je kan git en al zijn commando's gewoon blijven gebruiken daar git flow alleen een handig gereedschap is</li>
+        <li>De 'support' feature is nog steeds in beta, het gebruik hiervan wordt niet geadviseerd</li>
+        <li>Als je vertalingen wilt aanleveren, zal ik deze graag integreren</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -357,7 +366,7 @@
 
 <footer>
     <div class="scrollblock">
-        <h2><a name="comments" href="#comments">Comments</a></h2>
+        <h2><a name="comments" href="#comments">Reacties</a></h2>
 
         <div id="disqus_thread"></div>
     </div>
