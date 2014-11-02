@@ -30,10 +30,10 @@
 <div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
 <header>
 
-    <h1 id="title">git-flow cheatsheet</h1>
+    <h1 id="title">git-flow Spickzettel</h1>
 
     <p id="author">
-        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        erstellt von <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -45,20 +45,20 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
-    <p id="translations">translations:
-        <a href="index.html" title="english">English</a> -
-        <a href="index.es_ES.html" title="spanish">Castellano</a> -
+    <p id="desc">Effizientes Branching mittels git-flow von <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">Übersetzungen:
+        <a href="index.html" title="English">English</a> -
+        <a href="index.es_ES.html" title="Spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
         <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
         <a href="index.ja_JP.html" title="日本語">日本語</a> -
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
-        <a href="#" class="active" title="한국어">한국어(Korean)</a> -
+        <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
         <a href="index.fr_FR.html" title="Français">Français</a> -
         <a href="index.it_IT.html" title="Italiano">Italiano</a> -
         <a href="index.nl_NL.html" title="Nederlands">Nederlands</a> -
         <a href="index.ru_RU.html" title="Russian">Русский (Russian)</a> -
-        <a href="index.de_DE.html" title="German">Deutsch (German)</a>
+        <a href="#" class="active" title="German">Deutsch (German)</a>
     </p>
 </header>
 
@@ -66,35 +66,36 @@
 
 
 <div class="scrollblock">
-    <h2>About</h2>
+    <h2>Über</h2>
 
     <p>
-        git-flow는 Vincent Driessen의 브랜칭 모델을 위한 고수준 저장소 작업을 제공하는 git의 확장입니다.
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">more</a></small>
+        git-flow ist ein Set aus Git-Erweiterungen, welches komplexe Repository-Arbeiten 
+        nach Vincent Driessen's Branching-Modell ermöglicht.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">mehr</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>이 치트 시트는 기본적인 사용법과 git-flow 작업의 효과를 보여줍니다.</p>
+    <p>Dieser Spickzettel veranschaulicht die grundlegende Nutzung und den Ablauf von git-flow Operationen.</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>Basic tips</h2>
+    <h2>Grundlegende Tipps</h2>
     <ul>
-        <li>Git flow는 훌륭한 명령행 도움말과 출력을 제공합니다. 무슨 일이 일어나는지를 알려면 출력을 주의깊게 읽어주세요.</li>
-        <li>OSX/Window Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a>는 훌륭한 git gui를 제공하고 git-flow에 대한 지원을 제공합니다.</li>
-        <li>Git-flow는 병합(merge) 기반의 솔루션입니다. feature 브랜치를 리베이스(rebase)하지 않습니다.</li>
+        <li>git-flow bietet eine exzellente Hilfe und ausführliche Ausgabe auf der Kommandozeile. Lies dir die Ausgaben aufmerksam durch und versuche zu verstehen, was passiert.</li>
+        <li>Der OSX/Windows Client <a href="http://www.sourcetreeapp.com/">SourceTree</a> bietet ein exzellentes grafisches Interface und einfache Git-Flow Unterstützung.</li>
+        <li>git-flow ist eine rein Merge-basierte Lösung (Zusammenführung). Es findet kein Rebasing der Feature-Branches (Entwicklungszweige) statt.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">Setup</a></h2>
+    <h2><a name="setup" href="#setup">Einrichtung</a></h2>
     <ul>
-        <li>사전에 제대로 동작하는 git이 설치되어 있어야합니다.</li>
-        <li>Git flow는 OSX, Linux, Windows에서 동작합니다.</li>
+        <li>Du benötigst eine funktionierende Git Installation als Voraussetzung.</li>
+        <li>git-flow läuft unter OSX, Linux und Windows.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -116,30 +117,31 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>git-flow의 설치를 위해서는 wget과 util-linux가 필요합니다.</p>
+        <p>Du benötigst wget und util-linux um git-flow zu installieren.</p>
     </div>
     <div class="col-2">
         <p>
-            상세한 git flow의 설치 방법은 <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow wiki</a>를 참고하세요.
+            Für eine detaillierte git-flow Installationsanleitung, besuche bitte das <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
+            wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
-    <p>Git flow는 프로젝트 설정을 변경하기위해 초기화를 필요로합니다.</p>
+    <h2><a name="getting_started" href="#getting_started">Erste Schritte</a></h2>
+    <p>git-flow muss initalisiert werden, um das Projektsetup anzupassen.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>초기화</h3>
+        <h3>Initialisierung</h3>
 
-        <p>기존 git 저장소 내에서 초기화하는 것으로 git-flow의 사용을 시작합니다</p>
+        <p>Fange an mit git-flow zu arbeiten, indem Du es innerhalb eines bestehenden Git-Repository initialisierst:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            몇몇 질문에 대답해서 브랜치의 명명규칙을 정합니다.
-            기본 값을 사용하기를 권장합니다.
+            Dabei musst Du einige Fragen bezueglich der Namenskoventionen Deiner Branches (Entwicklungszweige) beantworten.<br/>
+            Es wird empfohlen, die Standardwerte zu verwenden.
         </p>
 
     </div>
@@ -156,19 +158,19 @@
     <h2><a name="features" href="#features">Features</a></h2>
 
     <ul class="narrow">
-        <li>다가오는 배포(release)를 위한 새 기능(feature)을 개발합니다.</li>
-        <li>일반적으로 개발자의 저장소에만 존재합니다.</li>
+        <li>Entwicklung neuer Features für bevorstehende Releases.</li>
+        <li>In der Regel nur in Entwickler-Repositories zu finden.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>새 기능(feature) 시작하기</h3>
-        <p>새 기능의 개발은 'develop' 브랜치에서 시작합니다.</p>
-        <p>다음과 같이 새 기능의 개발을 시작합니다.</p>
+        <h3>Entwicklung neuer Features</h3>
+        <p>Neue Features werden vom 'develop'-Branch abgeleitet.</p>
+        <p>Starte die Entwicklung eines neuen Features mittels</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>이것은 'develop'에 기반한 새 기능(feature) 브랜치를 생성하고 그 브랜치로 전환합니다.</p>
+        <p>Dieser Befehl erstellt einen neuen Feature-Branch basierend auf 'develop' und wechselt in diesen.</p>
 
         <!--
         - Bump the version number now!
@@ -188,16 +190,16 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>기능 완료</h3>
+        <h3>Fertigstellung eines Features</h3>
 
         <p>
-            기능 개발을 완료합니다.
-	    이것은 다음 작업들을 수행합니다.
+            Beende die Entwicklung eines Features.
+            Dies führt zu folgenden Aktionen:
         </p>
         <ul>
-            <li>MYFEATURE 브랜치를 'develop'에 병합(merge)합니다.</li>
-            <li>기능 브랜치를 삭제합니다.</li>
-            <li>'develop' 브랜치로 전환합니다.</li>
+            <li>Zusammenführen von MYFEATURE in den 'develop'-Branch (Merge-Prozess)</li>
+            <li>Entfernt den Feature-Branch</li>
+            <li>Wechselt zurück in den 'develop'-Branch</li>
         </ul>
 
         <blockquote>
@@ -211,11 +213,12 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>기능을 게시(publish)</h3>
+        <h3>Veröffentlichen eines Features</h3>
 
         <p>
-            기능을 공동으로 개발하고 있나요? <br/>
-	    기능을 원격 서버에 게시하여 다른 사용자들도 사용할 수있게 합니다.
+            Entwickelst Du ein Feature in Zusammenarbeit? <br/>
+            Veröffentliche Dein Feature auf einem entfernten Server,
+            so dass es auch von anderen verfolgt werden kann.
         </p>
 
         <blockquote>
@@ -229,15 +232,23 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>게시된 기능 가져오기</h3>
+        <h3>Holen eines veröffentlichten Features</h3>
 
         <p>
-            다른 사용자가 게시한 기능을 가져오고 원격 변경을 추적합니다.
+            Hole ein Feature, welches von einem anderen Nutzer veröffentlicht wurde.
         </p>
 
         <blockquote>
-            git flow feature pull MYFEATURE
+            git flow feature pull origin MYFEATURE
         </blockquote>
+
+        <p>
+            Du kannst ein Feature unter Verwendung von
+        </p>
+        <blockquote>git flow feature track MYFEATURE</blockquote>
+        <p>
+            auf 'origin' verfolgen.
+        </p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -246,29 +257,41 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Make a release</a></h2>
+    <h2><a name="release" href="#release">Erstelle ein Release</a></h2>
 
     <ul>
-        <li>새로운 제품 출시 준비를 지원합니다.</li>
-        <li>출시를 위한 사소한 버그 수정이나 메타 데이터 준비를 허용합니다.</li>
+        <li>Unterstützt die Fertigstellung einer Produktionsversion.</li>
+        <li>Erlaubt geringfügige Bugfixes und die Erstellung der Metadaten für ein Release</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>릴리스 시작</h3>
+        <h3>Beginne ein Release</h3>
 
-        <p>릴리스를 시작하려면 git flow의 release 명령을 사용합니다.</p>
-        'develop' 브랜치로부터 'release' 브랜치를 생성합니다.
+        <p>
+            Um ein neues Releases zu beginnen, benutze den git flow release Befehl.
+            Mit diesem wird ein Release-Branch vom aktuellen 'develop'-Branch erstellt.
         </p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>릴리스를 시작할 <code>[BASE]</code> commit sha-1 해시를 선택적으로 줄 수도 있습니다. 그 commit은 반드시 'develop' 브랜치에 있어야합니다.</p>
+        <p>
+            Du kannst optional einen <code>[BASE]</code> Commit sha-1 Hash bereitstellen,
+            um ein Release von diesem Commit zu starten. Der Commit muss sich im 'develop'-Branch befinden.
+        </p>
+
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>릴리스 브랜치를 생성한 후에는 다른 개발자들의 릴리스 commit을 허용하기위해 게시(publish)하는 것이 현명합니다. 기능 게시와 비슷한 방법으로합니다:</p>
+
+        <p>
+            Es ist ratsam, den Release-Branch nach der Erstellung zu veröffentlichen und damit anderen Entwicklern
+            die Möglichkeit für Comitts zu geben. Mache es ähnlich wie bei einem Feature-Branch mit dem Befehl:
+        </p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(원격 'release' 브랜치의 변경 추적은 다음과 같이 합니다<br/><code>git flow release track RELEASE</code> )</p>
+        <p>
+            (Du kannst ein entferntes Remote-Release mittels <br/>
+            <code>git flow release track RELEASE</code> verfolgen.)
+        </p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -277,19 +300,22 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>릴리스 완료</h3>
+        <h3>Fertigstellung eines Releases</h3>
 
-        <p>릴리스 완료는 git 브랜치하기에서 가장 큰 단계입니다. 몇몇 작업을 수행합니다:</p>
+        <p>
+            Das Beenden eines Releases ist einer der größten Schritte im Git-Branching-Prozess.
+            Es bewirkt folgende Aktionen:
+        </p>
         <ul>
-            <li>'release' 브랜치를 'master' 브랜치에 병합(merge)</li>
-            <li>릴리스를 릴리스 이름으로 태그(tag)</li>
-            <li>릴리스를 'develop' 브랜치로 재병합(back-merge)</li>
-            <li>'release' 브랜치 삭제</li>
+            <li>Zusammenführen des Release-Branches zurück in den 'master'-Branch. (Merge-Prozess)</li>
+            <li>Markiert (Tagged) das Release mit seinem Namen</li>
+            <li>Zurückführen des Releases in den 'develop'-Branch (Merge-Prozess)</li>
+            <li>Entfernt den Release-Branch</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
-	<p><code>git push --tags</code>를 사용해 태그들을 push하는 것을 잊지마세요.</p>
+        <p>Vergesse nicht Deine Tags mittels <code>git push --tags</code> zu pushen.</p>
 
     </div>
     <div class="col-2">
@@ -302,19 +328,28 @@
     <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
 
     <ul>
-        <li>핫픽스는 현재 출시된 제품에 문제가 생겨서 즉각 대응해야하는 상황에서 필요합니다.</li>
-        <li>'master' 브랜치의 현재 출시된 버전으로 표기(mark)된 태그(tag)로부터 브랜치를 땁니다.</li>
+        <li>
+            Hotfixes werden notwendig, sobald ein unerwünschter Zustand innerhalb einer Live-Produktionsversion
+            eintritt und resultierend daraus, sofort gehandelt werden muss.
+        </li>
+        <li>
+            Ein Hotfix kann aus dem entsprechenden Tag des 'master'-Branches, welcher die Produktionsversion markiert,
+            direkt abgezweigt werden.
+        </li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>핫픽스 시작</h3>
+        <h3>git flow hotfix start</h3>
 
-        <p>여타 git flow 명령과 비슷한 방법으로 시작합니다.</p>
+        <p>Ähnlich wie auch die anderen git-flow Befehle, wird ein Hotfix mittels</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>여기서 버전 인수는 핫픽스 릴리스 이름을 지정합니다. 선택적으로 basename으로 시작점을 지정할 수도 있습니다.</p>
-        <p></p>
+        <p>
+            begonnen. Das VERSION-Argument markiert hierbei den neuen Hotfix-Release-Namen.
+            Optional kannst Du auch einen BASENAME spezifizieren.
+        </p>
+
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -323,9 +358,13 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>핫픽스 완료</h3>
+        <h3>Fertigstellung eines Hotfixes</h3>
 
-        <p>핫픽스를 종료하면 핫픽스는 'develop' 및 'master' 브랜치로 병합(merge)됩니다. 추가적으로 'master'의 병합분분은 핫픽스 버전으로 태그됩니다.</p>
+        <p>
+            Mit dem Beenden eines Hotfixes, wird dieser in den 'develop'- und 'master'-Branch
+            zusammengeführt (Merge). Nebenbei wird der 'master'-Branch mit einem Tag
+            welcher die Hotfix-Version beinhaltet markiert.
+        </p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -345,7 +384,7 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">Commands</a></h2>
+    <h2><a name="commands" href="#commands">Befehle</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
@@ -353,10 +392,10 @@
     <h2>Backlog</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>여기서는 모든 명령을 다루지 않았습니다. 중요한 것들만 설명했습니다.</li>
-        <li>git 명령도 사용할 수 있습니다. git flow는 단지 도구 모음일 뿐입니다.</li>
-        <li>'support' 기능은 아직 베타 버전입니다. 사용은 권장되지 않습니다.</li>
-        <li>번역해주신다면 저는 행복하게 통합할 것입니다.</li>
+        <li>Nicht alle verfügbaren Befehle sind hier abgedeckt, nur die wichtigsten.</li>
+        <li>Du kannst weiterhin alle Git-Befehle normal nutzen, wie Du es gewohnt bist. Git-flow ist nur eine Werkzeugsammlung.</li>
+        <li>Das 'support' Feature ist noch Beta und die Nutzung nicht empfohlen.</li>
+        <li>Wenn Du Übersetzungen beisteuern möchtest, würde ich mich freuen diese zu integrieren.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -366,7 +405,7 @@
 
 <footer>
     <div class="scrollblock">
-        <h2><a name="comments" href="#comments">Comments</a></h2>
+        <h2><a name="comments" href="#comments">Kommentare</a></h2>
 
         <div id="disqus_thread"></div>
     </div>
@@ -385,9 +424,9 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+<noscript>Bitte aktiviere Javascript um die Kommentare zu sehen. <a href="http://disqus.com/?ref_noscript">Powered by Disqus.</a>
 </noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<a href="http://disqus.com" class="dsq-brlink">Kommentare powered by <span class="logo-disqus">Disqus</span></a>
 
 
 </body>
