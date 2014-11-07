@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<html lang="zh-TW" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>git-flow 备忘清单</title>
+    <title>git-flow 備忘清單</title>
     <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
@@ -28,18 +28,19 @@
 <div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
 <header>
 
-    <h1 id="title" style="font-size: 80px;">git-flow 备忘清单</h1>
+    <h1 id="title" style="font-size: 80px;">git-flow 備忘清單</h1>
 
     <p id="author">
-        由 <a href="http://twitter.com/0r1g4m14dd1c7" target="_blank">Daniel Kummer (<a href="https://twitter.com/share" data-size="large">Tweet</a>)</a> 创建
+        由 <a href="http://twitter.com/0r1g4m14dd1c7" target="_blank">Daniel Kummer (<a href="https://twitter.com/share" data-size="large">Tweet</a>)</a> 建立
 
     </p>
-    <p id="desc">使用 git-flow 进行有效的分支实践。 by <a href="http://nvie.com/" target="_blank">Vincent Driessen</a></p>
-    <p id="translations">翻译:
+    <p id="desc">使用 git-flow 進行高效率的分支使用。 by <a href="http://nvie.com/" target="_blank">Vincent Driessen</a></p>
+    <p id="translations">翻譯:
         <a href="index.html" title="english">English</a> -
         <a href="index.es_ES.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
-        <a href="#" class="active" title="Simplified Chinese">简体中文(Simplified Chinese)</a>
+        <a href="#" class="active" title="Traditional Chinese">繁體中文(Traditional Chinese)</a> -
+        <a href="index.zh_CN" title="Simplified Chinese">简体中文(Simplified Chinese)</a><br />
         <a href="index.ja_JP.html" title="日本語">日本語</a> -
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
         <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
@@ -55,44 +56,44 @@
 
 
 <div class="scrollblock">
-    <h2>关于</h2>
+    <h2>什麼是 git-flow ?</h2>
 
     <p>
-        git-flow 是一个 git 扩展集，按 Vincent Driessen 的分支模型提供高层次的库操作。
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">查看详情</a></small>
+        git-flow 是一個 git 擴充功能，依照 Vincent Driessen 的分支模型提供高層次的倉庫控制方式。
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">查看更多</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>这个备忘清单展示了 git-flow 的基本操作和效果。</p>
+    <p>這個備忘清單將會為您展示 git-flow 的基本操作方式與結果。</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>基础建议</h2>
+    <h2>基礎建議</h2>
     <ul>
-        <li>Git flow 提供了极出色的命令帮忙以及输出提示。请仔细阅读并观察发生了什么事情...</li>
-        <li>OSX 程序 <a href="http://www.sourcetreeapp.com/">Sourcetree</a> 是一个极出色的 git 界面客户端，已经提供了 git-flow 的支持。 </li>
-        <li>- Git-flow 是一个基于归并的解决方案，它并没有提供重置(rebase)特性分支的能力。</li>
+        <li>Git flow 提供了極為出色的指令與輸出提示。請仔細閱讀並觀察發生了什麼事情...</li>
+        <li><a href="http://www.sourcetreeapp.com/">SourceTree</a> 是一個極為出色的 git 圖形介面應用程式，以內建了 git-flow 的功能。(支援 Mac OS X 與 Windows)</li>
+        <li>Git-flow 是一個以歸並(Merge)為基底的解決方案，它並無提供重置(rebase)特性分支的功能。</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">安装</a></h2>
+    <h2><a name="setup" href="#setup">安裝</a></h2>
     <ul>
-        <li>你需要有一个可以工作的 git 作为前提。 </li>
-        <li>Git flow 可以工作在 OSX, Linux 和 Windows之下</li>
+        <li>你需要有一個已經初始化的 git 倉庫。</li>
+        <li>Git flow 可以在 OSX, Linux 和 Windows 之下使用。</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>OSX</h3>
-        <span>Homebrew</span>
+        <h3>Mac OS X</h3>
+        <span>透過 Homebrew 安裝</span>
         <blockquote>
             $ brew install git-flow
         </blockquote>
-        <span>Macports</span>
+        <span>透過 Macports 安裝</span>
         <blockquote>
             $ port install git-flow
         </blockquote>
@@ -105,29 +106,29 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>安装 git-flow, 你需要 wget 和 util-linux。</p>
+        <p>在 Windows 下安装 git-flow, 你會需要 wget 和 util-linux。</p>
     </div>
     <div class="col-2">
         <p>
-            更多的 git flow 安装指引，请阅读  <a href="https://github.com/nvie/gitflow/wiki/Windows" target="_blank">git flow wiki</a>.
+            更詳細的 git flow 安裝指南，請參閱  <a href="https://github.com/nvie/gitflow/wiki/Windows" target="_blank">git flow wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">开始</a></h2>
-    <p>为了自定义你的项目，Git flow 需要初始化过程。</p>
+    <h2><a name="getting_started" href="#getting_started">開始 git flow</a></h2>
+    <p>在開始使用 git flow 之前，你必須完成一些簡單的設定。</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>初始化</h3>
 
-        <p>使用 git-flow，从初始化一个现有的 git 库内开始:</p>
+        <p>開始使用 git-flow 前，你必須切換目錄至你的 git 專案中，並且以下列指令進行初始化:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            你必须回答几个关于分支的命名约定的问题。<br/>建议使用默认值。
+            接著您必須回答幾個問題，是關於分支名稱的定義。<br/>這裡建議使用預設值。
         </p>
 
     </div>
