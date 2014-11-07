@@ -142,22 +142,22 @@
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">特性</a></h2>
+    <h2><a name="features" href="#features">新功能分支</a></h2>
 
     <ul class="narrow">
-        <li>为即将发布的版本开发新功能特性。</li>
-        <li>这通常只存在开发者的库中。</li>
+        <li>為接下即將發佈的版本開發新功能時使用。</li>
+        <li>通常新功能分支只會存於開發者機器上。</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>增加新特性</h3>
-        <p>新特性的开发是基于 'develop' 分支的。</p>
-        <p>通过下面的命令开始开发新特性：</p>
+        <h3>開始新功能設計</h3>
+        <p>新功能的開發是由 'develop' 分支的最後一個版本發展出來的。</p>
+        <p>使用下列的命令可以開始一個新功能的分支：</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>这个操作创建了一个基于'develop'的特性分支，并切换到这个分支之下。</p>
+        <p>這個命令將會於 'develop' 的最後一個版本建立出另一個 'feature/MYFEATURE' 分支，並自動切換至這個分支底下。現在你可以開始製作新功能。</p>
     </div>
     <div class="col-2">
         <div class="feature-start"></div>
@@ -166,19 +166,19 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>完成新特性</h3>
+        <h3>完成新功能</h3>
 
-        <p>完成开发新特性。这个动作执行下面的操作.
+        <p>當你在新功能分支完成新功能後，使用下列指令來結束新功能開發:
         </p>
-        <ul>
-            <li>合并 MYFEATURE 分支到 'develop'</li>
-            <li>删除这个新特性分支</li>
-            <li>切换回 'develop' 分支</li>
-        </ul>
-
         <blockquote>
             git flow feature finish MYFEATURE
         </blockquote>
+        <p>這個指令會替你完成下列動作:
+        <ul>
+            <li>合並(Merge) MYFEATURE 分支回到 'develop'</li>
+            <li>刪除這個新功能分支</li>
+            <li>切換回 'develop' 分支</li>
+        </ul>
     </div>
     <div class="col-2">
         <div class="feature-end"></div>
@@ -187,11 +187,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>发布新特性</h3>
+        <h3>發佈新功能分支</h3>
 
         <p>
-            你是否合作开发一项新特性？<br/>
-            发布新特性分支到远程服务器，所以，其它用户也可以使用这分支。
+            你是否需多人合作開發新功能？<br/>
+            透過下列命令來發佈新功能分支到遠端 git 伺服器，讓其他使用者也能共用這個新功能分支。
         </p>
 
         <blockquote>
@@ -205,10 +205,10 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>取得一个发布的新特性分支</h3>
+        <h3>取得新功能分支</h3>
 
         <p>
-            取得其它用户发布的新特性分支，并签出远程的变更。
+            當你需接手完成新功能時，透過下列命令取得遠端伺服器上的新功能分支，並得到所有保存在遠端伺服器上的變更紀錄：
         </p>
 
         <blockquote>
