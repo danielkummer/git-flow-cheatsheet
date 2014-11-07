@@ -233,26 +233,27 @@
     <h2><a name="release" href="#release">製作一個 release 版本</a></h2>
 
     <ul>
-        <li>支持一个新的用于生产环境的发布版本。 </li>
-        <li>允许修正小问题，并为发布版本准备元数据。 </li>
+        <li>用於支援準備發佈正式產品前的預備分支。</li>
+        <li>允許修正小問題，並為發布版本準備或修改中介資料。</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>开始准备release版本</h3>
+        <h3>開始 release</h3>
 
-        <p>开始准备release版本，使用 git flow release 命令. </p>
-        它从 'develop' 分支开始创建一个 release 分支。
-        </p>
+        <p>使用下列指令準備 release 分支:</p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p> 你可以选择提供一个 <code>[BASE]</code>参数，即提交记录的 sha-1 hash 值，来开启动 release 分支. 这个提交记录的 sha-1 hash 值必须是'develop' 分支下的。</p>
+        <p>
+        它會從 'develop' 分支的最後一個版本創建出 release 分支。
+        </p>
+        <p>你也可以選擇性的加入一個 sha-1 hash 於<code>[BASE]</code>參數，這會讓 release 分支於您指定的 develop 提交紀錄點產生分支。有一點需要注意的是，sha-1 has 只能是於'develop' 分支下。</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>创建 release 分支之后立即发布允许其它用户向这个 release 分支提交见容是个明智的做法。命令十分类似发布新特性：</p>
+        <p>最佳的狀況下，在創建出新的 release 分支後，應要立即的發布至遠端伺服器上，讓其他團隊中的開發者也能存取這個 release 分支。而這個發布指令很類似於發布新功能:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(你可以通过 <br/><code>git flow release track RELEASE</code> 命令签出 release 版本的远程变更)</p>
+        <p>(您也可以透過 <br/><code>git flow release track RELEASE</code> 指令來取得 release 版本的遠端更改)</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
