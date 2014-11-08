@@ -283,21 +283,22 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">热点修复</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">快速修復</a></h2>
 
     <ul>
-        <li>热点修复来自这样的需求：生产环境的版本处于一个不预期状态，需要立即修正。  </li>
-        <li> 有可能是需要修正 master 分支上某个 TAG 标记的生产版本。 </li>
+        <li>當你的產品發佈環境處於不可預期的狀況，且發生了一些需要立即修正的問題，您可以使用 hotfix 來幫助您。</li>
+        <li>hotfix 是從 master 中加入的版本標籤開始。</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>开始 git flow 热点修复</h3>
+        <h3>開始快速修復</h3>
 
-        <p>像其它 git flow 命令一样, 热点修复分支开始自：</p>
+        <p>快速修復(hotfix)就像其他的 git flow 指令一樣，您可以透過下列指令開始：</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p> VERSION 参数标记着修正版本。你可以从 [BASENAME]开始，<code>[BASENAME]</code>为finish release时填写的版本号</p>
+        <p>你必須填寫一個 VERSION 參數，這代表當你完成 hotfix 時發佈的版本號碼。</p>
+        <p>此外你可以自由挑選修復開始的分支名稱<code>[BASENAME]</code>，分支名稱如果不填寫的狀況下，預設是 'master'。</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -306,9 +307,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>完成热点修复</h3>
+        <h3>完成快速修復</h3>
 
-        <p>当完成热点分支，代码归并回 develop 和 master 分支。相应地，master 分支打上修正版本的 TAG。</p>
+        <p>當你在快速修復分支完成修復後，透過下列的指令讓修復分支合並回 develop 和 master 分支。並且在 master 分支加上修訂版本號的標籤(tag):</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
