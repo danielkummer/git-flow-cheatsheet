@@ -238,9 +238,9 @@
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>開始 release</h3>
+        <h3>開始推出新版本</h3>
 
-        <p>使用下列指令準備 release 分支:</p>
+        <p>使用下列指令準備推出(release)新版本分支:</p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
@@ -262,18 +262,19 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>完成 release 版本</h3>
+        <h3>完成推出新版本</h3>
 
-        <p>完成 release 版本是一个大 git 分支操作。它执行下面几个动作： </p>
-        <ul>
-            <li>归并 release 分支到 'master' 分支</li>
-            <li>用 release 分支名打 Tag</li>
-            <li>归并 release 分支到 'develop'</li>
-            <li>移除 release 分支</li>
-        </ul>
+        <p>完成 release 版本是一個很大的 git 分支操作。但你只許要執行下列指令:</p>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
+        <p>git flow 會幫你執行下面幾個步驟:</p>
+        <ul>
+            <li>合並 release 分支到 'master'</li>
+            <li>在 master 加上版本號標籤<small>(Tag)</small></li>
+            <li>合並 release 分支到 'develop'</li>
+            <li>移除 release 分支</li>
+        </ul>
     </div>
     <div class="col-2">
         <div class="release-end"></div>
