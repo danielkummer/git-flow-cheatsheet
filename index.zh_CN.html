@@ -239,7 +239,7 @@
         </blockquote>
         <p> 你可以选择提供一个 <code>[BASE]</code>参数，即提交记录的 sha-1 hash 值，来开启动 release 分支. 这个提交记录的 sha-1 hash 值必须是'develop' 分支下的。</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>创建 release 分支之后立即发布允许其它用户向这个 release 分支提交见容是个明智的做法。命令十分类似发布新特性：</p>
+        <p>创建 release 分支之后立即发布允许其它用户向这个 release 分支提交内容是个明智的做法。命令十分类似发布新特性：</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
@@ -272,17 +272,17 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">热点修复</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">紧急修复</a></h2>
 
     <ul>
-        <li>热点修复来自这样的需求：生产环境的版本处于一个不预期状态，需要立即修正。  </li>
+        <li>紧急修复来自这样的需求：生产环境的版本处于一个不预期状态，需要立即修正。  </li>
         <li> 有可能是需要修正 master 分支上某个 TAG 标记的生产版本。 </li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>开始 git flow 热点修复</h3>
+        <h3>开始 git flow 紧急修复</h3>
 
-        <p>像其它 git flow 命令一样, 热点修复分支开始自：</p>
+        <p>像其它 git flow 命令一样, 紧急修复分支开始自：</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
@@ -295,9 +295,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>完成热点修复</h3>
+        <h3>完成紧急修复</h3>
 
-        <p>当完成热点分支，代码归并回 develop 和 master 分支。相应地，master 分支打上修正版本的 TAG。</p>
+        <p>当完成紧急修复分支，代码归并回 develop 和 master 分支。相应地，master 分支打上修正版本的 TAG。</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
