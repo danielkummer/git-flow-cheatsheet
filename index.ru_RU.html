@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Шпаргалка по git-flow</title>
-    
+
     <!-- Lobster is same as Sansita but with cyrillic and another subsets. I recomend to use Lobster instead Sansita everywere-->
     <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    
+
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
-    
+
     <style>
     .title, h1, h2, h2 a, h3 {
       font-family: 'Lobster';
@@ -66,7 +66,8 @@
         <a href="index.fr_FR.html" title="Français">Français</a> -
         <a href="index.it_IT.html" title="Italiano">Italiano</a> -
         <a href="#" class="active" title="Russian">Русский (Russian)</a> -
-        <a href="index.de_DE.html" title="German">Deutsch (German)</a>
+        <a href="index.de_DE.html" title="German">Deutsch (German)</a> -
+        <a href="index.ca_CA.html" title="Català">Català (Catalan)</a>
     </p>
 </header>
 
@@ -143,7 +144,7 @@
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>Инициализация</h3>
-        
+
         <p>Для начала использования git-flow проинициализируйте его внутри существующего git-репозитория:</p>
         <blockquote>
             git flow init
@@ -278,7 +279,7 @@
         <p>При желании вы можете указать <code>[BASE]</code>-коммит в виде его хеша sha-1, чтобы начать релиз с него.
          Этот коммит должен принадлежать ветке "develop".</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>Желательно сразу публиковать ветку релиза после создания, чтобы позволить другим разработчиками выполнять коммиты в ветку релиза. 
+        <p>Желательно сразу публиковать ветку релиза после создания, чтобы позволить другим разработчиками выполнять коммиты в ветку релиза.
           Это делается так же, как и при публикации фичи, с помощью команды:</p>
         <blockquote>
             git flow release publish RELEASE
