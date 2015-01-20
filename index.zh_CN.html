@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>git-flow 备忘清单</title>
+    <title>git-flow cheatsheet</title>
     <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
 
     <script src="js/jquery-1.7.2.min.js"></script>
+
+
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-33766650-1']);
@@ -28,18 +30,28 @@
 <div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
 <header>
 
-    <h1 id="title" style="font-size: 80px;">git-flow 备忘清单</h1>
+    <h1 id="title">git-flow cheatsheet</h1>
 
     <p id="author">
-        由 <a href="http://twitter.com/0r1g4m14dd1c7" target="_blank">Daniel Kummer (<a href="https://twitter.com/share" data-size="large">Tweet</a>)</a> 创建
-
+        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">使用 git-flow 进行有效的分支实践。 by <a href="http://nvie.com/" target="_blank">Vincent Driessen</a></p>
-    <p id="translations">翻译:
-        <a href="index.html" title="english">English</a> -
+    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">translations:
+        <a href="#" class="active" title="english">English</a> -
         <a href="index.es_ES.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
-        <a href="#" class="active" title="Simplified Chinese">简体中文(Simplified Chinese)</a>
+        <a href="index.zh_TW.html" title="Traditional Chinese">繁體中文(Traditional Chinese)</a> -
+        <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
         <a href="index.ja_JP.html" title="日本語">日本語</a> -
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
         <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
@@ -56,35 +68,38 @@
 
 
 <div class="scrollblock">
-    <h2>关于</h2>
+    <h2>About</h2>
 
     <p>
-        git-flow 是一个 git 扩展集，按 Vincent Driessen 的分支模型提供高层次的库操作。
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">查看详情</a></small>
+        git-flow are a set of git extensions to provide high-level repository operations for Vincent
+        Driessen's branching model.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">more</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>这个备忘清单展示了 git-flow 的基本操作和效果。</p>
+    <p>This cheatsheet shows the basic usage and effect of git-flow operations</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>基础建议</h2>
+    <h2>Basic tips</h2>
     <ul>
-        <li>Git flow 提供了极出色的命令帮忙以及输出提示。请仔细阅读并观察发生了什么事情...</li>
-        <li>OSX 程序 <a href="http://www.sourcetreeapp.com/">Sourcetree</a> 是一个极出色的 git 界面客户端，已经提供了 git-flow 的支持。 </li>
-        <li>- Git-flow 是一个基于归并的解决方案，它并没有提供重置(rebase)特性分支的能力。</li>
+        <li>Git flow provides excellent command line help and output. Read it carefully to see what's happening...</li>
+        <li>The OSX/Windows Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a> is an excellent git gui and provides
+            git-flow support
+        </li>
+        <li>Git-flow is a merge based solution. It doesn't rebase feature branches.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">安装</a></h2>
+    <h2><a name="setup" href="#setup">Setup</a></h2>
     <ul>
-        <li>你需要有一个可以工作的 git 作为前提。 </li>
-        <li>Git flow 可以工作在 OSX, Linux 和 Windows之下</li>
+        <li>You need a working git installation as prerequisite.</li>
+        <li>Git flow works on OSX, Linux and Windows</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -106,29 +121,31 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>安装 git-flow, 你需要 wget 和 util-linux。</p>
+        <p>You need wget and util-linux to install git-flow.</p>
     </div>
     <div class="col-2">
         <p>
-            更多的 git flow 安装指引，请阅读  <a href="https://github.com/nvie/gitflow/wiki/Windows" target="_blank">git flow wiki</a>.
+            For detailed git flow intallation instructions please visit the <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
+            wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">开始</a></h2>
-    <p>为了自定义你的项目，Git flow 需要初始化过程。</p>
+    <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
+    <p>Git flow needs to be initialized in order to customize your project setup.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>初始化</h3>
+        <h3>Initialize</h3>
 
-        <p>使用 git-flow，从初始化一个现有的 git 库内开始:</p>
+        <p>Start using git-flow by initializing it inside an existing git repository:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            你必须回答几个关于分支的命名约定的问题。<br/>建议使用默认值。
+            You'll have to answer a few questions regarding the naming conventions for your branches.<br/>
+            It's recommended to use the default values.
         </p>
 
     </div>
@@ -142,22 +159,33 @@
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">特性</a></h2>
+    <h2><a name="features" href="#features">Features</a></h2>
 
     <ul class="narrow">
-        <li>为即将发布的版本开发新功能特性。</li>
-        <li>这通常只存在开发者的库中。</li>
+        <li>Develop new features for upcoming releases</li>
+        <li>Typically exist in developers repos only</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>增加新特性</h3>
-        <p>新特性的开发是基于 'develop' 分支的。</p>
-        <p>通过下面的命令开始开发新特性：</p>
+        <h3>Start a new feature</h3>
+        <p>Development of new features starting from the 'develop' branch.</p>
+        <p>Start developing a new feature with</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>这个操作创建了一个基于'develop'的特性分支，并切换到这个分支之下。</p>
+        <p>This action creates a new feature branch based on 'develop' and switches to it</p>
+
+        <!--
+        - Bump the version number now!
+        - Start committing last-minute fixes in preparing your release
+        - When done, run:
+
+             git flow release finish 'testrelease'
+
+
+
+        -->
     </div>
     <div class="col-2">
         <div class="feature-start"></div>
@@ -166,14 +194,16 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>完成新特性</h3>
+        <h3>Finish up a feature</h3>
 
-        <p>完成开发新特性。这个动作执行下面的操作.
+        <p>
+            Finish the development of a feature.
+            This action performs the following
         </p>
         <ul>
-            <li>合并 MYFEATURE 分支到 'develop'</li>
-            <li>删除这个新特性分支</li>
-            <li>切换回 'develop' 分支</li>
+            <li>Merged MYFEATURE into 'develop'</li>
+            <li>Removes the feature branch</li>
+            <li>Switches back to 'develop' branch</li>
         </ul>
 
         <blockquote>
@@ -187,11 +217,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>发布新特性</h3>
+        <h3>Publish a feature</h3>
 
         <p>
-            你是否合作开发一项新特性？<br/>
-            发布新特性分支到远程服务器，所以，其它用户也可以使用这分支。
+            Are you developing a feature in collaboration? <br/>
+            Publish a feature to the remote server so it can be used by other users.
         </p>
 
         <blockquote>
@@ -205,15 +235,17 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>取得一个发布的新特性分支</h3>
+        <h3>Getting a published feature</h3>
 
         <p>
-            取得其它用户发布的新特性分支，并签出远程的变更。
+            Get a feature published by another user.
         </p>
 
         <blockquote>
-            git flow feature pull MYFEATURE
+            git flow feature pull origin MYFEATURE
         </blockquote>
+
+        <p>You can track a feature on origin by using <code> git flow feature track MYFEATURE</code> </p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -222,29 +254,29 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">作一个release版本</a></h2>
+    <h2><a name="release" href="#release">Make a release</a></h2>
 
     <ul>
-        <li>支持一个新的用于生产环境的发布版本。 </li>
-        <li>允许修正小问题，并为发布版本准备元数据。 </li>
+        <li>Support preparation of a new production release</li>
+        <li>Allow for minor bug fixes and preparing meta-data for a release</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>开始准备release版本</h3>
+        <h3>Start a release</h3>
 
-        <p>开始准备release版本，使用 git flow release 命令. </p>
-        它从 'develop' 分支开始创建一个 release 分支。
-        </p>
+        <p>To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch.</p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p> 你可以选择提供一个 <code>[BASE]</code>参数，即提交记录的 sha-1 hash 值，来开启动 release 分支. 这个提交记录的 sha-1 hash 值必须是'develop' 分支下的。</p>
+        <p>You can optionally supply a <code>[BASE]</code> commit sha-1 hash to start the release from. The commit must
+            be on the
+            'develop' branch.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>创建 release 分支之后立即发布允许其它用户向这个 release 分支提交见容是个明智的做法。命令十分类似发布新特性：</p>
+        <p>It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(你可以通过 <br/><code>git flow release track RELEASE</code> 命令签出 release 版本的远程变更)</p>
+        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE</code> command)</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -253,18 +285,20 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>完成 release 版本</h3>
+        <h3>Finish up a release</h3>
 
-        <p>完成 release 版本是一个大 git 分支操作。它执行下面几个动作： </p>
+        <p>Finishing a release is one of the big steps in git branching. It performs several actions:</p>
         <ul>
-            <li>归并 release 分支到 'master' 分支</li>
-            <li>用 release 分支名打 Tag</li>
-            <li>归并 release 分支到 'develop'</li>
-            <li>移除 release 分支</li>
+            <li>Merges the release branch back into 'master'</li>
+            <li>Tags the release with its name</li>
+            <li>Back-merges the release into 'develop'</li>
+            <li>Removes the release branch</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
+        <p>Don't forget to push your tags with<code>git push --tags</code></p>
+
     </div>
     <div class="col-2">
         <div class="release-end"></div>
@@ -273,21 +307,22 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">热点修复</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
 
     <ul>
-        <li>热点修复来自这样的需求：生产环境的版本处于一个不预期状态，需要立即修正。  </li>
-        <li> 有可能是需要修正 master 分支上某个 TAG 标记的生产版本。 </li>
+        <li>Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version
+        </li>
+        <li>May be branched off from the corresponding tag on the master branch that marks the production version.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>开始 git flow 热点修复</h3>
+        <h3>git flow hotfix start</h3>
 
-        <p>像其它 git flow 命令一样, 热点修复分支开始自：</p>
+        <p>Like the other git flow commands, a hotfix is started with</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p> VERSION 参数标记着修正版本。你可以从 [BASENAME]开始，<code>[BASENAME]</code>为finish release时填写的版本号</p>
+        <p>The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -296,9 +331,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>完成热点修复</h3>
+        <h3>Finish a hotfix</h3>
 
-        <p>当完成热点分支，代码归并回 develop 和 master 分支。相应地，master 分支打上修正版本的 TAG。</p>
+        <p>By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -318,7 +353,7 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">命令</a></h2>
+    <h2><a name="commands" href="#commands">Commands</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
@@ -326,10 +361,12 @@
     <h2>Backlog</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>并非所有可用的命令都涵盖在这里，这里包含有最重要的部分命令。 </li>
-        <li>你依旧可以继续使用你所知道和了解的 git 命令， git flow 只是一个工具集合。</li>
-        <li>'support' 功能只是测试版本, 不建议使用</li>
-        <li>如果你乐意提供翻译，我很乐意整合它。</li>
+        <li>Not all available commands are covered here, only the most important ones</li>
+        <li>You can still use git and all its commands normally as you know them, git flow is only a tooling
+            collection
+        </li>
+        <li>The 'support' feature is still beta, using it is not advised</li>
+        <li>If you'd like to supply translations I'd be happy to integrate them</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -344,6 +381,7 @@
         <div id="disqus_thread"></div>
     </div>
 </footer>
+
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'gitflowcheatsheet'; // required: replace example with your forum shortname
@@ -360,6 +398,7 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
 </noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
 </body>
 </html>
