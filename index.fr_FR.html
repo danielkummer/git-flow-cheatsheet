@@ -33,7 +33,7 @@
     <h1 id="title">git-flow cheatsheet</h1>
 
     <p id="author">
-        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        créé par <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -45,9 +45,9 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
-    <p id="translations">translations:
-        <a href="#" class="active" title="english">English</a> -
+    <p id="desc">modèle de versionnement efficace utilisant git-flow par <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">traductions:
+        <a href="index.html" title="english">English</a> -
         <a href="index.es_ES.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
         <a href="index.zh_TW.html" title="Traditional Chinese">繁體中文(Traditional Chinese)</a> -
@@ -55,7 +55,7 @@
         <a href="index.ja_JP.html" title="日本語">日本語</a> -
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
         <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
-        <a href="index.fr_FR.html" title="Français">Français</a> -
+        <a href="#" class="active" title="Français">Français</a> -
         <a href="index.it_IT.html" title="Italiano">Italiano</a> -
         <a href="index.nl_NL.html" title="Nederlands">Nederlands</a> -
         <a href="index.ru_RU.html" title="Russian">Русский (Russian)</a> -
@@ -68,38 +68,36 @@
 
 
 <div class="scrollblock">
-    <h2>About</h2>
+    <h2>A propos</h2>
 
     <p>
-        git-flow are a set of git extensions to provide high-level repository operations for Vincent
-        Driessen's branching model.
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">more</a></small>
+        git-flow est un ensemble d'extensions git permettant des opérations de haut niveau sur un dépot pour appliquer le modèle de branches de Vincent Driessen.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">détails</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>This cheatsheet shows the basic usage and effect of git-flow operations</p>
+    <p>Cet aide-mémoire montre l'utilisation et les effets des opérations git-flow</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>Basic tips</h2>
+    <h2>Conseils de base</h2>
     <ul>
-        <li>Git flow provides excellent command line help and output. Read it carefully to see what's happening...</li>
-        <li>The OSX/Windows Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a> is an excellent git gui and provides
-            git-flow support
+        <li>Les commandes et sorties de Git-flow apportent une aide précieuse. Lisez les attentivement pour comprendre ce qui se passe...</li>
+        <li>Le logiciel pour OSX <a href="http://www.sourcetreeapp.com/">Sourcetree</a> est une excellente interface graphique pour git qui supporte git-flow.
         </li>
-        <li>Git-flow is a merge based solution. It doesn't rebase feature branches.</li>
+        <li>Git-flow est une solution basée sur les fusions (merge). Elle n'effectue pas de <em>rebase</em> sur les branches de fonctionnalitées</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">Setup</a></h2>
+    <h2><a name="setup" href="#setup">Installation</a></h2>
     <ul>
-        <li>You need a working git installation as prerequisite.</li>
-        <li>Git flow works on OSX, Linux and Windows</li>
+        <li>Une installation fonctionnelle de git est requise</li>
+        <li>Git flow fonctionne sur OSX, Linux et Windows</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -121,31 +119,31 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>You need wget and util-linux to install git-flow.</p>
+        <p>Vous aurez besoin de wget et de util-linux pour installer git-flow.</p>
     </div>
     <div class="col-2">
         <p>
-            For detailed git flow intallation instructions please visit the <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
-            wiki</a>.
+            Pour des instructions détaillées concernant l'installation de git-flow, consultez le
+            <a href="https://github.com/nvie/gitflow/wiki/Windows">wiki git-flow</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
-    <p>Git flow needs to be initialized in order to customize your project setup.</p>
+    <h2><a name="getting_started" href="#getting_started">Premiers pas</a></h2>
+    <p>Git flow doit être initialisé afin de personnaliser la configuration de votre projet.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Initialize</h3>
+        <h3>Initialisation</h3>
 
-        <p>Start using git-flow by initializing it inside an existing git repository:</p>
+        <p>Commencez à utiliser git-flow en l'initialisant dans un dépot git existant:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            You'll have to answer a few questions regarding the naming conventions for your branches.<br/>
-            It's recommended to use the default values.
+            Vous devrez répondre à quelques questions concernant les conventions de nommage pour vos branches.<br/>
+            Il est recommandé d'utiliser les valeurs par défaut.
         </p>
 
     </div>
@@ -153,28 +151,28 @@
         <div class="initialize"></div>
         <div class="lines-small"></div>
         <div class="lines-open"></div>
-        <div class="lines-big"></div>
+        <div class="lines-big" style="height:5200px"></div>
     </div>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">Features</a></h2>
+    <h2><a name="features" href="#features">Fonctionnalités/Features</a></h2>
 
     <ul class="narrow">
-        <li>Develop new features for upcoming releases</li>
-        <li>Typically exist in developers repos only</li>
+        <li>Developpe des nouvelles fonctionnalités pour la prochaine version</li>
+        <li>Existe en général uniquement dans les dépots des développeurs</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>Start a new feature</h3>
-        <p>Development of new features starting from the 'develop' branch.</p>
-        <p>Start developing a new feature with</p>
+        <h3>Commencer une feature</h3>
+        <p>Le développement d'une fonctionnalité commence à partir de la branche 'develop'</p>
+        <p>Commencer le développement d'une nouvelle fonctionnalité avec:</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>This action creates a new feature branch based on 'develop' and switches to it</p>
+        <p>Cette commande crée une nouvelle branche de fonctionnalité basée sur 'develop' et passe sur cette branche</p>
 
         <!--
         - Bump the version number now!
@@ -194,16 +192,15 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish up a feature</h3>
-
+        <h3>Terminer une fonctionnalité</h3>
         <p>
-            Finish the development of a feature.
-            This action performs the following
+            Termine le développement d'une fonctionnalité.
+            Cette action effectue les opérations suivantes:
         </p>
         <ul>
-            <li>Merged MYFEATURE into 'develop'</li>
-            <li>Removes the feature branch</li>
-            <li>Switches back to 'develop' branch</li>
+            <li>fusionne MYFEATURE dans 'develop'</li>
+            <li>Supprime la branche de fonctionnalité</li>
+            <li>Passe sur la branche 'develop'</li>
         </ul>
 
         <blockquote>
@@ -217,11 +214,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Publish a feature</h3>
+        <h3>Publier une fonctionnalité</h3>
 
         <p>
-            Are you developing a feature in collaboration? <br/>
-            Publish a feature to the remote server so it can be used by other users.
+            Vous développez une fonctionnalité en collaboration? <br/>
+            Publiez une fonctionnalité sur le serveur distant pour qu'elle puisse être utilisée par d'autres utilisateurs.
         </p>
 
         <blockquote>
@@ -235,17 +232,17 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Getting a published feature</h3>
+        <h3>Récupérer une fonctionnalité publiée</h3>
 
         <p>
-            Get a feature published by another user.
+            Récupérer une fonctionnalité publiée par un autre utilisateur
         </p>
 
         <blockquote>
             git flow feature pull origin MYFEATURE
         </blockquote>
 
-        <p>You can track a feature on origin by using <code> git flow feature track MYFEATURE</code> </p>
+        <p>Vous pouvez suivre une fonctionnalité sur le serveur distant en utilisant <code> git flow feature track MYFEATURE</code> </p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -254,29 +251,29 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Make a release</a></h2>
+    <h2><a name="release" href="#release">Livraison/Release</a></h2>
 
     <ul>
-        <li>Support preparation of a new production release</li>
-        <li>Allow for minor bug fixes and preparing meta-data for a release</li>
+        <li>Prépare la sortie d'une nouvelle version de production</li>
+        <li>Permet les corrections de bugs mineurs et la préparation des métadonnées de la release</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Start a release</h3>
+        <h3>Commencer une livraison</h3>
 
-        <p>To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch.</p>
+        <p>Pour commencer une livraison, utilisez la commande git-flow release</p>
+        créer une branche de livraison basée sur la branche de développement.
+        </p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>You can optionally supply a <code>[BASE]</code> commit sha-1 hash to start the release from. The commit must
-            be on the
-            'develop' branch.</p>
+        <p>Vous pouvez si besoin ajouter le paramètre <code>[BASE]</code>, le hash d'un commit à partir duquel commencera la livraison. Ce commit doit faire partie de la branche de développement.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:</p>
+        <p>Il est préférable de publier la branche de livraison après l'avoir créée pour permettre aux autres développeurs de commiter dessus. De la même manière que pour les fonctionnalités, utilisez cette commande:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE</code> command)</p>
+        <p>Vous pouvez suivre une livraison sur le serveur distant en utilisant <br/><code>git flow release track RELEASE</code></p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -285,19 +282,19 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish up a release</h3>
+        <h3>Terminer une livraison</h3>
 
-        <p>Finishing a release is one of the big steps in git branching. It performs several actions:</p>
+        <p>Terminer une livraison est une des étapes majeures de cette méthode. Plusieurs actions sont réalisées:</p>
         <ul>
-            <li>Merges the release branch back into 'master'</li>
-            <li>Tags the release with its name</li>
-            <li>Back-merges the release into 'develop'</li>
-            <li>Removes the release branch</li>
+            <li>Fusionne la branche de livraison dans la branche 'master'</li>
+            <li>Etiquette la livraison par son nom</li>
+            <li>Fusionne la livraison dans la branche 'develop'</li>
+            <li>Supprime la branche de livraison</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
-        <p>Don't forget to push your tags with<code>git push --tags</code></p>
+        <p>N'oubliez pas de pousser vos étiquettes avec <code>git push --tags</code></p>
 
     </div>
     <div class="col-2">
@@ -307,22 +304,22 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">Correctifs/Hotfixes</a></h2>
 
     <ul>
-        <li>Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version
+        <li>Les correctifs sont utiles quand il est nécessaire de corriger immédiatement l'état incorrect de la version en production
         </li>
-        <li>May be branched off from the corresponding tag on the master branch that marks the production version.</li>
+        <li>Ils peuvent se baser sur l'étiquette de la branche 'master' indiquant la version en production.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>git flow hotfix start</h3>
+        <h3>Commencer un hotfix</h3>
 
-        <p>Like the other git flow commands, a hotfix is started with</p>
+        <p>Comme pour les autres commandes git-flow, un hotfix est commencé par</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.</p>
+        <p>ici, le paramètre VERSION indique le nom de la future release corrigée. Vous pouvez si besoin spécifier à quelle release s'appliquera le hotfix.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -331,9 +328,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish a hotfix</h3>
+        <h3>Terminer un hotfix</h3>
 
-        <p>By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version.</p>
+        <p>En terminant un hotfix, il est fusionné dans les branches 'develop' et 'master'. De plus la fusion vers 'master' est etiquetée par la version du hotfix.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -353,20 +350,19 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">Commands</a></h2>
+    <h2><a name="commands" href="#commands">Commandes</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
 <div class="scrollblock">
-    <h2>Backlog</h2>
+    <h2>En suspens</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>Not all available commands are covered here, only the most important ones</li>
-        <li>You can still use git and all its commands normally as you know them, git flow is only a tooling
-            collection
+        <li>Toutes les commandes disponibles ne sont pas abordées ici, seulement les principales</li>
+        <li>Vous pouvez toujours utiliser normalement git et toutes ses commandes telles que vous les connaissez, git flow est seulement un ensemble d'outils supplémentaires
         </li>
-        <li>The 'support' feature is still beta, using it is not advised</li>
-        <li>If you'd like to supply translations I'd be happy to integrate them</li>
+        <li>la fonction 'support' est encore en version bêta, il n'est pas conseillé de l'utiliser</li>
+        <li>Si vous voulez ajouter des traductions de ce document, je les intégrerai avec plaisir</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -376,7 +372,7 @@
 
 <footer>
     <div class="scrollblock">
-        <h2><a name="comments" href="#comments">Comments</a></h2>
+        <h2><a name="comments" href="#comments">Commentaires</a></h2>
 
         <div id="disqus_thread"></div>
     </div>
