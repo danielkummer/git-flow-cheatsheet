@@ -27,13 +27,13 @@
     </script>
 </head>
 <body>
-<div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork su GitHub</a></div>
+<div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
 <header>
 
     <h1 id="title">git-flow cheatsheet</h1>
 
     <p id="author">
-        creato da <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -45,8 +45,8 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">branching efficiente usando git-flow realizzato da <a href="http://nvie.com/">Vincent Driessen</a></p>
-    <p id="translations">traduzioni:
+    <p id="desc">lucrul eficient cu branch-uri folosind git-flow al lui <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">traduceri:
         <a href="index.html" title="english">English</a> -
         <a href="index.es_ES.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
@@ -56,12 +56,12 @@
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
         <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
         <a href="index.fr_FR.html" title="Français">Français</a> -
-        <a href="#" title="Italiano" class="active">Italiano</a> -
+        <a href="index.it_IT.html" title="Italiano">Italiano</a> -
         <a href="index.nl_NL.html" title="Nederlands">Nederlands</a> -
         <a href="index.ru_RU.html" title="Russian">Русский (Russian)</a> -
         <a href="index.de_DE.html" title="German">Deutsch (German)</a> -
         <a href="index.ca_CA.html" title="Català">Català (Catalan)</a> -
-        <a href="index.ro_RO.html" title="Romanian">Română (Romanian)</a>
+        <a href="#" class="active" title="Romanian">Română (Romanian)</a>
     </p>
 </header>
 
@@ -69,37 +69,36 @@
 
 
 <div class="scrollblock">
-    <h2>Introduzione</h2>
+    <h2>Despre</h2>
 
     <p>
-        git-flow è un set di estensioni di git che offre dei comandi di alto livello sul repository per utilizzare il modello di branching di Vincent
-        Driessen.
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">maggiori informazioni</a></small>
+        git-flow sunt un set de extensii git care furnizează operații de nivel înalt pentru întreg repository-ul
+        folosind modelul de branch-uri al lui Vincent Driessen.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">mai mult</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>Questo cheatsheet mostra l'utilizzo di base a gli effetti dei comandi offerti da git-flow</p>
+    <p>Această copiuță arată scenariile de bază, precum și efectul folosirii operațiilor git-flow.</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>Consigli di base</h2>
+    <h2>Pentru început</h2>
     <ul>
-        <li>Git flow offre un eccelente guida e un ottimo output da linea di comando.  Leggeteli attentamente per vedere cosa sta succedendo...</li>
-        <li>Il Client per OSX/Windows <a href="http://www.sourcetreeapp.com/">Sourcetree</a> è un'eccellente GUI per git e offre supporto per git-flow
-        </li>
-        <li>Git-flow è una soluzione basata sul merge. Non esegue il rebase su i feature branch.</li>
+        <li>Git flow oferă ajutor și output excelente direct în linia de comandă. Citește-le cu atenție pentru a observa ce se întâmplă...</li>
+        <li>Clientul <a href="http://www.sourcetreeapp.com/">Sourcetree</a> pentru OSX/Windows este o interfață excelentă pentru git și are suport pentru git-flow</li>
+        <li>Git-flow este o soluție bazată pe merge-uri. Nu face rebase pe branch-urile de tip feature.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">Setup</a></h2>
+    <h2><a name="setup" href="#setup">Instalare</a></h2>
     <ul>
-        <li>È necessario un'installazione di git funzionante come prerequisito.</li>
-        <li>Git flow funziona su OSX, Linux e Windows</li>
+        <li>Ca și precondiții este nevoie de o instalare git funcțională.</li>
+        <li>Git flow funcționează pe OSX, Linux și Windows</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -121,30 +120,30 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>Sono necessari wget e util-linux per installare git-flow.</p>
+        <p>Vei avea nevoie de wget și de util-linux pentru a instala git-flow.</p>
     </div>
     <div class="col-2">
         <p>
-            Per le istruzioni dettagliate riguardo l'installazione di git-flow visitate il <a href="https://github.com/nvie/gitflow/wiki/Windows">wiki di git flow</a>.
+            Pentru instrucțiuni detaliate de instalare a git flow te rugăm să vizitezi <a href="https://github.com/nvie/gitflow/wiki/Windows">wiki-ul git flow</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">Per Iniziare</a></h2>
-    <p>Git flow ha la necessità di essere inizializzato per personalizzare il setup del progetto.</p>
+    <h2><a name="getting_started" href="#getting_started">La început</a></h2>
+    <p>Git flow trebuie să fie inițializat pentru a putea personaliza proiectul tău.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Inizializzazione</h3>
+        <h3>Inițializare</h3>
 
-        <p>Iniziate ad utilizzare git-flow inizializzandolo all'interno di un repository git esistente:</p>
+        <p>Începe folosirea git-flow prin a-l inițializa în interiorul unui repository git deja existent:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            Dovrete rispondere ad alcune domande riguardanti la naming conventions per i tuoi branch.<br/>
-            Si raccomanda l'uso dei valori di default.
+            Va fi necesar să răspunzi la căteva întrebări legate de convențiile de numire pentru branch-urile tale.<br/>
+            Se recomandă să folosești valorile implicite.
         </p>
 
     </div>
@@ -158,22 +157,22 @@
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">Features (Funzionalità)</a></h2>
+    <h2><a name="features" href="#features">Funcționalități/Features</a></h2>
 
     <ul class="narrow">
-        <li>Sviluppare nuove features per le releases in arrivo</li>
-        <li>Generalmente sono presenti solo nei repository di sviluppo</li>
+        <li>Dezvoltă noi funcționalități pentru viitoarele release-uri</li>
+        <li>Există de obicei doar în repository-urile programatorilor</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>Iniziare una nuova feature</h3>
-        <p>Lo sviluppo di nuove feature cominica dal branch 'develop'.</p>
-        <p>Iniziate lo sviluppo di una nuova feature con</p>
+        <h3>Începere funcționalitate nouă</h3>
+        <p>Dezvoltarea de funcționalități noi începe din branch-ul 'develop'.</p>
+        <p>Începe dezvoltarea unei funcționalități noi cu</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>Questa crea un nuovo feature branch basato su 'develop' e si sposta su quello</p>
+        <p>Această acțiune crează un nou branch bazat pe 'develop' și se mută pe el</p>
 
         <!--
         - Bump the version number now!
@@ -193,16 +192,16 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Terminare una feature</h3>
+        <h3>Finalizare funcționalitate</h3>
 
         <p>
-            Termina lo sviluppo di una feature.
-            Questa azione esegue le seguenti operazioni
+            Încheie dezvoltarea unei funcționalități.
+            Această acțiune execută următoarele operații
         </p>
         <ul>
-            <li>Merge del branch MYFEATURE all'inteno di 'develop'</li>
-            <li>Rimuove il feature branch</li>
-            <li>Si sposta di nuovo sul branch 'develop'</li>
+            <li>Face merge al branch-ului MYFEATURE în 'develop'</li>
+            <li>Șterge branch-ul de tip funcționalitate</li>
+            <li>Se mută înapoi pe branch-ul 'develop'</li>
         </ul>
 
         <blockquote>
@@ -216,11 +215,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Pubblicare una feature</h3>
+        <h3>Publicare funcționalitate</h3>
 
         <p>
-            State sviluppando una feature in collaborazione con altri?<br/>
-            Pubblicate una feature sul server remoto in modo che possa essere utilizzata da altri utenti.
+            Dezvolți funcționalitate în colaborare cu altcineva? <br/>
+            Publică-ți funcționalitatea pe server, ca ea să poată fi folosită și de alți utilizatori.
         </p>
 
         <blockquote>
@@ -234,17 +233,17 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Scaricare una feature pubblicata</h3>
+        <h3>Obținerea unei funcționalități publicate</h3>
 
         <p>
-            Scaricare una feature pubblicata da un altro utente.
+            Obține funcționalitate publicată de către un alt utilizator.
         </p>
 
         <blockquote>
             git flow feature pull origin MYFEATURE
         </blockquote>
 
-        <p>Potete tracciare una feature sul repository origin usando <code> git flow feature track MYFEATURE</code> </p>
+        <p>Poți urmări o funcționalitate la repository-ul origine folosind <code> git flow feature track MYFEATURE</code> </p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -253,28 +252,27 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Creare una release</a></h2>
+    <h2><a name="release" href="#release">Predare/Release</a></h2>
 
     <ul>
-        <li>Supporto alla preparazione di una nuova release di produzione</li>
-        <li>Consente di eseguire bug fixes minori e preparare i meta-dati per la release</li>
+        <li>Ajută la pregătirea unui nou release în producție</li>
+        <li>Permite fixarea unor probleme minore, precum și pregătirea meta-datelor asociate unui release</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Iniziare una release</h3>
+        <h3>Începere release</h3>
 
-        <p>Per iniziare una release usate il comando release di git flow. Crea un release branch a partire dal branch 'develop'.
-        </p>
+        <p>Pentru a începe un release nou, folosește comanda git flow release. Aceasta crează un nou branch de tip release bazat pe branch-ul 'develop'.</p>
         <blockquote>
-            git flow release start RELEASE [BASE]
+            git flow release start RELEASE [BAZE]
         </blockquote>
-        <p>Potere facoltativmente fornire come parametro <code>[BASE]</code> lo sha-1 hash del commit dal quale far partire la release. Il commit deve essere sul branch 'develop'.</p>
+        <p>Este posibilă furnizarea unei <code>[BAZE]</code> sha-1 de commit pentru a fi folosit drept bază a release-ului ce se crează. Acest commit trebuie să existe pe branch-ul 'develop'.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>È una buona idea pubblicare il release branch dopo averlo creato in modo da consentire l'invio di release commit anche da parte di altri sviluppatori. Potete farlo, usando un comando analogo a quello per pubblicare le features, con il comando:</p>
+        <p>Este înțelept a publica branch-ul de release după ce a fost creat, pentru a permite și altor programatori să contribuie. Acest proces este similar celui de publicare funcționalitate; se folosește comanda:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(Potete tracciare la release remota con il comando <code>git flow release track RELEASE</code>)</p>
+        <p>(Poți urmări un release cu comanda <br/><code>git flow release track RELEASE</code>)</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -283,19 +281,19 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Terminare una release</h3>
+        <h3>Finalizare release</h3>
 
-        <p>Terminare una release è uno dei passi più grandi nella gestione dei branch di git. Vengono eseguite svariate operazioni:</p>
+        <p>Finalizarea unui release este unul din cei mai importanți pași din lucrul cu branch-urile în git. Se efectuează câteva acțiuni:</p>
         <ul>
-            <li>Merge del release branch su branch 'master'</li>
-            <li>Tag della relase con il suo nome</li>
-            <li>Merge all'indietro della relase sul branch 'develop'</li>
-            <li>Rimozione del release branch</li>
+            <li>Merge al branch-ului release înapoi în 'master'</li>
+            <li>Crează tag (etichetă) pentru release, cu numele acestuia</li>
+            <li>Merge al release-ului în branch-ul 'develop'</li>
+            <li>Șterge branch-ul de release</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
-        <p>Non dimenticate di fare il push dei tag creati con <code>git push --tags</code></p>
+        <p>Nu uita să publici etichetele cu comanda <code>git push --tags</code></p>
 
     </div>
     <div class="col-2">
@@ -305,21 +303,21 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">Corecturi/Hotfixes</a></h2>
 
     <ul>
-        <li>Gli Hotfixes nascono dalla necessità di agire immediatamente di fronte ad uno stato indesiderato della versione live di produzione.</li>
-        <li>Possono essere fatti partire dal tag corrispondente sul branch master che contrassegna la versione di produzione.</li>
+        <li>Corecturile provin din necesitatea de a acționa cât mai curând asupra unei stări nedorite a unei versiuni deja livrate </li>
+        <li>Se poate baza pe eticheta de pe branch-ul master corespunzătoare release-ului țintit.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>git flow hotfix start</h3>
+        <h3>Începere corectură</h3>
 
-        <p>Come gli altri comandi di git flow, un hotfix comincia con</p>
+        <p>Asemeni celorlalte comezi git flow, o corectură se începe cu</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>La versione passata come argomento definisce il nuovo nome dell'hotfix release. Facoltativamente potete specificare un basename da cui partire.</p>
+        <p>Argumentul VERSION markează noul nume de release ce va fi atribuit corecturii. În mod opțional poți preciza un nume de bază de la care se va porni în crearea corecturii.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -328,9 +326,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Terminare un hotfix</h3>
+        <h3>Finalizare corectură</h3>
 
-        <p>Terminando un hotfix, esso viene integrato (merge) all'indietro all'interno di 'develop' e di 'master'. In aggiunta il master viene taggato con la versone dell'hotfix.</p>
+        <p>Prin finalizarea unei corecturi, aceasta va fi merge-uită înapoi în branch-urile 'develop' și 'master'. Suplimentar, 'master' va fi etichetat cu versiunea corecturii.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -350,19 +348,20 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">Comandi</a></h2>
+    <h2><a name="commands" href="#commands">Comenzi</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
 <div class="scrollblock">
-    <h2>Backlog</h2>
+    <h2>Rezerve</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>Non tutti i comandi disponibili sono riportati qui, solo i più importanti</li>
-        <li>Potete comunque usare git e tutti i suoi comandi normalmente come li conoscete, git flow è solo una collezione di strumenti aggiuntivi.
+        <li>Nu toate comenzile disponibile sunt acoperite aici, ci doar cele mai importante</li>
+        <li>Poți folosi în continuare git și toate comenzile sale în mod normal, așa cum le cunoști, deoarece git flow
+            este doar o colecție de instrumente suplimentare
         </li>
-        <li>La funzionalità 'support' è ancora in beta, 'utilizzo non è consigliato</li>
-        <li>Se volete fornire una traduzione sarò felice di integrarla</li>
+        <li>Facilitatea de 'support' este încă în beta, de aceea folosirea sa nu este recomandată</li>
+        <li>Dacă dorești să ajuti la traducere, voi fi fericit să le integrez</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -372,7 +371,7 @@
 
 <footer>
     <div class="scrollblock">
-        <h2><a name="comments" href="#comments">Commenti</a></h2>
+        <h2><a name="comments" href="#comments">Comentarii</a></h2>
 
         <div id="disqus_thread"></div>
     </div>
@@ -391,9 +390,9 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+<noscript>Te rugăm să activezi JavaScript pentru a vizualiza <a href="http://disqus.com/?ref_noscript">comentariile oferite cu sprijinul Disqus.</a>
 </noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<a href="http://disqus.com" class="dsq-brlink">comentarii cu sprijinul <span class="logo-disqus">Disqus</span></a>
 
 
 </body>
