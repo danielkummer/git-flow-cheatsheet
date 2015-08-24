@@ -75,7 +75,7 @@
 
     <p>
         git-flow ist ein Set aus Git-Erweiterungen, welches komplexe Repository-Arbeiten
-        nach Vincent Driessen's Branching-Modell ermöglicht.
+        nach Vincent Driessens Branching-Modell ermöglicht.
         <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">mehr</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
@@ -273,7 +273,7 @@
         <h3>Beginne ein Release</h3>
 
         <p>
-            Um ein neues Releases zu beginnen, benutze den git flow release Befehl.
+            Um ein neues Release zu beginnen, benutze den git flow release Befehl.
             Mit diesem wird ein Release-Branch vom aktuellen 'develop'-Branch erstellt.
         </p>
         <blockquote>
@@ -288,7 +288,7 @@
 
         <p>
             Es ist ratsam, den Release-Branch nach der Erstellung zu veröffentlichen und damit anderen Entwicklern
-            die Möglichkeit für Comitts zu geben. Mache es ähnlich wie bei einem Feature-Branch mit dem Befehl:
+            die Möglichkeit für Commits zu geben. Mache es ähnlich wie bei einem Feature-Branch mit dem Befehl:
         </p>
         <blockquote>
             git flow release publish RELEASE
@@ -335,7 +335,7 @@
     <ul>
         <li>
             Hotfixes werden notwendig, sobald ein unerwünschter Zustand innerhalb einer Live-Produktionsversion
-            eintritt und resultierend daraus, sofort gehandelt werden muss.
+            eintritt und resultierend daraus sofort gehandelt werden muss.
         </li>
         <li>
             Ein Hotfix kann aus dem entsprechenden Tag des 'master'-Branches, welcher die Produktionsversion markiert,
@@ -366,9 +366,9 @@
         <h3>Fertigstellung eines Hotfixes</h3>
 
         <p>
-            Mit dem Beenden eines Hotfixes, wird dieser in den 'develop'- und 'master'-Branch
-            zusammengeführt (Merge). Nebenbei wird der 'master'-Branch mit einem Tag
-            welcher die Hotfix-Version beinhaltet markiert.
+            Mit dem Beenden eines Hotfixes wird dieser in den 'develop'- und 'master'-Branch
+            zusammengeführt (Merge). Nebenbei wird der 'master'-Branch mit einem Tag,
+            welcher die Hotfix-Version beinhaltet, markiert.
         </p>
         <blockquote>
             git flow hotfix finish VERSION
@@ -397,7 +397,7 @@
     <h2>Backlog</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>Nicht alle verfügbaren Befehle sind hier abgedeckt, nur die wichtigsten.</li>
+        <li>Nur die wichtigsten aller verfügbaren Befehle sind hier abgedeckt.</li>
         <li>Du kannst weiterhin alle Git-Befehle normal nutzen, wie Du es gewohnt bist. Git-flow ist nur eine Werkzeugsammlung.</li>
         <li>Das 'support' Feature ist noch Beta und die Nutzung nicht empfohlen.</li>
         <li>Wenn Du Übersetzungen beisteuern möchtest, würde ich mich freuen diese zu integrieren.</li>
