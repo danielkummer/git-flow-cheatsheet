@@ -242,7 +242,7 @@
         </p>
 
         <blockquote>
-            git flow feature pull MYFEATURE
+            git flow feature pull REMOTE_NAME MYFEATURE
         </blockquote>
     </div>
     <div class="col-2">
@@ -255,26 +255,26 @@
     <h2><a name="release" href="#release">Tạo một bản release</a></h2>
 
     <ul>
-        <li>リリースのための準備を行います。</li>
-        <li>軽微なバグフィックスを行ったり、リリースのため作業を行います。</li>
+        <li>Hỗ trợ chuẩn bị cho bản release.</li>
+        <li>Cho phép sửa các lỗi nhỏ và chuẩn bị meta-data cho release.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>リリース準備開始</h3>
+        <h3>Bắt đầu release</h3>
 
-        <p>リリース作業を開始するには、git flowのreleaseコマンドを使います</p>
-        'develop'ブランチから'release'ブランチを作成します
+        <p>Để bắt đầu release, sử dụng lệnh release của git flow.</p>
+        Lệnh này sẽ tạo ra nhánh 'release' từ nhánh 'develop'.
         </p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p><code>[BASE]</code>はオプションで 'develop'ブランチの特定のCommitのハッシュ値を指定します。指定がない場合はHEADが使われます。</p>
+        <p>Tùy chọn <code>[BASE]</code> cho phép commit được một giá trị hash sha-1. Trường hợp không chỉ định tùy chọn này thì HEAD sẽ được sử dụng.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>'release'ブランチ作成後に修正をプッシュするには、'feature'の時と似たコマンドを使用します:</p>
+        <p>Để công bố phần code 'release' của mình cho các thành viên khác, ta có thể làm tương tự như với công bố tính năng bằng lệnh sau:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>('release'リポジトリの修正のトラッキングをすることもできます<br/><code>git flow release track RELEASE</code> )</p>
+        <p>(Bạn có thể theo dấu remote 'release' bằng lệnh <br/><code>git flow release track RELEASE</code> )</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -283,14 +283,14 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>リリース準備完了</h3>
+        <h3>Kết thúc release</h3>
 
-        <p>リリース準備の終了作業は、gitのリポジトリが大きく変化します:</p>
+        <p>Kết thúc release là một bước lớn trong chiến lược phân nhánh git. Nó thực hiện các việc sau:</p>
         <ul>
-            <li>'release'ブランチを'master'にマージします。</li>
-            <li>'master'ブランチにリリース用のタグをつけます。</li>
-            <li>'develop'ブランチに'release'ブランチの内容がマージされます。</li>
-            <li>'release'ブランチが削除されます。</li>
+            <li>Merge nhánh 'release' vào nhánh 'master'</li>
+            <li>Gắn tag ở nhánh 'master' dành cho bản release</li>
+            <li>Merge lại nhánh 'release' vào nhánh 'develop'</li>
+            <li>Xóa bỏ nhánh 'release'</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
