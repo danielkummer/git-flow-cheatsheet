@@ -303,21 +303,21 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">Sửa lỗi nóng</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">Sửa đổi nóng - hotfix</a></h2>
 
     <ul>
-        <li>すぐに適用しなければいけないような、緊急の場合に使用します。</li>
-        <li>'master'ブランチのタグから、緊急対応用のブランチを作成します。</li>
+        <li>Sử dụng cho các trường hợp khẩn cấp cần phải sửa đổi ngay trên bản sản phẩm (nhánh master).</li>
+        <li>Có thể tạo nhánh giải quyết khẩn cấp từ tag của nhánh 'master'.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>緊急対応の開始</h3>
+        <h3>Bắt đầu hotfix</h3>
 
-        <p>他のgit flowコマンドと似た形で、hotfixを開始します</p>
+        <p>Giống như các lệnh khác của git flow, hotfix bắt đầu với:</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>バージョンの引数は、ホットフィックスリリース名を指定します。 オプションとして開始するベースを指定出来ます。</p>
+        <p>Tham số VERSION ở đây chỉ định tên của phiên bản release hotfix này. Còn tham số tùy chọn basename sẽ chỉ định tên nhánh cơ bản thay cho hotfix thay vì nhánh 'master'</p>
         <p></p>
     </div>
     <div class="col-2">
@@ -327,9 +327,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>緊急対応の終了</h3>
+        <h3>Kết thúc hotfix</h3>
 
-        <p>緊急対応の終了作業は、'develop'と'master'のブランチをマージします。加えて、'master'ブランチは緊急対応のタグが付けられます。</p>
+        <p>Kết thúc hotfix sẽ merge lại nội dung thay đổi vào nhánh 'develop' và 'master'. Ở nhánh 'master' sẽ được gắn tag là phiên bản của hotfix.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
