@@ -1,0 +1,6 @@
+body {
+    direction:rtl;
+}
+.col-2{
+    direction: ltr;
+}
