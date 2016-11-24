@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>git-flow cheatsheet</title>
+    <title>Apie git-flow</title>
     <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
@@ -30,10 +30,10 @@
 <div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
 <header>
 
-    <h1 id="title">git-flow cheatsheet</h1>
+    <h1 id="title">Apie git-flow</h1>
 
     <p id="author">
-        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        sukurta <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -45,8 +45,8 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
-    <p id="translations">translations:
+    <p id="desc">efektyvus šakojimas naudojant git-flow, autorius <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">vertimai:
         <a href="#" class="active" title="english">English</a> -
         <a href="index.es_ES.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
@@ -74,38 +74,38 @@
 
 
 <div class="scrollblock">
-    <h2>About</h2>
+    <h2>Apie</h2>
 
     <p>
-        git-flow are a set of git extensions to provide high-level repository operations for Vincent
-        Driessen's branching model.
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">more</a></small>
+        git-flow yra git plėtinių rinkinys, kuris įgalina aukšto lygio repozitorijos operacijas pagal Vincent
+        Driessen šakojimosi modelį.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">daugiau</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>This cheatsheet shows the basic usage and effect of git-flow operations</p>
+    <p>Ši paruoštukė parodo pagrindinį git-flow operacijų panaudojimą ir efektą</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>Basic tips</h2>
+    <h2>Bendri patarimai</h2>
     <ul>
-        <li>Git flow provides excellent command line help and output. Read it carefully to see what's happening...</li>
-        <li>The OSX/Windows Client <a href="http://www.sourcetreeapp.com/">Sourcetree</a> is an excellent git gui and provides
-            git-flow support
+        <li>Git flow suteikia puikią komandinės eilutės pagalbą ir išvedimą. Skaitykite tai atsargiai, kad pamatytumėte, kas vyksta...</li>
+        <li>OSX/Windows klientas <a href="http://www.sourcetreeapp.com/">Sourcetree</a> yra puikus git grafinis klientas ir palaiko
+            git-flow
         </li>
-        <li>Git-flow is a merge based solution. It doesn't rebase feature branches.</li>
+        <li>Git-flow yra apjunginėjimu paremtas sprendimas. Jis nepakeičia šakų bazės ypatybių.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">Setup</a></h2>
+    <h2><a name="setup" href="#setup">Nustatymas</a></h2>
     <ul>
-        <li>You need a working git installation as prerequisite.</li>
-        <li>Git flow works on OSX, Linux and Windows</li>
+        <li>Pačiai pradžiai yra reikalinga git instaliacija.</li>
+        <li>Git flow veikia OSX, Linux ir Windows sistemose</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -127,31 +127,31 @@
             $ wget -q -O - --no-check-certificate
             https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
         </blockquote>
-        <p>You need wget and util-linux to install git-flow.</p>
+        <p>Jums reikia wget ir util-linux, kad įdiegtumėte git-flow.</p>
     </div>
     <div class="col-2">
         <p>
-            For detailed git flow installation instructions please visit the <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
-            wiki</a>.
+            Detalesnė git flow įdiegimo instaliacija yra pasiekiama <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
+            wiki</a> puslapyje.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
-    <p>Git flow needs to be initialized in order to customize your project setup.</p>
+    <h2><a name="getting_started" href="#getting_started">Pradžia</a></h2>
+    <p>Git flow turi būti inicializuotas, kad būtų galima tinkinti jūsų projektą.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Initialize</h3>
+        <h3>Inicializacija</h3>
 
-        <p>Start using git-flow by initializing it inside an existing git repository:</p>
+        <p>Norint pradėti naudoti git-flow by esančioje git repozitorijoje:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            You'll have to answer a few questions regarding the naming conventions for your branches.<br/>
-            It's recommended to use the default values.
+            Jums reikės turėti atsakymus į kelis klausimus, susijusius su jūsų šakų pavadinimais.<br/>
+            Rekomenduojama naudoti numatytąsias reikšmes.
         </p>
 
     </div>
@@ -165,22 +165,22 @@
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">Features</a></h2>
+    <h2><a name="features" href="#features">Ypatybės</a></h2>
 
     <ul class="narrow">
-        <li>Develop new features for upcoming releases</li>
-        <li>Typically exist in developers repos only</li>
+        <li>Vystykite naujas ypatybes artėjantiems išleidimams</li>
+        <li>Tipiškai yra tik kūrėjų repozitorijose</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>Start a new feature</h3>
-        <p>Development of new features starting from the 'develop' branch.</p>
-        <p>Start developing a new feature with</p>
+        <h3>Pradėti naują ypatybę</h3>
+        <p>Naujų ypatybių kūrimas prasideda nuo 'develop' šakos.</p>
+        <p>Pradėkite kurti naują ypatybę su komanda</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>This action creates a new feature branch based on 'develop' and switches to it</p>
+        <p>Ši komanda sukuria naujos ypatybės šaką pagal 'develop' ir pasikeičia į ją</p>
 
         <!--
         - Bump the version number now!
@@ -200,16 +200,16 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish up a feature</h3>
+        <h3>Užbaigti ypatybę</h3>
 
         <p>
-            Finish the development of a feature.
-            This action performs the following
+            Užbaigti ypatybės kūrimą.
+            Šis veiksmas atlieka tai:
         </p>
         <ul>
-            <li>Merged MYFEATURE into 'develop'</li>
-            <li>Removes the feature branch</li>
-            <li>Switches back to 'develop' branch</li>
+            <li>Sujungia MYFEATURE į 'develop'</li>
+            <li>Pašalina ypatybės šaką</li>
+            <li>Grįžta atgal į 'develop' šaką</li>
         </ul>
 
         <blockquote>
@@ -223,11 +223,11 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Publish a feature</h3>
+        <h3>Publikuoti ypatybę</h3>
 
         <p>
-            Are you developing a feature in collaboration? <br/>
-            Publish a feature to the remote server so it can be used by other users.
+            Ar kuriate ypatybę komandoje? <br/>
+            Publikuokite ypatybę į nuotolinį serverį, jog jį galėtų pasiekti kiti naudotojai.
         </p>
 
         <blockquote>
@@ -241,17 +241,17 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Getting a published feature</h3>
+        <h3>Publikuotos ypatybės gavimas</h3>
 
         <p>
-            Get a feature published by another user.
+            Gauti kito naudotojo publikuotą ypatybę.
         </p>
 
         <blockquote>
             git flow feature pull origin MYFEATURE
         </blockquote>
 
-        <p>You can track a feature on origin by using <code> git flow feature track MYFEATURE</code> </p>
+        <p>Galite sekti ypatybę kilmėje naudodami <code> git flow feature track MYFEATURE</code> </p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -260,29 +260,28 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Make a release</a></h2>
+    <h2><a name="release" href="#release">Atlikti išleidimą</a></h2>
 
     <ul>
-        <li>Support preparation of a new production release</li>
-        <li>Allow for minor bug fixes and preparing meta-data for a release</li>
+        <li>Palaiko pasiruošimą naujam išleidimui</li>
+        <li>Leidžia mažybinius trikių ištaisymus ir paruošia metaduomenis išleidimui</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Start a release</h3>
+        <h3>Pradėti išleidimą</h3>
 
-        <p>To start a release, use the git flow release command. It creates a release branch created from the 'develop' branch.</p>
+        <p>Norint pradėti išledimą, naudokite git glow release komandą. Ji sukuria išleidimo šaką pagal 'develop' šaką.</p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>You can optionally supply a <code>[BASE]</code> commit sha-1 hash to start the release from. The commit must
-            be on the
-            'develop' branch.</p>
+        <p>Galite pasirinktinai nurodyti <code>[BASE]</code> komito sha-1 hash'ą, nuo kurio norite pradėti. Komitas privalo būti
+            'develop' šakoje.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>It's wise to publish the release branch after creating it to allow release commits by other developers. Do it similar to feature publishing with the command:</p>
+        <p>Yra išmintinga publikuoti išleidimo šaką po to, kai leista daryti išleidimo komitus kitiems naudotojams. Tai daroma panašiai kaip ir su ypatybės išleidimu:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(You can track a remote release with the <br/><code>git flow release track RELEASE</code> command)</p>
+        <p>(Galite sekti nuotolinį išleidimą su <br/><code>git flow release track RELEASE</code> komanda)</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -291,19 +290,19 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish up a release</h3>
+        <h3>Užbaigti išleidimą</h3>
 
-        <p>Finishing a release is one of the big steps in git branching. It performs several actions:</p>
+        <p>Išleidimo užbaigimas yra vienas iš didelių žingsnių git šakojime. Jis atlieka kelis veiksmus:</p>
         <ul>
-            <li>Merges the release branch back into 'master'</li>
-            <li>Tags the release with its name</li>
-            <li>Back-merges the release into 'develop'</li>
-            <li>Removes the release branch</li>
+            <li>Sujungia išleidimo šaką atgal į 'master'</li>
+            <li>Pažymi išleidimą kartu su gairės vardu</li>
+            <li>Atgal-sujungia išleidimą su 'develop'</li>
+            <li>Pašalina išledimo šaką</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
-        <p>Don't forget to push your tags with<code>git push --tags</code></p>
+        <p>Nepamirškite persiųsti gaires su <code>git push --tags</code></p>
 
     </div>
     <div class="col-2">
@@ -313,22 +312,22 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">Pataisymai</a></h2>
 
     <ul>
-        <li>Hotfixes arise from the necessity to act immediately upon an undesired state of a live production version
+        <li>Pataisymai atsiranda iš būtinumo taisyti jau išleistos versijos netenkinamą būseną
         </li>
-        <li>May be branched off from the corresponding tag on the master branch that marks the production version.</li>
+        <li>Gali būti iššakotos nuo susijusios gairės master šakoje, kuri žymi produkcijos versiją.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>git flow hotfix start</h3>
 
-        <p>Like the other git flow commands, a hotfix is started with</p>
+        <p>Kaip ir kitos git flow komandos, pataisymas yra pradedamas su</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>The version argument hereby marks the new hotfix release name. Optionally you can specify a basename to start from.</p>
+        <p>Versijos argumentas čia žymi naują pataisymo išleidimo pavadinimą. Pasirinktinai dar galite nurodyti pagrindinį vardą nuo kurio pradėti.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -337,9 +336,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Finish a hotfix</h3>
+        <h3>Užbaigti pataisymą</h3>
 
-        <p>By finishing a hotfix it gets merged back into develop and master. Additionally the master merge is tagged with the hotfix version.</p>
+        <p>Užbaigiant pataisymą jis yra sujungiamas atgal į develop ir master šakas. Taip pat master sujungimas yra pažymimas su pataisymo versija.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -359,20 +358,19 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">Commands</a></h2>
+    <h2><a name="commands" href="#commands">Komandos</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
 <div class="scrollblock">
-    <h2>Backlog</h2>
+    <h2>Pastabos</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>Not all available commands are covered here, only the most important ones</li>
-        <li>You can still use git and all its commands normally as you know them, git flow is only a tooling
-            collection
+        <li>Ne visos galimos komandos yra čia aprašytos, tik svarbiausios</li>
+        <li>Jūs vis tiek galite naudoti standartines git komandas kaip ir anksčiau, git flow yra įrankinių rinkinys
         </li>
-        <li>The 'support' feature is still beta, using it is not advised</li>
-        <li>If you'd like to supply translations I'd be happy to integrate them</li>
+        <li>'support' ypatybė vis dar yra beta, jos naudojimas yra nepatartinas</li>
+        <li>Jeigu norite pateikti vertimus, būsiu laimingas galėdamas juos integruoti</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -382,7 +380,7 @@
 
 <footer>
     <div class="scrollblock">
-        <h2><a name="comments" href="#comments">Comments</a></h2>
+        <h2><a name="comments" href="#comments">Komentarai</a></h2>
 
         <div id="disqus_thread"></div>
     </div>
@@ -401,9 +399,9 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+<noscript>Įgalinkite JavaScript kad peržiūrėti <a href="http://disqus.com/?ref_noscript">komentarus palaiko Disqus.</a>
 </noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<a href="http://disqus.com" class="dsq-brlink">komantarus tvarko <span class="logo-disqus">Disqus</span></a>
 
 
 </body>
