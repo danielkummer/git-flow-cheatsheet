@@ -6,7 +6,7 @@
     <title>Шпаргалка по git-flow</title>
 
     <!-- Lobster is same as Sansita but with cyrillic and another subsets. I recomend to use Lobster instead Sansita everywere-->
-    <link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
@@ -73,7 +73,8 @@
         <a href="index.el_GR.html" title="Ελληνικά (Greek)">Ελληνικά (Greek)</a> -
         <a href="#" class="active"  title="Ukrainian">Українська (Ukrainian)</a> -
         <a href="index.vi_VN.html" title="Tiếng Việt">Tiếng Việt (Vietnamese)</a> -
-        <a href="index.pl_PL.html" title="Polish">Polski</a>
+        <a href="index.pl_PL.html" title="Polish">Polski</a> -
+        <a href="index.ar_MA.html" title="العربية">العربية</a>
     </p>
 </header>
 
@@ -98,10 +99,10 @@
     <div class="scrollblock">
         <h2>Загальні зауваження</h2>
         <ul>
-            <li>Git flow надає чудовий додаток для командного рядкя, який має довідку і покращений вивід. Уважно читайте його, щоб знати, що відбувається...</li>
-            <li>Клієнт для OSX/Windows <a href="http://www.sourcetreeapp.com/">Sourcetree</a> — чудовий GUI для Git — також підтримує git-flow
+            <li>Git flow надає чудовий додаток для командного рядка, який має чудову довідку і виведення. Уважно читайте його, щоб знати, що відбувається...</li>
+            <li>Клієнт для OSX/Windows <a href="http://www.sourcetreeapp.com/">Sourcetree</a> — чудовий GUI для Git, який також підтримує git-flow
             </li>
-            <li>Git-flow заснований на злитті. Для злиття гілок фіч не використовується rebase.</li>
+            <li>Git-flow заснований на злитті. Для злиття гілок нововведень не використовується rebase.</li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
     </div>
@@ -110,7 +111,7 @@
     <div class="scrollblock">
         <h2><a name="setup" href="#setup">Встановлення</a></h2>
         <ul>
-            <li>В першу чергу вам потрібна робоча установка git</li>
+            <li>В першу чергу вам потрібен робочий інсталлятор git</li>
             <li>Git flow працює на OSX, Linux і Windows</li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
@@ -118,11 +119,11 @@
             <h3>OSX</h3>
             <span>Homebrew</span>
             <blockquote>
-                $ brew install git-flow
+                $ brew install git-flow-avh
             </blockquote>
             <span>Macports</span>
             <blockquote>
-                $ port install git-flow
+                $ port install git-flow-avh
             </blockquote>
             <h3>Linux</h3>
             <blockquote>
@@ -131,13 +132,13 @@
             <h3>Windows (Cygwin)</h3>
             <blockquote>
                 $ wget -q -O - --no-check-certificate
-                https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+                https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash
             </blockquote>
-            <p>Вам знадобиться wget і util-linux для установки git-flow.</p>
+            <p>Вам знадобиться wget і util-linux для встановлення git-flow.</p>
         </div>
         <div class="col-2">
             <p>
-                Докладні інструкції для встановлення git flow дивіться на <a href="https://github.com/nvie/gitflow/wiki/Windows">git flow
+                Для більш детальної інформації по встановленню git flow відвідайте <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow
                 wiki</a>.
             </p>
             <img src="img/download.png" alt="install git-flow"/>
@@ -151,13 +152,13 @@
         <div class="col-1">
             <h3>Ініціалізація</h3>
 
-            <p>Щоб почати використовувати git-flow проініціалізуйте його в середині існуючого репозиторія:</p>
+            <p>Щоб почати використовувати git-flow, проініціалізуйте його в середині існуючого репозиторію:</p>
             <blockquote>
                 git flow init
             </blockquote>
             <p>
-                Вам знадобиться відповісти на декілька запитань про те, яким чином іменувати ваші гілки.<br/>
-                Рекомендується залишати значення по-замовчуванню.
+                Вам знадобиться відповісти на декілька запитань про те, яким чином називати ваші гілки.<br/>
+                Рекомендується залишати значення за замовчуванням.
             </p>
 
         </div>
@@ -174,19 +175,19 @@
         <h2><a name="features" href="#features">Фічі</a></h2>
 
         <ul class="narrow">
-            <li>Розробка нових фіч для подальших релізів</li>
+            <li>Розробка нововведень для подальших релізів</li>
             <li>Зазвичай існує тільки в репозиторіях розробників</li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
 
         <div class="col-1">
-            <h3>Початок нової фічі</h3>
-            <p>Розробка нової фічі починається з гілки "develop".</p>
-            <p>Для початку розробки нової фічі виконайте:</p>
+            <h3>Початок нововведення</h3>
+            <p>Розробка нововведення починається з гілки "develop".</p>
+            <p>Для початку розробки нововведення виконайте:</p>
             <blockquote>
                 git flow feature start MYFEATURE
             </blockquote>
-            <p>Ця дія створить нову гілку фічі, засновану на гілці "develop", і переключається на неї.</p>
+            <p>Ця дія створить нову гілку нововведення, засновану на гілці "develop", і переключиться на неї.</p>
 
             <!--
             - Bump the version number now!
@@ -206,15 +207,15 @@
 
     <div class="scrollblock">
         <div class="col-1">
-            <h3>Завершення фічі</h3>
+            <h3>Завершення нововведення</h3>
 
             <p>
-                Завершення розробки фічі.
+                Завершення розробки нововведення.
                 Ця дія виконується так:
             </p>
             <ul>
                 <li>Злиття гілки MYFEATURE в "develop"</li>
-                <li>Видалення гілки фічі</li>
+                <li>Видалення гілки нововведення</li>
                 <li>Переключення назад на гілку "develop"</li>
             </ul>
 
@@ -229,11 +230,11 @@
 
     <div class="scrollblock">
         <div class="col-1">
-            <h3>Публікація фічі</h3>
+            <h3>Публікація нововведення</h3>
 
             <p>
-                Ви розробляєте фічу в команді? <br/>
-                Опубулікуйте фічу на віддаленому сервері, щоб її могли використовувати Ваші колеги.
+                Ви розробляєте нововведення в команді? <br/>
+                Опубулікуйте нововведення на віддаленому сервері, щоб його могли використовувати інші користувачі.
             </p>
 
             <blockquote>
@@ -247,17 +248,17 @@
 
     <div class="scrollblock">
         <div class="col-1">
-            <h3>Отримання опублікованої фічі</h3>
+            <h3>Отримання опублікованого нововведення</h3>
 
             <p>
-                Отримання фічі, опублікованої іншим користувачем.
+                Отримання нововведення, опублікованого іншим користувачем.
             </p>
 
             <blockquote>
                 git flow feature pull origin MYFEATURE
             </blockquote>
 
-            <p>Ви можете відслідковувати фічу в репозиторії origin з допомогою команди <code> git flow feature track MYFEATURE</code></p>
+            <p>Ви можете відслідковувати нововведення в репозиторії origin з допомогою команди <code> git flow feature track MYFEATURE</code></p>
         </div>
         <div class="col-2">
             <div class="feature-pull"></div>
@@ -270,7 +271,7 @@
 
         <ul>
             <li>Підтримка підготовки нового релізу продукту</li>
-            <li>Дозволяє усунути дрібні помилки і підготувати різноманітні метадані для реліза</li>
+            <li>Дозволяє усунути дрібні помилки і підготувати різноманітні метадані для релізу</li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
         <div class="col-1">
@@ -282,7 +283,7 @@
             <blockquote>
                 git flow release start RELEASE [BASE]
             </blockquote>
-            <p>За потреби ви может вказати <code>[BASE]</code>-комміт у вигляді його хешу sha-1, щоб почати реліз з нього.
+            <p>За потреби ви можете вказати <code>[BASE]</code>-комміт у вигляді його хешу SHA-1, щоб почати реліз з нього.
                 Цей комміт повинен належати гілці "develop".</p>
             <p class="divider">&#9733; &#9733; &#9733;</p>
             <p>Бажано одразу публікувати гілку релізу після створення, щоб інші користувачі мали змогу виконувати комміти в гілку релізу.
@@ -335,7 +336,7 @@
             <blockquote>
                 git flow hotfix start VERSION [BASENAME]
             </blockquote>
-            <p>Аргумент VERSION визанчає назву нового, виправленого релізу.</p>
+            <p>Аргумент VERSION визначає назву нового, виправленого релізу.</p>
             <p>За потреби можна вказати BASENAME-комміт, від якого піде відгалуження.</p>
         </div>
         <div class="col-2">
@@ -407,9 +408,9 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+<noscript>Будь ласка, увімкніть JavaScript, щоб переглянути <a href="http://disqus.com/?ref_noscript">коментарі при підтримці Disqus.</a>
 </noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<a href="http://disqus.com" class="dsq-brlink">коментарі при підтримці <span class="logo-disqus">Disqus</span></a>
 
 
 </body>

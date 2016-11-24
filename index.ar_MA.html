@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ar" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>git-flow cheatsheet</title>
+    <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
+    <link rel="stylesheet" href="css/style.ar_MA.css" type="text/css" media="screen,print">
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33766650-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="banner" style="direction: ltr;"><a href="https://github.com/danielkummer/git-flow-cheatsheet"> GitHub  فرع في  </a></div>
+<header>
+
+    <h1 id="title">git-flow cheatsheet</h1>
+
+    <p id="author">
+        طور من طرف
+        &nbsp;<a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>&nbsp;
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">تويتر</a>
+
+        <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");</script>
+    </p>
+    <p id="desc">
+        كفاءة المتفرعة باستخدام git-flow من قبل
+        <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">الترجمات:
+        <a href="index.html" title="english">English</a> -
+        <a href="index.es_ES.html" title="spanish">Castellano</a> -
+        <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
+        <a href="index.zh_TW.html" title="Traditional Chinese">繁體中文(Traditional Chinese)</a> -
+        <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
+        <a href="index.ja_JP.html" title="日本語">日本語</a> -
+        <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
+        <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
+        <a href="index.fr_FR.html" title="Français">Français</a> -
+        <a href="index.it_IT.html" title="Italiano">Italiano</a> -
+        <a href="index.nl_NL.html" title="Nederlands">Nederlands</a> -
+        <a href="index.ru_RU.html" title="Russian">Русский (Russian)</a> -
+        <a href="index.de_DE.html" title="German">Deutsch (German)</a> -
+        <a href="index.ca_CA.html" title="Català">Català (Catalan)</a> -
+        <a href="index.ro_RO.html" title="Romanian">Română (Romanian)</a> -
+        <a href="index.el_GR.html" title="Ελληνικά (Greek)">Ελληνικά (Greek)</a> -
+        <a href="index.uk_UA.html" title="Ukrainian">Українська (Ukrainian)</a> -
+        <a href="index.vi_VN.html" title="Tiếng Việt">Tiếng Việt (Vietnamese)</a> -
+        <a href="index.pl_PL.html" title="Polish">Polski</a> -
+        <a href="#" title="العربية">العربية</a>
+    </p>
+</header>
+
+<div id="main">
+
+
+<div class="scrollblock" dir="rtl">
+    <h2>حول</h2>
+
+    <p>
+        git-flow هي إضافات لـ git لتوفير عمليات متطورة على المستودع لنموذج الفروع لفانسين دريسنز.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">للمزيد</a></small>
+    </p>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+
+    <p>        هذه المذكرة تشرح أساسيات استعمال عمليات git-flow وتأثيراتها. </p>
+
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+
+<div class="scrollblock">
+    <h2>نصائح أساسية</h2>
+    <ul>
+        <li>
+أوامر ومخرجات الـ git-flow توفر تسهيلات مهمة جدا. إقرأها بعناية لكي تفهم ماذا يحدث...
+        </li>
+        <li>
+يعتبر تطبيق الـ OSX/Windows <a href="http://www.sourcetreeapp.com/">سورستري</a>
+            واجهة مستخدم ممتازة لـ git الذي يدعم git-flow.
+        </li>
+        <li>
+              Git-flow هي حل مبني على عمليات الدمج. التي لاتترك قاعدة على الفروع الوظيفية.
+        </li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="setup" href="#setup">التنصيب</a></h2>
+    <ul>
+        <li>
+            تحتاج إلى تنصيب git متوفر كشرط أساسي.
+        </li>
+        <li>Git flow يعمل في كل من OSX، الينوكس والويندوز.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>OSX</h3>
+        <span>Homebrew</span>
+        <blockquote>
+            $ brew install git-flow-avh
+        </blockquote>
+        <span>Macports</span>
+        <blockquote>
+            $ port install git-flow-avh
+        </blockquote>
+        <h3>اللينيكس</h3>
+        <blockquote>
+            $ apt-get install git-flow
+        </blockquote>
+        <h3>الويندوز (Cygwin)</h3>
+        <blockquote>
+            $ wget -q -O - --no-check-certificate
+            https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash
+        </blockquote>
+        <p> ستحتاج إلى wget و util-linux لكي تقوم بتنصيب git-flow.  </p>
+    </div>
+    <div class="col-2">
+        <p style="direction: rtl;">
+  لتفسير مفصل عن التنصيب زر موقع <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow wiki</a>.
+        </p>
+        <img src="img/download.png" alt="install git-flow"/>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <h2><a name="getting_started" href="#getting_started">الشروع في العمل</a></h2>
+    <p style="direction: rtl;">
+        Git flow .يحتاج للتهييء كي تخصص تنصيب مشروعك
+    </p>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>التهييء</h3>
+
+        <p>
+            ابدأ باستعمال git-flow عن طريق التهييء داخل مستودع git موفر.
+        </p>
+        <blockquote>
+            git flow init
+        </blockquote>
+        <p>
+            ستحتاج إى الإجابة عن بعض الأسئلة المتعلقة بنظام تسمية فروعك.<br/>
+            من المستحسن استخدام القيم الافتراضية.
+        </p>
+
+    </div>
+    <div class="col-2">
+        <div class="initialize"></div>
+        <div class="lines-small"></div>
+        <div class="lines-open"></div>
+        <div class="lines-big"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="features" href="#features">
+        ميزات Features
+    </a></h2>
+
+    <ul class="narrow">
+        <li>
+            طور ميزات جديدة للإصدارات القادمة.
+        </li>
+        <li>
+            توجد عادة في مستودع المبرمجين فقط.
+        </li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+
+    <div class="col-1">
+        <h3>بدء ميزة جديدة</h3>
+        <p>
+            تبدأ عملية برمجة ميزات جديدة انطلاقا من فرع 'develop'.
+        </p>
+        <p>
+            إبدأ عملية برمجة ميزة جديدة بتنفيذ الأمر
+        </p>
+        <blockquote>
+            git flow feature start MYFEATURE
+        </blockquote>
+        <p>
+            هذه العملية تصنع فرع ميزة جديد انطلاقا من فرع 'develop' وينتقل إليه.
+        </p>
+
+        <!--
+        - Bump the version number now!
+        - Start committing last-minute fixes in preparing your release
+        - When done, run:
+
+             git flow release finish 'testrelease'
+
+
+
+        -->
+    </div>
+    <div class="col-2">
+        <div class="feature-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>إتمام الميزة</h3>
+
+        <p>
+           إتمام تطوير ميزة. هذه العملية تقوم بتنفيذ ما يلي:
+        </p>
+        <ul>
+            <li>
+                دمج  MYFEATURE نحو فرع 'develop'
+            </li>
+            <li>
+                تحذف فرع الميزة.
+            </li>
+            <li>
+                تحول إلى فرع 'develop'
+            </li>
+        </ul>
+
+        <blockquote>
+            git flow feature finish MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-end"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>نشر ميزة</h3>
+
+        <p>
+            هل تقوم بتطوير ميزة بالتعاون مع مجموعة مبرمجين؟
+            <br/>
+            أنشر الميزة إلى نطاق السيرفر لكي يستطيع بقية المبرمجين استخدامها.
+        </p>
+
+        <blockquote>
+            git flow feature publish MYFEATURE
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="feature-publish"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>الحصول على ميزة منشورة</h3>
+
+        <p>
+           الحصول على ميزة منشورة من طرف مستخدم آخر.
+        </p>
+
+        <blockquote>
+            git flow feature pull origin MYFEATURE
+        </blockquote>
+
+        <p>يمكنك تتبع ميزة على الأصل باستخدام <code> git flow feature track MYFEATURE</code> </p>
+    </div>
+    <div class="col-2">
+        <div class="feature-pull"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="release" href="#release" style="direction: rtl">  اصنع إصدارا  Release</a></h2>
+
+    <ul>
+        <li>
+            دعم إعداد إنتاج اصدار جديد.
+        </li>
+        <li>
+            السماح باصلاحات أخطاء طفيفة وإعداد بيانات وصفية لإصدار.
+        </li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>إبدأ الإصدار</h3>
+
+        <p>
+            لكي تبدأ إصدارا استخدم أوامر الإصدار لـ git flow. أنشىء فرع إصدار إنطلاقا من فرع  'develop'
+
+        </p>
+        <blockquote style="direction: ltr;">
+            git flow release start RELEASE [BASE]
+        </blockquote>
+        <p>يمكنك اختياريا اضافة التوريد <code>[BASE]</code> ايداع sha-1 hash كي تبدأ من خلالها الإصدار.
+        الإيداع يجب أن يكون في فرع 'develop'
+        </p>
+        <p class="divider">&#9733; &#9733; &#9733;</p>
+        <p>
+            من الأفضل نشر فرع الإصدار بعد إنشائه للسماح للمبرمجين بإيداع الإصدار. قم بنفس الشيء للميزات المنشورة باستخدام الأمر:
+        </p>
+        <blockquote>
+            git flow release publish RELEASE
+        </blockquote>
+        <p>يمكنك متابعة الاصدار على السرفر باستخدام <br/><code>git flow release track RELEASE</code> </p>
+    </div>
+    <div class="col-2">
+        <div class="release-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>إتمام إصدار</h3>
+
+        <p>
+            إتمام إصدار هي من أهم الخطوات في فروع git.
+        </p>
+        <ul>
+            <li>
+                دمج فرع الإصدار نحو فرع 'master'
+            </li>
+            <li>
+                تسمية فرع الإصدار باسمه.
+            </li>
+            <li>
+                رجع دمج فرع الإصدار نحو فرع 'develop'
+            </li>
+            <li>
+                حذف فرع الإصدار
+            </li>
+        </ul>
+        <blockquote>
+            git flow release finish RELEASE
+        </blockquote>
+        <p>لا تنسى دفع مسمياتك بتنفيذ<code>git push --tags</code></p>
+
+    </div>
+    <div class="col-2">
+        <div class="release-end"></div>
+
+    </div>
+</div>
+
+<div class="scrollblock">
+    <h2><a name="hotfixes" href="#hotfixes"> الإصلاحات Hotfixes </a></h2>
+
+    <ul>
+        <li>
+            تنشأ الإصلاحات من ضرورة العمل فورا على حالة غير مرغوب فيها من نسخة الانتاج الحية.
+        </li>
+        <li>
+            يمكن الاعتماد على تسمية فرع الإنتاج 'master' لإشارة على نسخة الإنتج الحية.
+        </li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <div class="col-1">
+        <h3>بدأ إصلاح</h3>
+
+        <p>كمثل أوامر git flow الأخرى تبدأ إصلاح بالأمر:</p>
+        <blockquote>
+            git flow hotfix start VERSION [BASENAME]
+        </blockquote>
+        <p>
+            يمثل المعامل VERSION اسم الإصلاح الجديد. اختياريا يمكنك تحديد basename أي إصدار يطبق الإصلاح.
+        </p>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-start"></div>
+    </div>
+</div>
+
+<div class="scrollblock">
+    <div class="col-1">
+        <h3>إنهاء الإصلاح</h3>
+
+        <p>
+            عند الانتهاء من الإصلاح فإنه يتم دمجها نحو develop و master. بالإضافة إلى ذلك يتم تسمية دمج master بنسخة الإصلاح.
+        </p>
+        <blockquote>
+            git flow hotfix finish VERSION
+        </blockquote>
+    </div>
+    <div class="col-2">
+        <div class="hotfix-end"></div>
+    </div>
+</div>
+
+<div>
+    <div class="col-1"></div>
+    <div class="col-2">
+        <div class="lines-close"></div>
+        <div class="lines-small-end"></div>
+    </div>
+</div>
+
+
+<div class="scrollblock">
+    <h2><a name="commands" href="#commands">الأوامر</a></h2>
+    <img src="img/git-flow-commands.png" alt="git-flow commands"/>
+</div>
+
+<div class="scrollblock">
+    <h2> الأعمال المعلقة</h2>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+    <ul>
+        <li>ليست كل الأوامر مذكورة هنا، فقط الأساسية.</li>
+        <li>
+            يمكنك الاستمرار في استخدام git وجميع الأوامر بشكل طبيعي كما عاهدتهم، git flow ليست سوى مجموعة أدواة
+        </li>
+        <li>ميزة "دعم" لا تزال بيتا، لا ينصح باستخدامها.</li>
+        <li>إذا كنت تريد إضافة ترجمة لهذه الوثيقة، سوف أدرجها بكل سرور.</li>
+    </ul>
+    <p class="divider">&#9733; &#9733; &#9733;</p>
+</div>
+</div>
+
+
+
+<footer>
+    <div class="scrollblock">
+        <h2><a name="comments" href="#comments">تعليقات</a></h2>
+
+        <div id="disqus_thread"></div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gitflowcheatsheet'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>git-flow 备忘清单</title>
-    <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
 
@@ -39,6 +39,7 @@
         <a href="index.html" title="english">English</a> -
         <a href="index.es_ES.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
+        <a href="index.zh_TW.html" title="Traditional Chinese">繁體中文(Traditional Chinese)</a> -
         <a href="#" class="active" title="Simplified Chinese">简体中文(Simplified Chinese)</a>
         <a href="index.ja_JP.html" title="日本語">日本語</a> -
         <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
@@ -50,9 +51,10 @@
         <a href="index.de_DE.html" title="German">Deutsch (German)</a> -
         <a href="index.ro_RO.html" title="Romanian">Română (Romanian)</a> -
         <a href="index.el_GR.html" title="Ελληνικά (Greek)">Ελληνικά (Greek)</a> -
-        <a href="index.uk_UK.html" title="Ukrainian">Українська (Ukrainian)</a> -
+        <a href="index.uk_UA.html" title="Ukrainian">Українська (Ukrainian)</a> -
         <a href="index.vi_VN.html" title="Tiếng Việt">Tiếng Việt (Vietnamese)</a> -
-        <a href="index.pl_PL.html" title="Polish">Polski</a>
+        <a href="index.pl_PL.html" title="Polish">Polski</a> -
+        <a href="index.ar_MA.html" title="العربية">العربية</a>
     </p>
 </header>
 
@@ -95,11 +97,11 @@
         <h3>OSX</h3>
         <span>Homebrew</span>
         <blockquote>
-            $ brew install git-flow
+            $ brew install git-flow-avh
         </blockquote>
         <span>Macports</span>
         <blockquote>
-            $ port install git-flow
+            $ port install git-flow-avh
         </blockquote>
         <h3>Linux</h3>
         <blockquote>
@@ -108,13 +110,13 @@
         <h3>Windows (Cygwin)</h3>
         <blockquote>
             $ wget -q -O - --no-check-certificate
-            https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+            https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash
         </blockquote>
         <p>安装 git-flow, 你需要 wget 和 util-linux。</p>
     </div>
     <div class="col-2">
         <p>
-            更多的 git flow 安装指引，请阅读  <a href="https://github.com/nvie/gitflow/wiki/Windows" target="_blank">git flow wiki</a>.
+            更多的 git flow 安装指引，请阅读  <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation" target="_blank">git flow wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
@@ -216,8 +218,10 @@
         </p>
 
         <blockquote>
-            git flow feature pull MYFEATURE
+            git flow feature pull origin MYFEATURE
         </blockquote>
+        
+        <p>你可以使用 <code> git flow feature track MYFEATURE</code> 跟踪在origin上的特性分支。</p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
