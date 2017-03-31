@@ -14,7 +14,7 @@ header {
     box-shadow: 0px 5px 7px #8db7bd;
     -webkit-box-shadow: 0px 5px 7px #8db7bd;
     -moz-box-shadow: 0px 5px 7px #8db7bd;
-    height: 400px;
+    /*height: 400px;*/
     background-color: #8db7bd;
     border-bottom: 1px solid #698b91
 }
@@ -59,10 +59,28 @@ h3 {
 
 p {
     margin: 20px auto;
-    text-shadow: 0 2px 1px #fff;
+    text-shadow: none;
     color: #222438;
 }
 
+h2 a {
+    text-decoration: none;
+    font-size: 60px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 1px #000;
+    color: #FFB000;
+    font-family: 'Sansita One', cursive;
+}
+
+h2 a:hover {
+    text-decoration: none;
+}
+
+h2 a:visited {
+    color: #FFB000;
+}
 
 a, a:visited {
     color: #D92B00;
@@ -75,7 +93,7 @@ ul {
     margin-left: 0;
     padding-left: 1em;
     text-indent: -1em;
-    text-shadow: 0 2px 1px #fff;
+    text-shadow: none;
     line-height: 1.4;
 }
 
@@ -92,11 +110,13 @@ blockquote {
     border-right: 2px solid #30334F;
     border-radius: 10px;
     padding: 5px 20px;
-    color:white;
+    color: white;
     font-family: menlo, monospace;
+    word-wrap: break-word;
 }
 
 code {
+    display: inline-block;
     font-style: normal;
     padding-left: 5px;
     border-radius: 10px;
@@ -140,7 +160,7 @@ code {
 
 .lines-big {
     width: 300px;
-    height: 4140px;
+    height: 4395px;
     background-repeat: repeat-y;
     background: url("../img/lines-big.png");
     position: absolute;
@@ -161,7 +181,7 @@ code {
     height: 52px;
     background: url("../img/lines-close.png");
     position: relative;
-        left: 11px;
+    left: 11px;
 }
 
 .hotfix-end, .hotfix-start, .release-end, .release-start, .feature-end, .feature-start {
@@ -286,12 +306,10 @@ code {
 }
 
 #author {
-    width: 640px;
-    position: absolute;
+    width: 80%;
     top: 230px;
-    right: 15%;
     font-size: 20px;
-    text-align: right;
+    text-align: center;
     font-style: italic;
     color: #D92B00;
     z-index: 100;
@@ -304,17 +322,16 @@ code {
 }
 
 #desc {
-    position: absolute;
     top: 300px;
-    width: 100%;
+    width: 90%;
+    text-align: center;
 }
 
 #translations {
-    position: absolute;
     top: 340px;
-    width: 100%;
-    right: 15%;
-    text-align: right;
+    width: 80%;
+    right: 5%;
+    text-align: center;
 }
 
 #translations .active {
