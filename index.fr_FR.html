@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>git-flow cheatsheet</title>
-    <link href='http://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
 
-    <script src="js/jquery-1.7.2.min.js"></script>
 
 
     <script type="text/javascript">
@@ -63,9 +62,10 @@
         <a href="index.ca_CA.html" title="Català">Català (Catalan)</a> -
         <a href="index.ro_RO.html" title="Romanian">Română (Romanian)</a> -
         <a href="index.el_GR.html" title="Ελληνικά (Greek)">Ελληνικά (Greek)</a> -
-        <a href="index.uk_UK.html" title="Ukrainian">Українська (Ukrainian)</a> -
+        <a href="index.uk_UA.html" title="Ukrainian">Українська (Ukrainian)</a> -
         <a href="index.vi_VN.html" title="Tiếng Việt">Tiếng Việt (Vietnamese)</a> -
-        <a href="index.pl_PL.html" title="Polish">Polski</a> - 
+        <a href="index.pl_PL.html" title="Polish">Polski</a> -
+        <a href="index.ar_MA.html" title="العربية">العربية</a> -
         <a href="index.az_AZ.html" title="Polish">Azərbaycanca (Azerbaijani)</a>
     </p>
 </header>
@@ -74,10 +74,10 @@
 
 
 <div class="scrollblock">
-    <h2>A propos</h2>
+    <h2>À propos</h2>
 
     <p>
-        git-flow est un ensemble d'extensions git permettant des opérations de haut niveau sur un dépot pour appliquer le modèle de branches de Vincent Driessen.
+        git-flow est un ensemble d'extensions git permettant des opérations de haut niveau sur un dépôt pour appliquer le modèle de branches de Vincent Driessen.
         <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">détails</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
@@ -90,7 +90,7 @@
 <div class="scrollblock">
     <h2>Conseils de base</h2>
     <ul>
-        <li>Les commandes et sorties de Git-flow apportent une aide précieuse. Lisez les attentivement pour comprendre ce qui se passe...</li>
+        <li>Les commandes et sorties de Git-flow apportent une aide précieuse. Lisez-les attentivement pour comprendre ce qui se passe…</li>
         <li>Le logiciel pour OSX <a href="http://www.sourcetreeapp.com/">Sourcetree</a> est une excellente interface graphique pour git qui supporte git-flow.
         </li>
         <li>Git-flow est une solution basée sur les fusions (merge). Elle n'effectue pas de <em>rebase</em> sur les branches de fonctionnalitées</li>
@@ -143,7 +143,7 @@
     <div class="col-1">
         <h3>Initialisation</h3>
 
-        <p>Commencez à utiliser git-flow en l'initialisant dans un dépot git existant:</p>
+        <p>Commencez à utiliser git-flow en l'initialisant dans un dépôt git existant&nbsp;:</p>
         <blockquote>
             git flow init
         </blockquote>
@@ -167,14 +167,14 @@
 
     <ul class="narrow">
         <li>Développe des nouvelles fonctionnalités pour la prochaine version</li>
-        <li>Existe en général uniquement dans les dépots des développeurs</li>
+        <li>Existe en général uniquement dans les dépôts des développeurs</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
         <h3>Commencer une feature</h3>
         <p>Le développement d'une fonctionnalité commence à partir de la branche 'develop'</p>
-        <p>Commencer le développement d'une nouvelle fonctionnalité avec:</p>
+        <p>Commencer le développement d'une nouvelle fonctionnalité avec&nbsp;:</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
@@ -290,7 +290,7 @@
     <div class="col-1">
         <h3>Terminer une livraison</h3>
 
-        <p>Terminer une livraison est une des étapes majeures de cette méthode. Plusieurs actions sont réalisées:</p>
+        <p>Terminer une livraison est une des étapes majeures de cette méthode. Plusieurs actions sont réalisées&nbsp;:</p>
         <ul>
             <li>Fusionne la branche de livraison dans la branche 'master'</li>
             <li>Etiquette la livraison par son nom</li>
@@ -393,7 +393,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
