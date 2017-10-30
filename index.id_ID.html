@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>git-flow cheatsheet</title>
+    <title>Rujukan git-flow</title>
     <link href='https://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
@@ -29,10 +29,10 @@
 <div id="banner"><a href="https://github.com/danielkummer/git-flow-cheatsheet">Fork me on GitHub</a></div>
 <header>
 
-    <h1 id="title">git-flow Spickzettel</h1>
+    <h1 id="title">Rujukan <br/>git-flow</h1>
 
     <p id="author">
-        erstellt von <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        dibuat oleh: <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -44,11 +44,11 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">Effizientes Branching mittels git-flow von <a href="http://nvie.com/">Vincent Driessen</a></p>
-    <p id="translations">Übersetzungen:
-        <a href="index.html" title="English">English</a> -
-        <a href="index.es_ES.html" title="Spanish">Castellano</a> -
-        <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
+    <p id="desc">menerapkan cabang <i>(branch)</i> yang efisien menggunakan git-flow oleh <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">Terjemahan:
+        <a href="index.html" title="english">English</a> -
+        <a href="index.es_ES.html" title="spanish">Castellano</a> -
+        <a href="index.pt_BR.html" title="Português Brasileiro">Português Brasileiro</a> -
         <a href="index.zh_TW.html" title="Traditional Chinese">繁體中文(Traditional Chinese)</a> -
         <a href="index.zh_CN.html" title="Simplified Chinese">简体中文(Simplified Chinese)</a> -
         <a href="index.ja_JP.html" title="日本語">日本語</a> -
@@ -58,7 +58,7 @@
         <a href="index.it_IT.html" title="Italiano">Italiano</a> -
         <a href="index.nl_NL.html" title="Nederlands">Nederlands</a> -
         <a href="index.ru_RU.html" title="Russian">Русский (Russian)</a> -
-        <a href="#" class="active" title="German">Deutsch (German)</a> -
+        <a href="index.de_DE.html" title="German">Deutsch (German)</a> -
         <a href="index.ca_CA.html" title="Català">Català (Catalan)</a> -
         <a href="index.ro_RO.html" title="Romanian">Română (Romanian)</a> -
         <a href="index.el_GR.html" title="Ελληνικά (Greek)">Ελληνικά (Greek)</a> -
@@ -66,8 +66,9 @@
         <a href="index.vi_VN.html" title="Tiếng Việt">Tiếng Việt (Vietnamese)</a> -
         <a href="index.pl_PL.html" title="Polish">Polski</a> -
         <a href="index.ar_MA.html" title="العربية">العربية</a> -
-        <a href="index.az_AZ.html" title="Polish">Azərbaycanca (Azerbaijani)</a>
-        <a href="index.id_ID.html" title="Bahasa Indonesia">Bahasa Indonesia</a>
+        <a href="index.lt_LT.html" title="Lithuanian">Lietuviškai (Lithuanian)</a> -
+        <a href="index.az_AZ.html" title="Polish">Azərbaycanca (Azerbaijani)</a> -
+        <a href="#" class="active" title="Bahasa Indonesia">Bahasa Indonesia</a>
     </p>
 </header>
 
@@ -75,36 +76,36 @@
 
 
 <div class="scrollblock">
-    <h2>Über</h2>
+    <h2>Tentang git-flow</h2>
 
     <p>
-        git-flow ist ein Set aus Git-Erweiterungen, welches komplexe Repository-Arbeiten
-        nach Vincent Driessens Branching-Modell ermöglicht.
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">mehr</a></small>
+        git-flow adalah sebuah ekstensi git untuk menyediakan operasi repositori tingkat tinggi 
+        untuk model percabangan <i>(branching model)</i> Vincent Driessen.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">baca lebih lanjut</a></a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>Dieser Spickzettel veranschaulicht die grundlegende Nutzung und den Ablauf von git-flow Operationen.</p>
+    <p>Rujukan ini menunjukan dasar penggunaan dan efek dari operasi git-flow</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>Grundlegende Tipps</h2>
+    <h2>Tips dasar</h2>
     <ul>
-        <li>git-flow bietet eine exzellente Hilfe und ausführliche Ausgabe auf der Kommandozeile. Lies dir die Ausgaben aufmerksam durch und versuche zu verstehen, was passiert.</li>
-        <li>Der OSX/Windows Client <a href="http://www.sourcetreeapp.com/">SourceTree</a> bietet ein exzellentes grafisches Interface und einfache Git-Flow Unterstützung.</li>
-        <li>git-flow ist eine rein Merge-basierte Lösung (Zusammenführung). Es findet kein Rebasing der Feature-Branches (Entwicklungszweige) statt.</li>
+        <li>Git flow menyediakan bantuan <i>command line</i> yang sangat baik. Baca perlahan untuk melihat apa yang terjadi</li>
+        <li><a href="http://www.sourcetreeapp.com/">Sourcetree</a> adalah salah satu program yang sangat baik untuk program git berbasis tampilan yang menyediakan dukungan git flow untuk OSX/Windows </li>
+        <li>Git-flow adalah solusi berbasis <i>merge</i>. Ini tidak me-<i>rebase</i> fitur branch.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">Einrichtung</a></h2>
+    <h2><a name="setup" href="#setup">Setup</a></h2>
     <ul>
-        <li>Du benötigst eine funktionierende Git Installation als Voraussetzung.</li>
-        <li>git-flow läuft unter OSX, Linux und Windows.</li>
+        <li>Sebagai prasyarat, anda diharuskan memasang/menginstal git</li>
+        <li>Git flow dapat bekerja pada OSX, Linux dan Windows</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -126,11 +127,11 @@
             $ wget -q -O - --no-check-certificate
             https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash
         </blockquote>
-        <p>Du benötigst wget und util-linux um git-flow zu installieren.</p>
+        <p>Anda membutuhakn wget dan util-linus untuk menginstal git-flow.</p>
     </div>
     <div class="col-2">
         <p>
-            Für eine detaillierte git-flow Installationsanleitung, besuche bitte das <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow
+            Untuk detil instruksi pemasangan git flow kunjungi <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow
             wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
@@ -138,19 +139,19 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">Erste Schritte</a></h2>
-    <p>git-flow muss initalisiert werden, um das Projektsetup anzupassen.</p>
+    <h2><a name="getting_started" href="#getting_started">Mulai</a></h2>
+    <p>Git flow membutuhkan inisialisasi untuk menyesuaikan dengan proyek anda.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Initialisierung</h3>
+        <h3>Inisialisasi</h3>
 
-        <p>Fange an mit git-flow zu arbeiten, indem Du es innerhalb eines bestehenden Git-Repository initialisierst:</p>
+        <p>Mulai menggunakan git-flow dengan menginisialisasi dalam repositori git yang sudah ada:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            Dabei musst Du einige Fragen bezueglich der Namenskoventionen Deiner Branches (Entwicklungszweige) beantworten.<br/>
-            Es wird empfohlen, die Standardwerte zu verwenden.
+            Anda akan diharuskan untuk menjawab beberapa pertanyaan mengenai konvensi nama untuk branch anda.<br/>
+            Sangat direkomendasikan untuk menggunakan nilai bawaan.
         </p>
 
     </div>
@@ -164,27 +165,27 @@
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">Features</a></h2>
+    <h2><a name="features" href="#features">Fitur</a></h2>
 
     <ul class="narrow">
-        <li>Entwicklung neuer Features für bevorstehende Releases.</li>
-        <li>In der Regel nur in Entwickler-Repositories zu finden.</li>
+        <li>Mengembangkan fitur baru untuk rilis selanjutnya</li>
+        <li>Khususnya hanya dalam repositori yang sudah ada sebelumnya</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>Entwicklung neuer Features</h3>
-        <p>Neue Features werden vom 'develop'-Branch abgeleitet.</p>
-        <p>Starte die Entwicklung eines neuen Features mittels</p>
+        <h3>Mulai sebuah fitur baru</h3>
+        <p>Pengembangan fitur baru dimulai dari <i>branch</i> 'develop'.</p>
+        <p>Mulai pengembangan sebuah fitur baru dengan</p>
         <blockquote>
-            git flow feature start MYFEATURE
+            git flow feature start FITURSAYA
         </blockquote>
-        <p>Dieser Befehl erstellt einen neuen Feature-Branch basierend auf 'develop' und wechselt in diesen.</p>
+        <p>Perintah ini membuat sebuah <i>branch</i> fitur baru berdasarkan 'develop' dan beralih ke branch tersebut</p>
 
         <!--
-        - Bump the version number now!
-        - Start committing last-minute fixes in preparing your release
-        - When done, run:
+        - Benarkan nomor versinya sekarang!
+        - Mulai meng-<i>commit</i> pembenaran di menit-menit akhir dalam persiapan rilis
+        - Ketika selesai, jalankan
 
              git flow release finish 'testrelease'
 
@@ -199,20 +200,20 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Fertigstellung eines Features</h3>
+        <h3>Menyelesaikan sebuah fitur</h3>
 
         <p>
-            Beende die Entwicklung eines Features.
-            Dies führt zu folgenden Aktionen:
+            Menyelesaikan pengembangan sebuah fitur.
+            Tindakan ini melakukan hal berikut
         </p>
         <ul>
-            <li>Zusammenführen von MYFEATURE in den 'develop'-Branch (Merge-Prozess)</li>
-            <li>Entfernt den Feature-Branch</li>
-            <li>Wechselt zurück in den 'develop'-Branch</li>
+            <li>Merge FITURSATA kedalam 'develop'</li>
+            <li>Menghapus <i>branch</i> fitur</li>
+            <li>Beralih kembali ke <i>branch</i> 'develop'</li>
         </ul>
 
         <blockquote>
-            git flow feature finish MYFEATURE
+            git flow feature finish FITURSAYA 
         </blockquote>
     </div>
     <div class="col-2">
@@ -222,16 +223,15 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Veröffentlichen eines Features</h3>
+        <h3>Mempublikasi sebuah Fitur</h3>
 
         <p>
-            Entwickelst Du ein Feature in Zusammenarbeit? <br/>
-            Veröffentliche Dein Feature auf einem entfernten Server,
-            so dass es auch von anderen verfolgt werden kann.
+            Apakah anda mengembangkan sebuah fitur dalam kolaborasi? <br/>
+            Mempublikasikan sebuah fitur ke dalam server remot agar bisa digunakan oleh pengguna yang lain.
         </p>
 
         <blockquote>
-            git flow feature publish MYFEATURE
+            git flow feature publish FITURSAYA
         </blockquote>
     </div>
     <div class="col-2">
@@ -241,23 +241,17 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Holen eines veröffentlichten Features</h3>
+        <h3>Mendapatkan sebuah fitur yang telah terpublikasi</h3>
 
         <p>
-            Hole ein Feature, welches von einem anderen Nutzer veröffentlicht wurde.
+            Mendapatkan sebuah fitur yang telah terpublikasi oleh pengguna lain.
         </p>
 
         <blockquote>
-            git flow feature pull origin MYFEATURE
+            git flow feature pull origin FITURSAYA
         </blockquote>
 
-        <p>
-            Du kannst ein Feature unter Verwendung von
-        </p>
-        <blockquote>git flow feature track MYFEATURE</blockquote>
-        <p>
-            auf 'origin' verfolgen.
-        </p>
+        <p>Anda dapat melacak sebuah fitur bedasarkan asalnya dengan menggunakan <code> git flow feature track FITURSAYA</code> </p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -266,41 +260,27 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Erstelle ein Release</a></h2>
+    <h2><a name="release" href="#release">Membuat sebuah rilis</a></h2>
 
     <ul>
-        <li>Unterstützt die Fertigstellung einer Produktionsversion.</li>
-        <li>Erlaubt geringfügige Bugfixes und die Erstellung der Metadaten für ein Release</li>
+        <li>Mendukung preparasi dari sebuah rilis <i>produksi</i> baru</li>
+        <li>Memperbolehkan untuk pembenaran bug minor dan mempersiapkan meta-data untuk sebuah rilis</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Beginne ein Release</h3>
+        <h3>Mulai sebuah rilis</h3>
 
-        <p>
-            Um ein neues Release zu beginnen, benutze den git flow release Befehl.
-            Mit diesem wird ein Release-Branch vom aktuellen 'develop'-Branch erstellt.
-        </p>
+        <p>Untuk memulai sebuah rilis, gunakan perintah git flow <i>release</i>. Perintah ini akan membuat sebuah <i>branch</i> rilis yang dibuat dari <i>branch</i> 'develop</p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>
-            Du kannst optional einen <code>[BASE]</code> Commit sha-1 Hash bereitstellen,
-            um ein Release von diesem Commit zu starten. Der Commit muss sich im 'develop'-Branch befinden.
-        </p>
-
+        <p>Anda dapat menambahkan opsi sebuah <code>[BASE]</code> commit sha-1 hash untuk memulai rilis dari. <i>Commit</i> harus berada dalam <i>branch</i> 'develop'.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-
-        <p>
-            Es ist ratsam, den Release-Branch nach der Erstellung zu veröffentlichen und damit anderen Entwicklern
-            die Möglichkeit für Commits zu geben. Mache es ähnlich wie bei einem Feature-Branch mit dem Befehl:
-        </p>
+        <p>Akan lebih bijak untuk mempublikasi <i>branch</i> rilis setelah membuatnya memperbolehkan merilis <i>commits</i> oleh developer yang lain. Melakukan ini sama dengan mempublikasi fitur dengan perintah:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>
-            (Du kannst ein entferntes Remote-Release mittels <br/>
-            <code>git flow release track RELEASE</code> verfolgen.)
-        </p>
+        <p>(Anda dapat melacak sebuah rilis remot dengan perintah <br/><code>git flow release track RELEASE</code>)</p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -309,22 +289,19 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Fertigstellung eines Releases</h3>
+        <h3>Menyelesaikan sebuah rilis</h3>
 
-        <p>
-            Das Beenden eines Releases ist einer der größten Schritte im Git-Branching-Prozess.
-            Es bewirkt folgende Aktionen:
-        </p>
+        <p>Menyelesaikan sebuah rilis adalah sebuah langkah besar dalam git <i>branching</i>. Ini melakukan beberapa tindakan:</p>
         <ul>
-            <li>Zusammenführen des Release-Branches zurück in den 'master'-Branch. (Merge-Prozess)</li>
-            <li>Markiert (Tagged) das Release mit seinem Namen</li>
-            <li>Zurückführen des Releases in den 'develop'-Branch (Merge-Prozess)</li>
-            <li>Entfernt den Release-Branch</li>
+            <li>Merge <i>branch</i> rilis kembali ke 'master'</li>
+            <li>Menandai (<i>tags</i>) rilis dengan namanya sendiri</li>
+            <li>Merge rilis kembali ke dalam 'develop'</li>
+            <li>Menghapus <i>branch</i> rilis</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
-        <p>Vergesse nicht Deine Tags mittels <code>git push --tags</code> zu pushen.</p>
+        <p>Jangan lupa untuk melakukan <i>push</i> pada penanda (<i>tags</i>) anda dengan <code>git push --tags</code></p>
 
     </div>
     <div class="col-2">
@@ -337,28 +314,18 @@
     <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
 
     <ul>
-        <li>
-            Hotfixes werden notwendig, sobald ein unerwünschter Zustand innerhalb einer Live-Produktionsversion
-            eintritt und resultierend daraus sofort gehandelt werden muss.
-        </li>
-        <li>
-            Ein Hotfix kann aus dem entsprechenden Tag des 'master'-Branches, welcher die Produktionsversion markiert,
-            direkt abgezweigt werden.
-        </li>
+        <li>Hotfixes muncul dari kebutuhan untuk melakukan tindakan sesegera mungkin atas keadaan yang tidak diinginan pada versi <i>production</i></li>
+        <li>Mungkin percabangan dari penanda (tag) yang sesuai dalam <i>branch</i> master yang ditandai sebagai versi <i>production</i> </li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>git flow hotfix start</h3>
 
-        <p>Ähnlich wie auch die anderen git-flow Befehle, wird ein Hotfix mittels</p>
+        <p>Seperti perintah git flow yang lain, sebuah <i>hotfix</i> dimulai dengan</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>
-            begonnen. Das VERSION-Argument markiert hierbei den neuen Hotfix-Release-Namen.
-            Optional kannst Du auch einen BASENAME spezifizieren.
-        </p>
-
+        <p>Argumen versi dengan ini menandai nama sebuah rilis hotfix baru. Dengan opsi anda dapat menspesifikasikan sebuah penamaan dasar untuk memulai.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -367,13 +334,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Fertigstellung eines Hotfixes</h3>
+        <h3>Menyelesaikan sebuah hotfix</h3>
 
-        <p>
-            Mit dem Beenden eines Hotfixes wird dieser in den 'develop'- und 'master'-Branch
-            zusammengeführt (Merge). Nebenbei wird der 'master'-Branch mit einem Tag,
-            welcher die Hotfix-Version beinhaltet, markiert.
-        </p>
+        <p>Dengan menyelesaikan sebuah <i>hotfix</i> ini berarti akan di-<i>merge</i> kembali ke dalam develop dan master. Sebagai tambahan merge ke master ditandai dengan versi <i>hotfix</i>.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -393,18 +356,18 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">Befehle</a></h2>
+    <h2><a name="commands" href="#commands">Commands</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
 <div class="scrollblock">
-    <h2>Backlog</h2>
+    <h2><i>Backlog</i></h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>Nur die wichtigsten aller verfügbaren Befehle sind hier abgedeckt.</li>
-        <li>Du kannst weiterhin alle Git-Befehle normal nutzen, wie Du es gewohnt bist. Git-flow ist nur eine Werkzeugsammlung.</li>
-        <li>Das 'support' Feature ist noch Beta und die Nutzung nicht empfohlen.</li>
-        <li>Wenn Du Übersetzungen beisteuern möchtest, würde ich mich freuen diese zu integrieren.</li>
+        <li>Tidak semua perintah yang tersedia dapat mencakup semua, hanya yang paling penting saja</li>
+        <li>Anda masih dapat menggunakan git dan semua perintahnya secara normal seperti yang anda ketahui, git flow adalah hanya sebuah koleksi alat</li>
+        <li>Penyokong fitur masih dalam versi beta, menggunakan ini tidak disarankan</li>
+        <li>Jika anda dapat menyediakan translasi saya akan senang untuk mengintegrasikannya</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -414,7 +377,7 @@
 
 <footer>
     <div class="scrollblock">
-        <h2><a name="comments" href="#comments">Kommentare</a></h2>
+        <h2><a name="comments" href="#comments">Komentar</a></h2>
 
         <div id="disqus_thread"></div>
     </div>
@@ -433,9 +396,9 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>Bitte aktiviere Javascript um die Kommentare zu sehen. <a href="http://disqus.com/?ref_noscript">Powered by Disqus.</a>
+<noscript>Mohon untuk mengaktifkan <i>JavaScript</i> untuk melihat <a href="http://disqus.com/?ref_noscript">komentar didukung oleh Disqus.</a>
 </noscript>
-<a href="http://disqus.com" class="dsq-brlink">Kommentare powered by <span class="logo-disqus">Disqus</span></a>
+<a href="http://disqus.com" class="dsq-brlink">komentar didukung oleh <span class="logo-disqus">Disqus</span></a>
 
 
 </body>
