@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -32,7 +32,7 @@
     <h1 id="title">git-flow cheatsheet</h1>
 
     <p id="author">
-        Tasarlayan: <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        dibuat oleh <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -44,8 +44,8 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc"><a href="http://nvie.com/">Vincent Driessen</a>'ın verimli dallanma modeli kullanılarak tasarlanmıştır.</p>
-    <p id="translations">çeviriler:
+    <p id="desc">percabangan efisien menggunakan git-flow oleh <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">terjemahan:
       <a href="index.ar_MA.html" title="العربية">العربية</a> -
       <a href="index.az_AZ.html" title="Polish">Azərbaycanca (Azerbaijani)</a> -
       <a href="index.es_ES.html" title="spanish">Castellano</a> -
@@ -58,7 +58,7 @@
       <a href="index.el_GR.html" title="Ελληνικά (Greek)">Ελληνικά (Greek)</a> -
       <a href="index.hr_HR.html" title="Croatian">Hrvatski</a> -
       <a href="index.it_IT.html" title="Italiano">Italiano</a> -
-      <a href="index.id_ID.html" title="Indonesia">Indonesia</a> -
+      <a href="#" class="active" title="Indonesia">Indonesia</a> -
       <a href="index.ja_JP.html" title="日本語">日本語 (Japanese)</a> -
       <a href="index.ko_KR.html" title="한국어">한국어(Korean)</a> -
       <a href="index.lt_LT.html" title="Lithuanian">Lietuviškai (Lithuanian)</a> -
@@ -67,7 +67,7 @@
       <a href="index.pt_BR.html" title="Português Brasileiro">Português Brasileiro</a> -
       <a href="index.ro_RO.html" title="Romanian">Română (Romanian)</a> -
       <a href="index.ru_RU.html" title="Russian">Русский (Russian)</a> -
-      <a href="#" class="active" title="Turkce">Türkçe</a> -
+      <a href="index.tr_TR.html" title="Turkce">Türkçe</a> -
       <a href="index.uk_UA.html" title="Ukrainian">Українська (Ukrainian)</a> -
       <a href="index.vi_VN.html" title="Tiếng Việt">Tiếng Việt (Vietnamese)</a>
     </p>
@@ -77,42 +77,38 @@
 
 
 <div class="scrollblock">
-    <h2>Hakkında</h2>
+    <h2>About</h2>
 
     <p>
-        git-flow, Vincent Driessen'in dallanma modeli için geliştirilmiş,  git repoları için üst düzey işlemler
-        yapabilmenizi sağlayan, sözkonusu dallanma modelini kullanmayı oldukça kolaylaştıran git eklentilerini içerir.
-        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/"><br>Vincent Driessen'in dallanma modeli hakkında</a></small>
+        git-flow adalah ekstensi untuk menyediakan operasi repository tingkat lanjut untuk Vincent
+        Driessen's branching model.
+        <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">more</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>Bu döküman git flow işlemleri hakkında temel kullanım şekillerini içermektedir.</p>
+    <p>Cheatsheet ini memberikan contoh dan hasil dari operasi dasar git-flow</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 <div class="scrollblock">
-    <h2>Temel Ipuçları</h2>
+    <h2>Tips Dasar</h2>
     <ul>
-        <li>Git flow komut satırları ile kusursuz yardım (help) ve çıktı (output) sağlar.</li>
-        <li>OSX ve Windows kullanıcıları için <a href="http://www.sourcetreeapp.com/">Sourcetree</a> , git flowa destek
-            veren mükemmel bir git gui aracıdır.
-
+        <li>Git flow menyediakan bantuan command line beserta output yang lengkap. Silahkan baca dari sumber berikut...</li>
+        <li>Untuk OSX/Windows <a href="http://www.sourcetreeapp.com/">Sourcetree</a> adalah git gui yang sangat direkomendasikan karena
+            menyediakan support untuk git-flow
         </li>
-        <li>Git flow birleşme-kaynaşma (merge) tabanlı bir çözümdür. Rebase tabanlı çözümlemelerle karıştırılmamalıdır. Merge tabanlı çözümlerde
-            merge işlemi sonucunda bütün değişiklikler kendi dallanmalarındaki commit ile tek bir dala (branch) bağlanır, başlangıç noktası sabittir.
-            Rebase tabanlı çözümlerde ise kendi dalınız (branch) üzerinde yaptığınız değişiklikler, son yapılan commitler
-            başlangıç noktası alınarak ana dal üzerine eklenir. </li>
+        <li>Git-flow merupakan merge based solution dan tidak melakukan rebase terhadap feature branches.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
 
 
 <div class="scrollblock">
-    <h2><a name="setup" href="#setup">Ayarlar</a></h2>
+    <h2><a name="setup" href="#setup">Setup</a></h2>
     <ul>
-        <li>Git flow'u kullanabilmek için öncelikli olarak git kurulumunun yapılması gerekmektedir.</li>
-        <li>Git flow OSX, Linux ve Windows üzerinde çalıştırılabilir.</li>
+        <li>Pastikan Anda sudah menginstall git</li>
+        <li>Git flow dapat digunakan pada OSX, Linux dan Windows</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -134,12 +130,11 @@
             $ wget -q -O - --no-check-certificate
             https://raw.github.com/petervanderdoes/gitflow-avh/develop/contrib/gitflow-installer.sh install stable | bash
         </blockquote>
-        <p>Git flow kurulumu için wget ve util-linux gerekmektedir.</p>
+        <p>Anda membutuhkan wget dan util-linux untuk menginstall git-flow.</p>
     </div>
     <div class="col-2">
         <p>
-            Git-flow kurulumu hakkında detaylı bilgi için git flow wiki'yi
-            ziyaret edebilirsiniz.<a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow
+            Untuk instruksi yang lebih detail, silahkan kunjungi <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow
             wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
@@ -147,22 +142,19 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="getting_started" href="#getting_started">Baslarken</a></h2>
-    <p>Git flow, kullanmak istediğiniz projede ayarlarınızı özelleştirmek amacıyla başlatılır (initialize).</p>
+    <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
+    <p>Git flow perlu diinisialisasi untuk meng-custom project Anda</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Başlangıç (Initialize)</h3>
+        <h3>Inisialisasi</h3>
 
-        <p>git flow'u kullanmak istediğiniz reponuzdayken;
-        </p>
+        <p>Inisialisasi git-flow dilakukan didalam git repository yang sudah ada:</p>
         <blockquote>
             git flow init
         </blockquote>
-        <p>komutuyla başlatabilirsiniz.
-        </p>
         <p>
-            Bu noktada kafanızda dallarınızı (branches) isimlendirme konusuna ilişkin birçok soru işareti oluşacaktır.
-            Bu bağlamda varsayılan (default) değerleri kullanmanız önerilir.
+            Anda akan diminta untuk menjawab beberapa pertanyaan berkaitan dengan konvensi penamaan branch Anda.<br/>
+            Direkomendasikan untuk menggunakan nilai default.
         </p>
 
     </div>
@@ -176,26 +168,22 @@
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">Özellikler (Features)</a></h2>
+    <h2><a name="features" href="#features">Features</a></h2>
 
     <ul class="narrow">
-        <li>Git flow ile yayınlamak üzere olduğunuz projenize ekleyeceğiniz özellikler için yeni dallarda (feature) kodlama yaparsınız.</li>
-        <li>Genel olarak sadece geliştirici repolarında bulunurlar.</li>
+        <li>Menggembangkan fitur baru untuk release selanjutnya</li>
+        <li>Biasanya hanya ada pada repository developer</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>Yeni bir özellik eklemesi başlatmak </h3>
-        <h3>(feature start)</h3>
-        <p>Yeni özelliklerin eklenmesi öncelikle develop dalından (branch) başlar.</p>
-        <p>Yeni bir özelliği kodlamaya </p>
+        <h3>Mulai membuat fitur baru</h3>
+        <p>Pengembangan fitur baru dimulai dari branch 'develop'</p>
+        <p>Untuk memulai pengembangan fitur baru gunakan:</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>
-            ile başlarız. Bu komut bize develop dalını (branch) temel alan bir özellik dalı (feature) oluşturur.
-            Ve bulunduğumuz dalı feature/MYFEATURE olarak değiştirir.
-        </p>
+        <p>Perintah ini akan membuat branch baru berdasarkan branch 'develop' dan berpindah ke branch tsb</p>
 
         <!--
         - Bump the version number now!
@@ -215,23 +203,21 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Bir özellik eklemesi bitirilirken (feature finish)</h3>
+        <h3>Menyelesaikan fitur baru</h3>
 
         <p>
-            Bir özelliğin eklenme işlemi bitirilirken şunları yapılır:
+            Menyelesaikan fitur baru
+            Perintah ini melakukan hal berikut
         </p>
         <ul>
-            <li>Kendi çalıştığımız özellik dalı (burada MYFEATURE) develop ana dalı ile birleştirilir.</li>
-            <li>Bu birleşmeden sonra kendi özellik dalımız (MYFEATURE) silinir.</li>
-            <li>Bulunduğumuz dal tekrar develop olarak değiştirilir.</li>
+            <li>Merge MYFEATURE ke 'develop'</li>
+            <li>Menghapus feature branch</li>
+            <li>Kembali ke branch 'develop'</li>
         </ul>
 
         <blockquote>
             git flow feature finish MYFEATURE
         </blockquote>
-        <p>
-            bu işlemleri bizler için yapar.
-        </p>
     </div>
     <div class="col-2">
         <div class="feature-end"></div>
@@ -240,22 +226,16 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Bir özelliği yayınlamak</h3>
-        <h3> (Publish a feature)</h3>
+        <h3>Publikasi fitur</h3>
 
         <p>
-            Bir ekip içerisinde geliştirme mi yapıyorsunuz ? <br/>
-            O zaman geliştirdiğiniz özelliği bir uzak sunucuya gönderin,
-             böylelikle geliştirdiğiniz özellik diğer kullanıcılar tarafından kullanılabilir.Öyleyse ;
-
+            Apakah pengembangan fitur dilakukan lebih dari 1 orang? <br/>
+            Publikasikan fitur Anda ke remote server agar dapat diakses oleh orang lain.
         </p>
 
         <blockquote>
             git flow feature publish MYFEATURE
         </blockquote>
-        <p>
-            sizin için bu işi halledebilir.
-        </p>
     </div>
     <div class="col-2">
         <div class="feature-publish"></div>
@@ -264,19 +244,17 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Yayınlanmış bir özelliği almak (Getting a published feature)</h3>
+        <h3>Getting a published feature</h3>
 
         <p>
-            Uzak sunucu üzerinde yayınlanmış bir özelliği kendi yerel (local) çalışma ortamınıza aktarırken:
-
+            Mendapatkan fitur yang telah dipublikasikan orang lain.
         </p>
 
         <blockquote>
-            git flow feature pull MYFEATURE
+            git flow feature pull origin MYFEATURE
         </blockquote>
-        <p>
-            size yardımcı olacaktır.
-        </p>
+
+        <p>Anda dapat men-track fitur pada origin menggunakan <code> git flow feature track MYFEATURE</code> </p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -285,38 +263,28 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Bir yayın çıkarırken (release)</a></h2>
+    <h2><a name="release" href="#release">Make a release</a></h2>
 
     <ul>
-        <li>Yeni bir ürünün yayınlanmasına yardımcı olur.</li>
-        <li>Küçük hata giderimleri ve meta-data hazırlığı için kullanılabilir.</li>
+        <li>Membantu persiapan release produk baru</li>
+        <li>Mempermudah minor bug fixes dan mempersiapkan meta-data untuk release</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Bir sürüm yayınlamak</h3>
-        <h3>(Start a release)</h3>
+        <h3>Start a release</h3>
 
-
-        <p>Yayınlamaya başlamak için,
-
+        <p>Untuk me-release produk, gunakan perintah git-flow release untuk membuat branch release dari branch 'develop'</p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>
-            komutu kullanılır.Bu komut ile develop dalını temel kabul eden bir release dalı (branch) yaratılır.
-        </p>
-        <p>Opsiyonel olarak yayınınızın <code>[BASE]</code> noktasından başlamasını sağlayabilirsiniz.
-             Bu commit develop dalında (branch) iken yapılmalıdır.</p>
+        <p>Anda dapat memilih untuk memberikan <code>[BASE]</code> commit sha-1 hash untuk me-release. Commit harus dilakukan
+            pada branch 'develop'.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>Yayınlama dalınız (release branch) oluştuktan sonra bu yöntem ile diğer yazılımcılar tarafından yapılan release
-            commitlerinin de kabul edilmesini sağlayabilirsiniz. Bunu özellik yayınlama (feature publishing) ile kolaylıkla yapabilirsiniz.
-        </p>
+        <p>Direkomendasikan untuk mempublikasi branch release setelah dibuat agar developer lain dapat mengaksesnya. Gunakan perintah berikut untuk mempublikasi branch release:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(Uzak sunucu üzerindeki yayınları <br/>
-            <code>git flow release track RELEASE</code>
-            <br>ile izleyebilirsiniz. )</p>
+        <p>(Anda dapat men-track remote release menggunakan perintah <br/><code>git flow release track RELEASE</code></p>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -325,25 +293,20 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Bir sürüm yayınını tamamlamak</h3>
-        <h3>(Finish up a release)</h3>
+        <h3>Finish up a release</h3>
 
-        <p>
-            Bir sürüm yayınını tamamlarken git dallanmasının (branching) en büyük adımını atarız. Yayınlanma tamamlanırken:
-        </p>
+        <p>Menyelesaikan releas merupakan langkah besar dalam percabangan git. Hal yang dilakukan dalam proses ini adalah:</p>
         <ul>
-            <li>Yayınlama yaptığımız dal olan release dalı (branch) master ana dalı ile birleştirilir.</li>
-            <li>Etiketler (tags) isimleri ile birlikte yayınlanır.</li>
-            <li>Arkaplandaki birleştirmeler (back-merges) develop dalında yayınlanır.</li>
-            <li>Yayınlama için açmış olduğumuz dal (branch) silinir.</li>
+            <li>Merge kembali branch release ke 'master'</li>
+            <li>Memberikan tag pada release menggunakan namanya</li>
+            <li>Back-merges release ke 'develop'</li>
+            <li>Menghapus release branch</li>
         </ul>
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
-        <p>
-            sizler için bu işlemleri halledecektir. Ancak etiketlerinizi de eklemeyi unutmayın!
-            <code>git push --tags</code> bu sorununuzu da halledecektir.
-        </p>
+        <p>Jangan lupa untuk push tag Anda dengan <code>git push --tags</code></p>
+
     </div>
     <div class="col-2">
         <div class="release-end"></div>
@@ -352,27 +315,22 @@
 </div>
 
 <div class="scrollblock">
-    <h2><a name="hotfixes" href="#hotfixes">Hata giderimleri (Hotfixes)</a></h2>
+    <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
 
     <ul>
-        <li>Yayına çıkarılmış bir versiyonda istenmeyen durumlar ortaya çıktığında ani hata giderimi için kullanılır.
+        <li>Hotfix muncul dari kebutuhan untuk memperbaiki kondisi yang tidak diinginkan pada live product secepatnya
         </li>
-        <li>Hotfixler, master ana dalı (branch)ındaki versiyon numarasını belirten etiketten dallanır (branching).</li>
+        <li>Dapat dicabangkan berdasarakan tag pada master branch yang menandai versi produk</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Bir hata giderimini başlatmak</h3>
-        <h3> (git flow hotfix start)</h3>
+        <h3>git flow hotfix start</h3>
 
-        <p>Diğer git flow komutlarında olduğu gibi bir hotfix başlatılırken :</p>
+        <p>Seperti perintah lain, hotfix dimulai dengan perintah:</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>
-            komutu kullanılır.
-
-            Versiyon argümanları yeni hotfix yayınının adını alır. Opsiyonel olarak
-            başlangıç noktası için bir isim özelleştirmesi yapabilirsiniz (basename).</p>
+        <p>Argumen versi menandai nama baru release hotfix. Anda dapat mememilih untuk [BASENAME] untuk memulai hotfix</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -381,11 +339,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Hata giderimi bitirme</h3>
-        <h3>(Finish a hotfix)</h3>
+        <h3>Meneyelesaikan hotfix</h3>
 
-        <p>Bir hata giderimi tamamlanırken, develop ve master dalları ile birleştirilir.
-            Ayrıca master dalına (branch) hotfix versiyonunun etiketi eklenir.</p>
+        <p>Dengan selesainya hotfix, maka hotfix akan di-merge kembali ke develop da master. Kemudian merge master diberi tag sesuai dengan versi hotfix</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -405,21 +361,20 @@
 
 
 <div class="scrollblock">
-    <h2><a name="commands" href="#commands">Komutlar (Commands)</a></h2>
+    <h2><a name="commands" href="#commands">Commands</a></h2>
     <img src="img/git-flow-commands.png" alt="git-flow commands"/>
 </div>
 
 <div class="scrollblock">
-    <h2>Içerik bilgisi (Backlog)</h2>
+    <h2>Backlog</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>Bu dökümanda Git flow için en önemli komutlar ve kullanımları ile ilgili bilgiler verilmektedir.
-            Ancak tüm Git flow komutları burda bahsedilenlerle sınırlı değildir.</li>
-        <li>Git flow kullanırken git ve gite ait diğer alt komutları gönlünüzce kullanabilirsiniz.
-            Git flow sadece bir repo derleme-toplama aracıdır.
+        <li>Tidak semua perintah dijelaskan disini, hanya yang penting saja</li>
+        <li>Anda tetap dapat menggunakan perintah git biasa. Hal ini karena git-flow hanyalah tooling
+            collection
         </li>
-        <li>Support branch hala beta sürümündedir.Kullanımı tavsiye edilmemektedir.</li>
-        <li>Çevirilerinizle bize destek olabilirsiniz.Bunları projemize eklemekten mutluluk duyarız.</li>
+        <li>Fitur 'support' masih dalam beta, sehingga tidak direkomendasikan untuk menggunakannya</li>
+        <li>Jika ingin melakukan penerjemahan Saya akan sangat senang untuk mengintegrasikannya</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -429,7 +384,7 @@
 
 <footer>
     <div class="scrollblock">
-        <h2><a name="comments" href="#comments">Yorumlar (Comments)</a></h2>
+        <h2><a name="comments" href="#comments">Comments</a></h2>
 
         <div id="disqus_thread"></div>
     </div>
