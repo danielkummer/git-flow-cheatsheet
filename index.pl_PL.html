@@ -70,6 +70,7 @@
         <a href="index.vi_VN.html" title="Tiếng Việt">Tiếng Việt (Vietnamese)</a> -
         <a href="#" class="active" title="Polish">Polski</a> -
         <a href="index.ar_MA.html" title="العربية">العربية</a> -
+        <a href="index.fa_FA.html" title="فارسی">فارسی</a> -
         <a href="index.az_AZ.html" title="Polish">Azərbaycanca (Azerbaijani)</a>
         <a href="index.id_ID.html" title="Bahasa Indonesia">Bahasa Indonesia</a>
     </p>
@@ -82,13 +83,13 @@
     <h2>Wprowadzenie</h2>
 
     <p>
-        git-flow jest zbiorem rozszerzeń git dostarczającym wysokopoziomowe operacje na repozytorium, wspierającym 
-        strategię rozgałęziania opracowaną przez Vincenta Driessen'a.
+        git-flow jest zbiorem rozszerzeń gita dostarczającym wysokopoziomowe operacje na repozytorium, wspierającym 
+        strategię rozgałęziania opracowaną przez Vincenta Driessena.
         <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">Czytaj więcej</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>Ta ściągawka prezentuje podstawy użycia operacji git-flow.</p>
+    <p>Ta ściągawka prezentuje podstawy użycia i efekt działania operacji git-flow.</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -96,10 +97,10 @@
 <div class="scrollblock">
     <h2>Podstawowe wskazówki</h2>
     <ul>
-        <li>Git flow dostarcza świetną pomoc z poziomu wiersza poleceń. Przeczytaj uważne, aby dostrzec co się wydarzy...
+        <li>Git flow dostarcza świetną pomoc z poziomu wiersza poleceń. Czytaj ją uważne, aby wiedzieć, co się dzieje...
         </li>
-        <li><a href="http://www.sourcetreeapp.com/">Sourcetree</a> - klient dla macOS/Windows, który jest wyśmienitą 
-        nakładką graficzną dla git wspierającą również git-flow.</li>
+        <li><a href="http://www.sourcetreeapp.com/">Sourcetree</a> - klient dla OSX/Windowsa, który jest wyśmienitą 
+        nakładką graficzną dla gita posiadającą wsparcie dla git-flow.</li>
         <li>Git-flow bazuje na scalaniu. Nie używa rebase do integrowania zmian.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
@@ -109,8 +110,8 @@
 <div class="scrollblock">
     <h2><a name="setup" href="#setup">Konfiguracja</a></h2>
     <ul>
-        <li>Zanim zaczniesz potrzebujesz działającej instalacji git.</li>
-        <li>Git flow działa na systemach macOS, Linux oraz Windows</li>
+        <li>Zanim zaczniesz, potrzebujesz działającego gita.</li>
+        <li>Git flow działa na OSX, Linuxie oraz Windowsie.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -136,8 +137,8 @@
     </div>
     <div class="col-2">
         <p>
-            Szczegółową instrukcję instalacji git możesz znaleźć na 
-            <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow wiki</a>.
+            Szczegółową instrukcję instalacji git-flow możesz znaleźć na stronie 
+            <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
@@ -145,12 +146,12 @@
 
 <div class="scrollblock">
     <h2><a name="getting_started" href="#getting_started">Pierwsze kroki</a></h2>
-    <p>Żeby dostosować ustawienia Twojego projektu, Git flow musi zostać zainicjalizowany.</p>
+    <p>Żeby dostosować ustawienia Twojego projektu, git flow musi zostać zainicjalizowany.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>Inicjalizacja</h3>
 
-        <p>Rozpocznij używanie git-flow inicjalizując go w istniejącym repozytorium git:</p>
+        <p>Rozpocznij używanie git-flow inicjalizując go w istniejącym repozytorium gita:</p>
         <blockquote>
             git flow init
         </blockquote>
@@ -173,7 +174,7 @@
     <h2><a name="features" href="#features">Funkcjonalności</a></h2>
 
     <ul class="narrow">
-        <li>Rozwój nowych funkcjonalności przyszłych wydań.</li>
+        <li>Dostarczają nowych funkcjonalności do nadchodzących wydań.</li>
         <li>Zazwyczaj istnieją tylko w repozytoriach deweloperów.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
@@ -213,7 +214,7 @@
             Ta czynność spowoduje:
         </p>
         <ul>
-            <li>Scalenie gałęzi MYFEATURE do 'develop'</li>
+            <li>Scalenie gałęzi MYFEATURE do gałęzi 'develop'</li>
             <li>Usunięcie gałęzi funkcjonalności</li>
             <li>Przełączenie z powrotem do gałęzi 'develop'</li>
         </ul>
@@ -257,7 +258,7 @@
             git flow feature pull origin MYFEATURE
         </blockquote>
 
-        <p>Możesz śledzić zmianę na serwerze źródłowym używając <code> git flow feature track MYFEATURE</code> </p>
+        <p>Możesz śledzić zmianę na serwerze źródłowym używając <code>git flow feature track MYFEATURE</code> </p>
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -301,7 +302,7 @@
     <div class="col-1">
         <h3>Zakończ wydanie</h3>
 
-        <p>Zakończanie wydania jest jednym z dużych kroków w rozgałęzianiu git. Realizuje ono szereg działań:</p>
+        <p>Kończenie wydania jest jednym z dużych kroków podczas pracy z gałęziami gita. Realizuje ono szereg działań:</p>
         <ul>
             <li>Scala gałąź wydania do gałęzi 'master'</li>
             <li>Taguje wydanie jego nazwą</li>
@@ -378,7 +379,7 @@
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
         <li>Nie zostały tutaj opisane wszystkie dostępne polecenia, a jedynie te najważniejsze</li>
-        <li>Możesz wciąż normalnie używać git oraz wszystkich jego poleceń tak jak to robiłeś do tej pory - git flow 
+        <li>Możesz wciąż normalnie używać gita oraz wszystkich jego poleceń tak jak to robiłeś do tej pory - git flow 
             jest tylko zestawem dodatkowych narzędzi</li>
         <li>Funkcjonalność 'support' jest wciąż w fazie beta - użycie jej nie jest zalecane</li>
         <li>Jeśli chciałbyś dostarczyć poprawki do tego tłumaczenia, z chęcią je dołączę.</li>
