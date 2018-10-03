@@ -94,7 +94,7 @@
     <h2>Consejos básicos</h2>
     <ul>
         <li>Git flow provee una excelente ayuda en la línea de comandos y e información. Lée con atención lo que sucede...</li>
-        <li>El cliente para OSX <a href="http://www.sourcetreeapp.com/">Sourcetree</a> es una excelente GUI para git y tiene soporte para git-flow
+        <li>El cliente para OSX/Windows <a href="http://www.sourcetreeapp.com/">Sourcetree</a> es una excelente GUI para git y tiene soporte para git-flow
         </li>
         <li>- Git-flow funciona basándose en fusiones de ramas (merge). No reorganiza (branch rebase) las ramas de características (feature branches).</li>
     </ul>
@@ -180,7 +180,7 @@
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>Esta acción crea una nueva rama derivada de 'develop' y salta a esta, estableciéndola como rama de trabajo actual.</p>
+        <p>Esta acción crea una nueva rama derivada de 'develop' y cambia a esta, estableciéndola como rama de trabajo actual.</p>
 
         <!--
         - Bump the version number now!
@@ -209,7 +209,7 @@
         <ul>
             <li>Fusiona MYFEATURE en 'develop'</li>
             <li>Borra la rama MYFEATURE</li>
-            <li>Salta a la rama 'develop', estableciéndola como rama de trabajo actual</li>
+            <li>Cambia a la rama 'develop', estableciéndola como rama de trabajo actual</li>
         </ul>
 
         <blockquote>
@@ -244,12 +244,20 @@
         <h3>Obteniendo características publicadas</h3>
 
         <p>
-            Obtiene una característica publicada por otro y mantiene un seguimiento de sus cambios.
+            Obten una característica publicada por otro.
         </p>
 
         <blockquote>
-            git flow feature pull MYFEATURE
+            git flow feature pull origin MYFEATURE
         </blockquote>
+        
+        <p>
+            Puedes mantener un seguimiento de sus cambios usando.
+        </p>
+        <blockquote>
+            git flow feature track MYFEATURE
+        </blockquote>
+        
     </div>
     <div class="col-2">
         <div class="feature-pull"></div>
@@ -268,7 +276,7 @@
     <div class="col-1">
         <h3>Comenzar una publicación</h3>
 
-        <p>Para comenzar una publicación, usa el comando git flow release. Creará</p>
+        <p>Para comenzar una publicación, usa el comando git flow release. Creará
         una rama de publicación derivada de la rama 'develop'.
         </p>
         <blockquote>
@@ -281,7 +289,12 @@
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
-        <p>(Puede establecer el seguimiento de los cambios de la publicación remota utilizando el comando <br/><code>git flow release track RELEASE</code>)</p>
+        <p>
+            (Puede establecer el seguimiento de los cambios de la publicación remota utilizando el siguiente comando) 
+        <p/>
+        <blockquote>
+            git flow release track RELEASE
+        </blockquote>
     </div>
     <div class="col-2">
         <div class="release-start"></div>
@@ -302,6 +315,10 @@
         <blockquote>
             git flow release finish RELEASE
         </blockquote>
+        <p>
+            No olvides añadir las tags con <code>git push --tags</code>
+        </p>
+
     </div>
     <div class="col-2">
         <div class="release-end"></div>
