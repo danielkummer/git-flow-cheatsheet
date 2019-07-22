@@ -299,9 +299,9 @@
 
         <p>Assim como os outros comandos do git flow, um hotfix inicia com</p>
         <blockquote>
-            git flow hotfix start RELEASE
+            git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>O argumento release nesse caso marca a versão defeituosa na produção</p>
+        <p>O argumento version marca o nome do novo hotfix. Opcionalmente, você pode especificar um basename para começar.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -314,7 +314,7 @@
 
         <p>Ao finalizar um hotfix ele é mesclado tanto no develop quanto no master. Além disso, o merge no master é etiquetado.</p>
         <blockquote>
-            git flow hotfix finish RELEASE
+            git flow hotfix finish VERSION
         </blockquote>
     </div>
     <div class="col-2">
