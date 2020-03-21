@@ -125,11 +125,11 @@
 </div>
 <div class="scrollblock">
     <h2><a name="getting_started" href="#getting_started">Getting started</a></h2>
-    <p>Git flow는 프로젝트 설정을 변경하기위해 초기화를 필요로합니다.</p>
+    <p>Git flow는 프로젝트 설정을 변경하기 위해 초기화를 필요로 합니다.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>초기화</h3>
-        <p>기존 git 저장소 내에서 초기화하는 것으로 git-flow의 사용을 시작합니다</p>
+        <p>기존 git 저장소 내에서 초기화하는 것으로 git-flow의 사용을 시작합니다.</p>
         <blockquote>
             git flow init
         </blockquote>
@@ -197,7 +197,7 @@
         <h3>기능을 게시(publish)</h3>
         <p>
             기능을 공동으로 개발하고 있나요? <br/>
-            기능을 원격 서버에 게시하여 다른 사용자들도 사용할 수있게 합니다.
+            기능을 원격 서버에 게시하여 다른 사용자들도 사용할 수 있게 합니다.
         </p>
         <blockquote>
             git flow feature publish MYFEATURE
@@ -210,9 +210,7 @@
 <div class="scrollblock">
     <div class="col-1">
         <h3>게시된 기능 가져오기</h3>
-        <p>
-            다른 사용자가 게시한 기능을 가져옵니다.
-        </p>
+        <p>다른 사용자가 게시한 기능을 가져옵니다.</p>
         <blockquote>
             git flow feature pull origin MYFEATURE
         </blockquote>
@@ -225,20 +223,19 @@
     <h2><a name="release" href="#release">Make a release</a></h2>
     <ul>
         <li>새로운 제품 출시 준비를 지원합니다.</li>
-        <li>출시를 위한 사소한 버그 수정이나 메타 데이터 준비를 허용합니다.</li>
+        <li>출시를 위한 사소한 버그 수정이나, 메타 데이터 준비를 허용합니다.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>릴리스 시작</h3>
         <p>릴리스를 시작하려면 git flow의 release 명령을 사용합니다.</p>
-        'develop' 브랜치로부터 'release' 브랜치를 생성합니다.
-        </p>
+        <p>'develop' 브랜치로부터 'release' 브랜치를 생성합니다.</p>
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
         <p>릴리스를 시작할 <code>[BASE]</code> commit sha-1 해시를 선택적으로 줄 수도 있습니다. 그 commit은 반드시 'develop' 브랜치에 있어야합니다.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>릴리스 브랜치를 생성한 후에는 다른 개발자들의 릴리스 commit을 허용하기위해 게시(publish)하는 것이 현명합니다. 기능 게시와 비슷한 방법으로합니다:</p>
+        <p>릴리스 브랜치를 생성한 후에는 다른 개발자들의 릴리스 commit을 허용하기위해 게시(publish)하는 것이 현명합니다. 기능 게시와 비슷한 방법으로합니다.</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
@@ -251,7 +248,7 @@
 <div class="scrollblock">
     <div class="col-1">
         <h3>릴리스 완료</h3>
-        <p>릴리스 완료는 git 브랜치하기에서 가장 큰 단계입니다. 몇몇 작업을 수행합니다:</p>
+        <p>릴리스 완료는 git 브랜치하기에서 가장 큰 단계입니다. 몇몇 작업을 수행합니다.</p>
         <ul>
             <li>'release' 브랜치를 'master' 브랜치에 병합(merge)</li>
             <li>릴리스를 릴리스 이름으로 태그(tag)</li>
@@ -280,8 +277,8 @@
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>여기서 버전 인수는 핫픽스 릴리스 이름을 지정합니다. 선택적으로 basename으로 시작점을 지정할 수도 있습니다.</p>
-        <p></p>
+        <p>여기서 버전 인수는 핫픽스 릴리스 이름을 지정합니다.</p>
+        <p>선택적으로 basename으로 시작점을 지정할 수도 있습니다.</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -290,7 +287,8 @@
 <div class="scrollblock">
     <div class="col-1">
         <h3>핫픽스 완료</h3>
-        <p>핫픽스를 종료하면 핫픽스는 'develop' 및 'master' 브랜치로 병합(merge)됩니다. 추가적으로 'master'의 병합분분은 핫픽스 버전으로 태그됩니다.</p>
+        <p>핫픽스를 종료하면 핫픽스는 'develop' 및 'master' 브랜치로 병합(merge)됩니다.</p>
+        <p>추가적으로 'master'의 병합 부분은 핫픽스 버전으로 태그됩니다.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
