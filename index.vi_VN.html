@@ -32,7 +32,7 @@
     <h1 id="title">Tóm tắt về Git-Flow</h1>
 
     <p id="author">
-        created by <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
+        tác giả bài viết <a href="http://twitter.com/0r1g4m14dd1c7">Daniel Kummer</a>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7" data-size="large">Tweet</a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
@@ -44,8 +44,8 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">efficient branching using git-flow by <a href="http://nvie.com/">Vincent Driessen</a></p>
-    <p id="translations">translations:
+    <p id="desc">Phân nhánh tự động với công cụ git-flow của <a href="http://nvie.com/">Vincent Driessen</a></p>
+    <p id="translations">các bản dịch khác:
         <a href="index.html" title="english">English</a> -
         <a href="index.es_ES.html" title="spanish">Castellano</a> -
         <a href="index.pt_BR.html" title="Brazilian Portugues">Brazilian Portugues</a> -
@@ -79,12 +79,12 @@
     <h2>git-flow là gì?</h2>
 
     <p>
-        git-flow là một tập các thao tác mở rộng của git nhằm cung cấp các thao tác repository (kho mã nguồn) ở mức cao dựa trên mô hình phân nhánh của Vincent Driessen.
+        git-flow là một tiện ích mở rộng của git, giúp các thao tác trên repository (kho mã nguồn) trở nên dễ dàng và hiệu quả hơn dựa trên mô hình phân nhánh của Vincent Driessen.
         <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">xem chi tết ở đây</a></small>
     </p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
-    <p>Bản tóm tắt nãy sẽ cho bạn biết cách sử dụng cơ bản và hiệu quả của git-flow.</p>
+    <p>Bài tóm tắt nãy sẽ cho bạn biết các thao tác sử dụng cơ bản và sự hiệu quả của git-flow.</p>
 
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -92,9 +92,9 @@
 <div class="scrollblock">
     <h2>Một vài lời khuyên</h2>
     <ul>
-        <li>Git flow cung cấp giao diện trợ giúp và đầu ra rất tuyệt vời. Hãy đọc chúng cẩn thận để xem điều kì diệu gì sẽ xảy ra ;)</li>
-        <li>Git Client - <a href="http://www.sourcetreeapp.com/">Sourcetree</a> là một Git Client có giao diện GUI rất tiện lợi và cũng hỗ trợ luôn git-flow trên giao diện.</li>
-        <li>Git-flow là một giải pháp dựa trên merge. Nó không rebase các nhánh tính năng.</li>
+        <li>Git-flow sẽ hỗ trợ thao tác và cho ra kết quả rất tuyệt vời. Hãy đọc bài viết này cẩn thận để xem điều kì diệu gì sẽ xảy ra ;)</li>
+        <li>Git-client - <a href="http://www.sourcetreeapp.com/">Sourcetree</a> là một git-client có giao diện GUI rất tiện lợi và cũng hỗ trợ git-flow trên giao diện.</li>
+        <li>Git-flow hoạt động dựa trên các thao tác gộp nhánh (merge). Nó không thực hiện các thao tác sắp xếp commits (rebase) trên các nhánh tính năng.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -104,7 +104,7 @@
     <h2><a name="setup" href="#setup">Cài đặt</a></h2>
     <ul>
         <li>Bạn cần cài đặt git trước khi có thể cài git-flow.</li>
-        <li>Git flow có thể hoạt động trên macOS, Linux và Windows.</li>
+        <li>Git-flow có thể hoạt động trên macOS, Linux và Windows.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
@@ -130,7 +130,7 @@
     </div>
     <div class="col-2">
         <p>
-            Xem chi tiết về cách cài đặt git flow ở trang sau: <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git flow
+            Xem chi tiết về cách cài đặt git-flow ở trang sau: <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">git-flow
             wiki</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
@@ -139,7 +139,7 @@
 
 <div class="scrollblock">
     <h2><a name="getting_started" href="#getting_started">Bắt đầu nào</a></h2>
-    <p>Git flow cần phải khởi tạo để có thể tùy chỉnh các cài đặt của dự án của bạn.</p>
+    <p>Git flow cần phải được khởi tạo để có thể tùy chỉnh các cài đặt của dự án của bạn.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>Khởi tạo</h3>
@@ -164,21 +164,21 @@
 
 
 <div class="scrollblock">
-    <h2><a name="features" href="#features">Các tính năng</a></h2>
+    <h2><a name="features" href="#features">Làm việc với các chức năng</a></h2>
 
     <ul class="narrow">
-        <li>Phát triển các tính năng cho việc release sắp tới.</li>
-        <li>Về cơ bản chỉ tổ chức ở repos của các lập trình viên.</li>
+        <li>Phát triển các chức năng mới cho lần phát hành kế tiếp.</li>
+        <li>Về cơ bản việc này thường chỉ xảy ra ở kho mã nguồn (respository) của các lập trình viên.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
     <div class="col-1">
-        <h3>Bắt đầu một tính năng</h3>
-        <p>Phát triển tính năng mới bắt đầu từ nhánh phát triển'develop'. Ví dụ với tính năng MYFEATURE:</p>
+        <h3>Bắt đầu quá trình phát triển một chức năng mới</h3>
+        <p>Để phát triển chức năng mới bạn nên bắt đầu từ nhánh phát triển 'develop'. Ví dụ với chức năng MYFEATURE:</p>
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>Lệnh này sẽ tạo ra một nhánh mới dựa trên nhánh 'develop' và chuyển sang nhánh mới này.</p>
+        <p>Lệnh này sẽ tạo ra một nhánh mới từ nhánh 'develop' và tự động chuyển sang nhánh mới này.</p>
 
         <!--
         - Bump the version number now!
@@ -198,15 +198,15 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Kết thúc một tính năng</h3>
+        <h3>Kết thúc quá trình phát triển một chức năng</h3>
 
         <p>
-            Sau khi phát triển xong một tính năng, lệnh kết thúc tính năng sẽ thực hiện các thao tác:
+            Điều này xảy ra sau khi bạn đã phát triển xong một chức năng (ví dụ phía trên là MYFEATURE), lệnh kết thúc quá trình phát triển chức năng sẽ tự động thực hiện các thao tác:
         </p>
         <ul>
-            <li>Merge nhánh tính năng - MYFEATURE vào nhánh 'develop'</li>
-            <li>Xoá nhánh tính năng</li>
-            <li>Chuyển sang nhánh 'develop'</li>
+            <li>Gộp nhánh (merge branch) chức năng (MYFEATURE) vào nhánh 'develop'</li>
+            <li>Xoá nhánh chức năng (MYFEATURE)</li>
+            <li>Chuyển sang (checkout) nhánh 'develop'</li>
         </ul>
 
         <blockquote>
@@ -220,12 +220,12 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Công bố tính năng</h3>
+        <h3>Đẩy mã nguồn của chức năng lên máy chủ</h3>
 
         <p>
-            Khi bạn làm việc với những người khác trên cùng một tính năng,
-            bạn sẽ cần công bố phần mã nguồn của bạn cho tính năng đó lên remote 
-            để những người khác có thể cập nhập được.
+            Khi bạn làm việc với những người khác trên cùng một chức năng,
+            bạn sẽ cần đẩy (push) phần mã nguồn của bạn cho chức năng đó lên máy chủ (remote) 
+            để những người khác có thể kéo về (pull) được.
         </p>
 
         <blockquote>
@@ -239,10 +239,10 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Lấy về tính năng</h3>
+        <h3>Kéo mã nguồn của chức năng xuống máy bạn</h3>
 
         <p>
-            Pull mã nguồn của tính năng được cập nhập bởi những thành viên khác.
+            Khi bạn cần kéo (pull) mã nguồn của chức năng về để phát triển tiếp sau khi nó đã được cập nhập bởi những thành viên khác (và họ đã đẩy nó lên máy chủ).
         </p>
 
         <blockquote>
@@ -256,17 +256,17 @@
 
 
 <div class="scrollblock">
-    <h2><a name="release" href="#release">Tạo một bản release</a></h2>
+    <h2><a name="release" href="#release">Tạo một bản phát hành</a></h2>
 
     <ul>
-        <li>Hỗ trợ chuẩn bị cho bản release.</li>
-        <li>Cho phép sửa các lỗi nhỏ và chuẩn bị meta-data cho release.</li>
+        <li>Hỗ trợ bạn chuẩn bị cho bản phát hành mới.</li>
+        <li>Cho phép sửa các lỗi nhỏ và chuẩn bị các tài liệu cần thiết cho bản phát hành.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
-        <h3>Bắt đầu release</h3>
+        <h3>Bắt đầu một phát hành mới</h3>
 
-        <p>Để bắt đầu release, sử dụng lệnh release của git flow.</p>
+        <p>Để bắt đầu một phát hành mới, sử dụng lệnh release của git flow.</p>
         Lệnh này sẽ tạo ra nhánh 'release' từ nhánh 'develop'.
         </p>
         <blockquote>
