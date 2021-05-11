@@ -79,7 +79,7 @@
     <h2>Introduzione</h2>
 
     <p>
-        git-flow è un set di estensioni di git che offre dei comandi di alto livello sul repository per utilizzare il modello di branching di Vincent
+        git-flow è un set di estensioni per git che offre  comandi di alto livello sul repository per utilizzare il modello di branching di Vincent
         Driessen.
         <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">maggiori informazioni</a></small>
     </p>
@@ -93,10 +93,10 @@
 <div class="scrollblock">
     <h2>Consigli di base</h2>
     <ul>
-        <li>Git flow offre un eccelente guida e un ottimo output da linea di comando.  Leggeteli attentamente per vedere cosa sta succedendo...</li>
+        <li>Git flow offre un eccelente guida e un ottimo output a linea di comando.  Leggeteli attentamente per vedere e capire cosa sta succedendo...</li>
         <li>Il Client per macOS/Windows <a href="http://www.sourcetreeapp.com/">Sourcetree</a> è un'eccellente GUI per git e offre supporto per git-flow
         </li>
-        <li>Git-flow è una soluzione basata sul merge. Non esegue il rebase su i feature branch.</li>
+        <li>Git-flow è una soluzione basata sul merge. Non esegue alcun rebase sui feature branch.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -105,7 +105,7 @@
 <div class="scrollblock">
     <h2><a name="setup" href="#setup">Setup</a></h2>
     <ul>
-        <li>È necessario un'installazione di git funzionante come prerequisito.</li>
+        <li>È necessaria un'installazione di git funzionante come prerequisito.</li>
         <li>Git flow funziona su macOS, Linux e Windows</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
@@ -132,7 +132,7 @@
     </div>
     <div class="col-2">
         <p>
-            Per le istruzioni dettagliate riguardo l'installazione di git-flow visitate il <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">wiki di git flow</a>.
+            Per le istruzioni dettagliate riguardo all'installazione di git-flow visitate il <a href="https://github.com/petervanderdoes/gitflow-avh/wiki/Installation">wiki di git flow</a>.
         </p>
         <img src="img/download.png" alt="install git-flow"/>
     </div>
@@ -140,18 +140,18 @@
 
 <div class="scrollblock">
     <h2><a name="getting_started" href="#getting_started">Per Iniziare</a></h2>
-    <p>Git flow ha la necessità di essere inizializzato per personalizzare il setup del progetto.</p>
+    <p>Git flow ha la necessità di essere inizializzato onde personalizzare il setup del progetto.</p>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>Inizializzazione</h3>
 
-        <p>Iniziate ad utilizzare git-flow inizializzandolo all'interno di un repository git esistente:</p>
+        <p>&#232; possibile iniziare ad utilizzare git-flow inizializzandolo all'interno di un repository git esistente:</p>
         <blockquote>
             git flow init
         </blockquote>
         <p>
-            Dovrete rispondere ad alcune domande riguardanti la naming conventions per i tuoi branch.<br/>
-            Si raccomanda l'uso dei valori di default.
+            Dovrete rispondere ad alcune domande riguardanti la naming conventions da utilizzarsi per i branch.<br/>
+            Si consglia l'uso dei valori di default proposti.
         </p>
 
     </div>
@@ -169,7 +169,7 @@
 
     <ul class="narrow">
         <li>Sviluppare nuove features per le releases in arrivo</li>
-        <li>Generalmente sono presenti solo nei repository di sviluppo</li>
+        <li>Generalmente sono (branch) presenti solo nei repository di sviluppo</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 
@@ -180,7 +180,7 @@
         <blockquote>
             git flow feature start MYFEATURE
         </blockquote>
-        <p>Questa crea un nuovo feature branch basato su 'develop' e si sposta su quello</p>
+        <p>Questa crea un nuovo feature branch basato su 'develop' e si sposta su quello (ne fa il checkout)</p>
 
         <!--
         - Bump the version number now!
@@ -200,15 +200,15 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Terminare una feature</h3>
+        <h3>Completamento di una feature</h3>
 
         <p>
             Termina lo sviluppo di una feature.
             Questa azione esegue le seguenti operazioni
         </p>
         <ul>
-            <li>Merge del branch MYFEATURE all'inteno di 'develop'</li>
-            <li>Rimuove il feature branch</li>
+            <li>Merge del branch MYFEATURE nel branch 'develop'</li>
+            <li>Rimuove il feature branch usato per lo sviluppo della feature</li>
             <li>Si sposta di nuovo sul branch 'develop'</li>
         </ul>
 
@@ -244,7 +244,7 @@
         <h3>Scaricare una feature pubblicata</h3>
 
         <p>
-            Scaricare una feature pubblicata da un altro utente.
+            Scaricare dal server remoto una feature pubblicata da un altro utente.
         </p>
 
         <blockquote>
@@ -275,9 +275,9 @@
         <blockquote>
             git flow release start RELEASE [BASE]
         </blockquote>
-        <p>Potere facoltativmente fornire come parametro <code>[BASE]</code> lo sha-1 hash del commit dal quale far partire la release. Il commit deve essere sul branch 'develop'.</p>
+        <p>Potere facoltativamente fornire nel parametro <code>[BASE]</code> lo sha-1 hash del commit dal quale far partire la release. Il commit deve essere presente nel branch 'develop'.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>È una buona idea pubblicare il release branch dopo averlo creato in modo da consentire l'invio di release commit anche da parte di altri sviluppatori. Potete farlo, usando un comando analogo a quello per pubblicare le features, con il comando:</p>
+        <p>È una buona idea pubblicare il release branch dopo averlo creato in modo da consentire l'invio di release commit anche da parte di altri sviluppatori. Potete farlo, usando un comando analogo a quello usato per pubblicare le features:</p>
         <blockquote>
             git flow release publish RELEASE
         </blockquote>
@@ -290,12 +290,12 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Terminare una release</h3>
+        <h3>Completamento di una release</h3>
 
         <p>Terminare una release è uno dei passi più grandi nella gestione dei branch di git. Vengono eseguite svariate operazioni:</p>
         <ul>
             <li>Merge del release branch su branch 'master'</li>
-            <li>Tag della relase con il suo nome</li>
+            <li>Tagging della relase con il suo nome</li>
             <li>Merge all'indietro della relase sul branch 'develop'</li>
             <li>Rimozione del release branch</li>
         </ul>
@@ -315,18 +315,18 @@
     <h2><a name="hotfixes" href="#hotfixes">Hotfixes</a></h2>
 
     <ul>
-        <li>Gli Hotfixes nascono dalla necessità di agire immediatamente di fronte ad uno stato indesiderato della versione live di produzione.</li>
-        <li>Possono essere fatti partire dal tag corrispondente sul branch master che contrassegna la versione di produzione.</li>
+        <li>Gli Hotfixes nascono dalla necessità di reagire prontamente di fronte ad uno stato indesiderato della versione live di produzione.</li>
+        <li>Possono essere creati a partire dal tag corrispondente sul branch master che contrassegna la versione di produzione.</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <div class="col-1">
         <h3>git flow hotfix start</h3>
 
-        <p>Come gli altri comandi di git flow, un hotfix comincia con</p>
+        <p>Come gli altri comandi di git flow, un hotfix si inizia con</p>
         <blockquote>
             git flow hotfix start VERSION [BASENAME]
         </blockquote>
-        <p>La versione passata come argomento definisce il nuovo nome dell'hotfix release. Facoltativamente potete specificare un basename da cui partire.</p>
+        <p>La versione passata come argomento definisce il nuovo nome dell'hotfix release. Facoltativamente potete specificare un basename da cui partire (un tag di release sul branch 'master').</p>
     </div>
     <div class="col-2">
         <div class="hotfix-start"></div>
@@ -335,9 +335,9 @@
 
 <div class="scrollblock">
     <div class="col-1">
-        <h3>Terminare un hotfix</h3>
+        <h3>completamento di un hotfix</h3>
 
-        <p>Terminando un hotfix, esso viene integrato (merge) all'indietro all'interno di 'develop' e di 'master'. In aggiunta il master viene taggato con la versone dell'hotfix.</p>
+        <p>Terminando un hotfix, questo viene integrato (merge) all'indietro all'interno dei branch 'develop' e 'master'. In aggiunta il master viene taggato con la versone dell'hotfix.</p>
         <blockquote>
             git flow hotfix finish VERSION
         </blockquote>
@@ -365,11 +365,11 @@
     <h2>Backlog</h2>
     <p class="divider">&#9733; &#9733; &#9733;</p>
     <ul>
-        <li>Non tutti i comandi disponibili sono riportati qui, solo i più importanti</li>
-        <li>Potete comunque usare git e tutti i suoi comandi normalmente come li conoscete, git flow è solo una collezione di strumenti aggiuntivi.
+        <li>Non tutti i comandi git disponibili sono riportati qui, solo quelli più importanti</li>
+        <li>Potete comunque sempre usare git e tutti i suoi comandi normalmente come li conoscete, git flow costituisce solamente una collezione di strumenti aggiuntivi.
         </li>
-        <li>La funzionalità 'support' è ancora in beta, 'utilizzo non è consigliato</li>
-        <li>Se volete fornire una traduzione sarò felice di integrarla</li>
+        <li>La funzionalità 'support' è ancora in beta, il suo utilizzo non è consigliato</li>
+        <li>Se volete fornire una traduzione nella Vostra lingua, sarò felice di integrarla</li>
     </ul>
     <p class="divider">&#9733; &#9733; &#9733;</p>
 </div>
@@ -398,7 +398,7 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+<noscript>Prego abilitare JavaScript per visualizzare i <a href="http://disqus.com/?ref_noscript">commenti (powered by Disqus.)</a>
 </noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
