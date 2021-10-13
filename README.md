@@ -1,7 +1,7 @@
 git-flow-cheatsheet
 ===================
 
-A cheatsheet on the usage of git flow, visit http://danielkummer.github.com/git-flow-cheatsheet/
+A cheatsheet on the usage of git flow, visit http://danielkummer.github.io/git-flow-cheatsheet/
 
 GIT FLOW
 ========
