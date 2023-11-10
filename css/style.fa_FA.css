@@ -1,6 +1,7 @@
-*{
-    font-family: Tahoma,Calibri,sans serif !important;
+* {
+    font-family: 'Rubik', sans-serif !important;
 }
+
 .rtl {
     direction: rtl !important;
 }
