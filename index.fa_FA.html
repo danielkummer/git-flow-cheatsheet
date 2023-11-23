@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>راهنمای git-flow</title>
-    <link href='https://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Vazirmatn' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen,print">
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen,print">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Vazirmatn' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.fa_FA.css" type="text/css" media="screen,print">
 
 
@@ -32,9 +35,10 @@
     <h1 id="title">راهنمای git-flow</h1>
 
     <p id="author">
-        ایجاد شده توسط <a href="http://twitter.com/0r1g4m14dd1c7">دانیل کامر</a>
+        ایجاد شده توسط <a href="http://twitter.com/0r1g4m14dd1c7"> دانیل کامر </a>
+        <br>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="0r1g4m14dd1c7"
-           data-size="large">تویت</a>
+           data-size="large"> حساب تویتر </a>
         <script>!function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (!d.getElementById(id)) {
@@ -45,7 +49,7 @@
             }
         }(document, "script", "twitter-wjs");</script>
     </p>
-    <p id="desc">شاخه‌بندی بهینه با git-flow توسط<a href="http://nvie.com/">وینسنت دریسن</a></p>
+    <p id="desc"> شاخه‌بندی بهینه با git-flow توسط <a href="http://nvie.com/">وینسنت دریسن</a></p>
     <p id="translations">translations:
         <a href="#" class="active" title="english">English</a> -
         <a href="index.es_ES.html" title="spanish">Castellano</a> -
@@ -81,24 +85,28 @@
         <h2>درباره</h2>
 
         <p>
-            git-flow مجموعه‌ای از تعمیم‌های گیت است که برای عملیات سطح بالا روی مخازن با مدل شاخه‌بندی وینسنت دریسن است.
+            git-flow مجموعه‌ای از تعمیم‌های گیت برای ساده سازی عملیات سطح بالا روی مخازن با مدل شاخه‌بندی وینسنت دریسن
+            است.
             <small><a href="http://nvie.com/posts/a-successful-git-branching-model/">بیشتر</a></small>
         </p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
-        <p>این برگه تقلب استفاده‌های پایه و تاثیر عملیات git-flow را نشان می‌دهد.</p>
+        <p>این برگه تقلب، استفاده‌های پایه و تاثیر عملیات git-flow را نشان می‌دهد.</p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
     </div>
 
     <div class="scrollblock">
         <h2>راهنمایی‌های اولیه</h2>
         <ul>
-            <li>گیت فلو نکات کمکی برای دستورات و خروجی را بسیار خوب فراهم می‌کند. مطالب را با دقت مطالعه کنید تا ببنید
+            <li>گیت فلو راهنمایی‌های خوبی در مورد دستورات و خروجی آن‌ها فراهم می‌کند. مطالب را با دقت مطالعه کنید تا
+                ببنید
                 چه اتفاقی دارد می‌افتد...
             </li>
-            <li>برای کاربران OSX یا ویندوز<a href="http://www.sourcetreeapp.com/">Sourcetree</a> یک ابزار عالی است که
-                محیط گرافیکی دارد و از git-flow پشتیبانی میکند.
+            <li> برای کاربران OSX یا ویندوز<a href="http://www.sourcetreeapp.com/"> Sourcetree </a> یک ابزار عالی است که
+                محیط گرافیکی دارد و از git-flow پشتیبانی می‌کند.
             </li>
-            <li>گیت فلو یک راهکار بر اساس ادغام است و شاخه‌های feature(ویژگی، قابلیت) را بازسازی نمی‌کند.</li>
+            <li>گیت فلو یک راهکار بر اساس ادغام (merge based) است و شاخه‌های feature (ویژگی، قابلیت) را بازسازی (rebase)
+                نمی‌کند.
+            </li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
     </div>
@@ -107,8 +115,8 @@
     <div class="scrollblock">
         <h2><a name="setup" href="#setup">نصب و راه‌اندازی</a></h2>
         <ul>
-            <li>شما باید یک نصب فعال از گیت را به عنوان پیشنیاز داشته باشید.</li>
-            <li>گیت فلو، روی OSX، لینوکس و ویندوز کار می‌کند.</li>
+            <li>برای نصب git-flow ابتدا لازم است git روی سیستم شما نصب باشد.</li>
+            <li>گیت فلو، روی OSX، لینوکس و ویندوز قابل استفاده است.</li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
         <div class="col-1">
@@ -143,16 +151,16 @@
 
     <div class="scrollblock">
         <h2><a name="getting_started" href="#getting_started">شروع کار</a></h2>
-        <p>گیت فلو برای اعمال تغییرات روی پروژه شما باید آغاز(مقداردهی) شود. </p>
+        <p>در ابتدا نیاز است گیت فلو برای اعمال تغییرات روی پروژه شما آغاز (مقداردهی اولیه) شود. </p>
         <p class="divider">&#9733; &#9733; &#9733;</p>
         <div class="col-1">
             <h3>آغاز</h3>
 
-            <p>استفاده از گیت فلو را با دستور زیر در یک مخزن گیت-که وجود دارد- آغاز کنید.</p>
+            <p>استفاده از گیت فلو را با دستور زیر در یک مخزن گیت -که از قبل ایجاد شده و وجود دارد- آغاز کنید.</p>
             <blockquote>
                 git flow init
             </blockquote>
-            <p>شما باید چندین سوال را برای تعیین نام‌گذاری برنچ‌های(شاخه‌های) خود پاسخ دهید. پیشنهاد می‌شود از مقادیر
+            <p>شما باید چندین سوال را برای تعیین نام‌گذاری شاخه‌های (branches) خود پاسخ دهید. پیشنهاد می‌شود از مقادیر
                 پیشفرض برای این کار استفاده کنید. </p>
         </div>
         <div class="col-2">
@@ -169,7 +177,7 @@
 
         <ul class="narrow">
             <li>برای عرضه بعدی یک ویژگی جدید توسعه دهید!</li>
-            <li>به طور معمول فط در مخازن توسعه‌دهندگان موجود هستند!</li>
+            <li>به طور معمول فقط در مخازن توسعه‌دهندگان موجود هستند!</li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
 
@@ -180,7 +188,7 @@
             <blockquote>
                 git flow feature start MYFEATURE
             </blockquote>
-            <p>این دستور بر اساس شاخه 'develop' ویژگی جدیدی را می‌سازد و به صورت اتوماتیک روی آن سویچ می‌کند.</p>
+            <p>این دستور بر اساس شاخه 'develop' ویژگی جدیدی را می‌سازد و به صورت خودکار روی آن جابجا می‌شود.</p>
 
             <!--
             - Bump the version number now!
@@ -201,11 +209,11 @@
     <div class="scrollblock">
         <div class="col-1">
             <h3>اتمام ویژگی</h3>
-            <p>توسعه یک ویژگی را تمام میکند، این دستور نتایج زیر را خواهد داشت:</p>
+            <p>توسعه یک ویژگی را به پایان می‌رساند، این دستور نتایج زیر را خواهد داشت:</p>
             <ul>
                 <li>MYFEATURE را با شاخه 'develop' ادغام می‌کند.</li>
                 <li>شاخه ویژگی را حذف می‌کند.</li>
-                <li>دوباره روی شاخه 'develop' سویچ می‌کند.(برمی‌گردد)</li>
+                <li>دوباره به شاخه‌ی 'develop' برمی‌گردد.</li>
             </ul>
 
             <blockquote>
@@ -222,7 +230,7 @@
             <h3>انتشار یک ویژگی</h3>
 
             <p>
-                آیا شما در حال توسعه یک ویژگی در یک پروژه مشارکتی هستید؟ <br/>
+                آیا شما در حال توسعه‌ی یک ویژگی در یک پروژه مشارکتی هستید؟ <br/>
                 ویژگی را روی ریموت سرور منتشر کنید تا برای سایر اعضا قابل استفاده باشد.
             </p>
 
@@ -247,9 +255,8 @@
                 git flow feature pull origin MYFEATURE
             </blockquote>
 
-            <p>شما میتونید توسعه یک ویژگی رو از مبدا، با دستور زیر زیر نظر داشته باشید. <code> git flow feature track
+            <p>شما می‌توانید توسعه یک ویژگی رو از مبدا، با دستور زیر، زیر نظر داشته باشید. <code> git flow feature track
                 MYFEATURE</code></p>
-            <p>You can track a feature on origin by using <code> git flow feature track MYFEATURE</code></p>
         </div>
         <div class="col-2">
             <div class="feature-pull"></div>
@@ -261,8 +268,8 @@
         <h2><a name="release" href="#release">ایجاد یک انتشار</a></h2>
 
         <ul>
-            <li>تهیه پشتیبان از انتشار محصول جدید</li>
-            <li>اجازه برای رفع باگ‌های جزیی و آماده کردن متا دیتا برای انتشار</li>
+            <li>تهیه‌ی پشتیبان از انتشار محصول جدید</li>
+            <li>اجازه برای رفع باگ‌های جزئی و آماده کردن متا دیتا‌ها برای انتشار</li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
         <div class="col-1">
@@ -272,7 +279,7 @@
             <blockquote>
                 git flow release start RELEASE [BASE]
             </blockquote>
-            <p>شما به صورت اختیاری می‌توانید به جای <code>[BASE]</code> از کد sha-1 یک کامیت(ثبت) خود برای استارت انتشار
+            <p>شما به صورت اختیاری می‌توانید به جای <code>[BASE]</code> از کد sha-1 یک کامیت (ثبت تغییرات) خود برای استارت انتشار
                 از آنجا استفاده کنید. کامیت باید روی برنج 'develop' باشد.</p>
             <p class="divider">&#9733; &#9733; &#9733;</p>
             <p>بهتر است شاخه انتشار را پس از ایجاد منتشر کنید تا سایر توسعه‌دهنگان نیز بتوانند روی شاخه انتشار کامیت
@@ -281,7 +288,7 @@
             <blockquote>
                 git flow release publish RELEASE
             </blockquote>
-            <p>شما میتونید انتشار ریموت را، با دستور زیر زیر نظر داشته باشید. <code>git flow release track
+            <p>شما می‌توانید انتشار ریموت را، با دستور زیر، زیر نظر داشته باشید. <code>git flow release track
                 RELEASE</code></p>
         </div>
         <div class="col-2">
@@ -295,10 +302,10 @@
 
             <p>اتمام یک انتشار، بخش بزرگی از برنچینگ و شاخه‌بندی گیت است، که باعث رخدادهای زیر می‌شود:</p>
             <ul>
-                <li>شاخه انتشار را با شاخه 'master' ادغام می‌کند</li>
-                <li>انتشار را با نامی که روی ان گذاشته شده، برجسب می‌زند!</li>
-                <li>همجنین شاخه انتشار را با شاخه 'develop' ادغام می‌کند</li>
-                <li>شاخه انتشار را حذف می‌کند</li>
+                <li>شاخه انتشار را با شاخه 'master' ادغام می‌کند.</li>
+                <li>انتشار را با نامی که روی آن گذاشته شده، برجسب می‌زند!</li>
+                <li>همجنین شاخه انتشار را با شاخه 'develop' ادغام می‌کند.</li>
+                <li>شاخه انتشار را حذف می‌کند.</li>
             </ul>
             <blockquote>
                 git flow release finish RELEASE
@@ -316,11 +323,11 @@
         <h2><a name="hotfixes" href="#hotfixes">اصلاحات</a></h2>
 
         <ul>
-            <li>اصلاحیه‌ها از ضرورت تغییر بلافاصله در یک نسخه محصول زنده(در دسترس کاربران و عموم) پس از یک وضعیت
-                ناخواسته، حاصل می شود
+            <li>اصلاحیه‌ها از ضرورت تغییر فوری، در یک نسخه محصول درحال اجرا (در دسترس کاربران و عموم)، پس از یک  بروز یک وضعیت
+                ناخواسته، حاصل می شود.
             </li>
 
-            <li>ممکن است شاخه‌بندی آنها از برجسبی که روی شاخه 'master' برای آن نسخه از محصول وجود دارد، باشد.
+            <li>ممکن است شاخه‌بندی آن‌ها از برجسبی که روی شاخه 'master' برای آن نسخه از محصول وجود دارد، باشد.
             </li>
 
         </ul>
@@ -332,7 +339,8 @@
             <blockquote>
                 git flow hotfix start VERSION [BASENAME]
             </blockquote>
-            <p>آرگومان ورژن برای نام انتشار اصلاح بکار‌ می‌رود. که پیشنهاد می‌شود از یک نام پایه برای اینکار استفاده کنید.</p>
+            <p>متغیر ورژن برای نامگذاری انتشار اصلاح، بکار‌ می‌رود که پیشنهاد می‌شود از یک نام پایه برای این‌ کار استفاده
+                کنید.</p>
         </div>
         <div class="col-2">
             <div class="hotfix-start"></div>
@@ -341,9 +349,10 @@
 
     <div class="scrollblock">
         <div class="col-1">
-            <h3>اتمام  یک اصلاح</h3>
+            <h3>اتمام یک اصلاح</h3>
 
-            <p>با اتمام یک اصلاح، آن شاخه با شاخه‌های 'develop' و 'master' ادغام می‌شود. همچنین ادغام با شاخه 'master' با ورژن اصلاح برجسب‌گذاری می‌شود.</p>
+            <p>با اتمام یک اصلاح، آن شاخه با شاخه‌های 'develop' و 'master' ادغام می‌شود. همچنین ادغام با شاخه 'master'
+                با ورژن اصلاح برجسب‌گذاری می‌شود.</p>
             <blockquote>
                 git flow hotfix finish VERSION
             </blockquote>
@@ -371,11 +380,12 @@
         <h2>جمع‌بندی</h2>
         <p class="divider">&#9733; &#9733; &#9733;</p>
         <ul>
-            <li>در این نوشته فقط مهمترین دستورات  بررسی شده‌اند و همه دستورات تشریح نشده‌اند.</li>
-            <li>شما هنوز می‌توانید از گیت و تمامی دستورات آن، همانطور که می‌دانید استفاده کنید. گیت فلو فقط یک مجموعه ابزار است.
+            <li>در این نوشته فقط مهمترین دستورات بررسی شده‌اند و همه دستورات تشریح نشده‌اند.</li>
+            <li>شما هنوز می‌توانید از گیت و تمامی دستورات آن، همانطور که می‌دانید استفاده کنید، گیت فلو فقط یک مجموعه
+                ابزار است.
             </li>
             <li>ویژگی 'support' هنوز در نسخه بتا قرار دارد، استفاده از آن پیشنهاد نمی‌شود.</li>
-            <li>اگر دوست دارید ترجمه جدیدی ارائه‌ دهید، خوشحال می‌شوم از آنها استفاده کنم.</li>
+            <li>اگر دوست دارید ترجمه جدیدی ارائه‌ دهید، خوشحال می‌شوم از آن‌ها استفاده کنم.</li>
         </ul>
         <p class="divider">&#9733; &#9733; &#9733;</p>
     </div>
@@ -403,7 +413,8 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-<noscript>لطفا برای نمایش نظرات، جاوا اسکریپت را فعال نمایید <a href="http://disqus.com/?ref_noscript">نظرات، نیرو گرفته از Disqus.</a>
+<noscript>لطفا برای نمایش نظرات، جاوا اسکریپت را فعال نمایید <a href="http://disqus.com/?ref_noscript">نظرات، نیرو گرفته
+    از Disqus.</a>
 </noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
